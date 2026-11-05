@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d4b14c3eb139c72cec2515e532b4aee3",
+    "content-hash": "508a06825477350577835f07cbfed875",
     "packages": [
         {
             "name": "brick/math",
@@ -6657,6 +6657,62 @@
                 "source": "https://github.com/Jean85/pretty-package-versions/tree/2.1.1"
             },
             "time": "2025-03-19T14:43:43+00:00"
+        },
+        {
+            "name": "joelstein/blade-formatter",
+            "version": "v0.11.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/joelstein/blade-formatter.git",
+                "reference": "9ae111283e46204df7fb8a02f83547c63406dc9f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/joelstein/blade-formatter/zipball/9ae111283e46204df7fb8a02f83547c63406dc9f",
+                "reference": "9ae111283e46204df7fb8a02f83547c63406dc9f",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "php": "^8.2"
+            },
+            "require-dev": {
+                "larastan/larastan": "^3.0",
+                "laravel-zero/framework": "^12.1",
+                "laravel-zero/phar-updater": "^1.4",
+                "laravel/pao": "^1.0",
+                "laravel/pint": "^1.29",
+                "mockery/mockery": "^1.6",
+                "phpunit/phpunit": "^13.0"
+            },
+            "bin": [
+                "builds/blade-format"
+            ],
+            "type": "project",
+            "autoload": {
+                "psr-4": {
+                    "BladeFormatter\\": "app/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Format Blade templates and Livewire SFCs with Pint, Tailwind class sorting, and auto-indentation",
+            "keywords": [
+                "Pint",
+                "blade",
+                "formatter",
+                "laravel",
+                "livewire",
+                "tailwind"
+            ],
+            "support": {
+                "issues": "https://github.com/joelstein/blade-formatter/issues",
+                "source": "https://github.com/joelstein/blade-formatter/tree/v0.11.1"
+            },
+            "time": "2026-11-03T15:59:32+00:00"
         },
         {
             "name": "laravel/agent-detector",
