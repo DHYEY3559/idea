@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\RegisteredUserController;
 use Illuminate\Support\Facades\Route;
 
+Route::get('/register', [RegisteredUserController::class, 'create']);
 Route::get('/', function () {
     return view('welcome');
 });

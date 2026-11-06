@@ -11,7 +11,7 @@
 
 <body class="bg-background text-foreground">
     <x-layout.navbar />
-    <main>
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <p class="text-center text-2xl font-bold py-4"></p>
         {{ $slot }}
     </main>
