@@ -2,10 +2,10 @@
 
 namespace App\Models;
 
-use Database\Factories\IdeaFactory;
 use App\IdeaStatus;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Database\Factories\IdeaFactory;
 use Illuminate\Database\Eloquent\Casts\AsArrayObject;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -24,12 +24,12 @@ class Idea extends Model
         'status' => IdeaStatus::PENDING,
     ];
 
-    public function user() : BelongsTo
+    public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
-    public function steps() : HasMany
+    public function steps(): HasMany
     {
         return $this->hasMany(Step::class);
     }

@@ -7,6 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-
+    <h1>Welcome to the Idea App</h1>
 </body>
 </html>

@@ -52,7 +52,8 @@
         ],
         "format": [
             "vendor/bin/pint",
-            "vendor/bin/blade-format resources/views"
+            "vendor/bin/blade-format resources/views",
+            "npx prettier --write \"resources/**/*.{css,js}\""
         ],
         "test": [
             "@php artisan config:clear --ansi @no_additional_args",

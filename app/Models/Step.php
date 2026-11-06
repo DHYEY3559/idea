@@ -2,15 +2,20 @@
 
 namespace App\Models;
 
+use Database\Factories\StepFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Step extends Model
 {
-    /** @use HasFactory<\Database\Factories\StepFactory> */
+    /** @use HasFactory<StepFactory> */
     use HasFactory;
 
-    public function idea() : BelongsTo
+    protected $attributes = [
+        'completed' => false,
+    ];
+
+    public function idea(): BelongsTo
     {
         return $this->belongsTo(Idea::class);
     }
