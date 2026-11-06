@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use Database\Factories\StepFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Model;
 
 class Step extends Model
