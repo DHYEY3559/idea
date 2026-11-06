@@ -2,12 +2,12 @@
     <div class="max-w-7xl mx-auto h-16 flex items-center justify-between">
         <div>
             <a href="/">
-                <img src="/images/logo.png" alt="Logo" width="100">
+                <img src="/images/logo.png" alt="Logo" class="h-8 w-auto inline-block mr-2">
             </a>
         </div>
-        <div>
-            right side
+        <div class="flex gap-x-4 items-center">
+            <a href="/login"> Sign In </a>
+            <a href="/register" class="btn"> Register </a>
         </div>
     </div>
-
 </nav>
