@@ -10,7 +10,7 @@
                 <x-form.feild name='password' label='Password' />
 
                 <div class="grid grid-cols-1 gap-4">
-                    <button class="btn btn-neutral mt-4 text-lg font-semibold">Login</button>
+                    <button class="btn btn-neutral mt-4 text-lg font-semibold" type="submit">Login</button>
                 </div>
             </fieldset>
         </form>
