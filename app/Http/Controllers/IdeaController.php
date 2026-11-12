@@ -6,6 +6,7 @@ use App\Http\Requests\StoreIdeaRequest;
 use App\Http\Requests\UpdateIdeaRequest;
 use App\Models\Idea;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class IdeaController extends Controller
 {
@@ -42,7 +43,15 @@ class IdeaController extends Controller
      */
     public function show(Idea $idea)
     {
-        //
+        $ideas = DB::query()
+            ->select('id', 'title', 'description')
+            ->from('ideas')
+            ->where('id', $idea->id)
+            ->first();
+
+        return view('ideas.show', [
+            'idea' => $ideas,
+        ]);
     }
 
     /**
@@ -50,7 +59,11 @@ class IdeaController extends Controller
      */
     public function edit(Idea $idea)
     {
-        //
+        $ideas = DB::query()
+            ->select('id', 'title', 'description')
+            ->from('ideas')
+            ->where('id', $idea->id)
+            ->first();
     }
 
     /**
