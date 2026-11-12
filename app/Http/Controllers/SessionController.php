@@ -21,7 +21,7 @@ class SessionController extends Controller
         if (Auth::attempt($validated)) {
             $request->session()->regenerate();
 
-            return redirect()->intended('/');
+            return redirect()->intended('/')->with('success', 'You are logged in!');
         }
 
         return back()->withErrors([
