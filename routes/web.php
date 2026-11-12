@@ -13,6 +13,6 @@ Route::group(['middleware' => 'guest'], function () {
 });
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::post('/logout', [SessionController::class, 'destroy']);
+    Route::get('/logout', [SessionController::class, 'destroy']);
     Route::get('/', [IdeaController::class, 'create']);
 });
