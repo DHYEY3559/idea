@@ -14,5 +14,6 @@ Route::group(['middleware' => 'guest'], function () {
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/logout', [SessionController::class, 'destroy']);
-    Route::get('/', [IdeaController::class, 'create']);
+    Route::get('/', [IdeaController::class, 'index']);
+    // Route::get('/', [IdeaController::class, 'create']);
 });
