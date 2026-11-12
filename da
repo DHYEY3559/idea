@@ -1,0 +1,34 @@
+[90m= [39m[34;4mIlluminate\Database\Eloquent\Collection[39;24m {#8370
+    [34mall[39m: [
+      [34;4mApp\Models\Idea[39;24m {#7572
+        [34mstatus[39m: [32m"[39m[32mpending[39m[32m"[39m,
+        [34muser_id[39m: [35m1[39m,
+        [34mtitle[39m: [32m"[39m[32mTemporibus illo recusandae a consequatur.[39m[32m"[39m,
+        [34mdescription[39m: [32m"[39m[32mPerspiciatis dolores dolor et rerum quo debitis et. Repellat cum vero eos aut perferendis nisi et sed. Eos tenetur porro iure commodi. Recusandae id aut in odit quas tempore dolor.[39m[32m"[39m,
+        [34mlinks[39m: [32m"[39m[32m[[39m\"[32mhttp:[39m\\[32m/[39m\\[32m/www.huels.com[39m\\[32m/[39m\"[32m][39m[32m"[39m,
+        [34mupdated_at[39m: [32m"[39m[32m2026-11-12 08:29:19[39m[32m"[39m,
+        [34mcreated_at[39m: [32m"[39m[32m2026-11-12 08:29:19[39m[32m"[39m,
+        [34mid[39m: [35m2[39m,
+      },
+      [34;4mApp\Models\Idea[39;24m {#7570
+        [34mstatus[39m: [32m"[39m[32mpending[39m[32m"[39m,
+        [34muser_id[39m: [35m1[39m,
+        [34mtitle[39m: [32m"[39m[32mEum blanditiis itaque architecto a iure.[39m[32m"[39m,
+        [34mdescription[39m: [32m"[39m[32mSint voluptatem repudiandae temporibus id unde excepturi quis. Est numquam totam vero. Iste accusamus eius cupiditate aut ex magnam fugit voluptates. Nulla aperiam maiores qui.[39m[32m"[39m,
+        [34mlinks[39m: [32m"[39m[32m[[39m\"[32mhttp:[39m\\[32m/[39m\\[32m/www.schumm.com[39m\\[32m/rem-ratione-earum-ipsa-cumque-officiis.html[39m\"[32m][39m[32m"[39m,
+        [34mupdated_at[39m: [32m"[39m[32m2026-11-12 08:29:19[39m[32m"[39m,
+        [34mcreated_at[39m: [32m"[39m[32m2026-11-12 08:29:19[39m[32m"[39m,
+        [34mid[39m: [35m3[39m,
+      },
+      [34;4mApp\Models\Idea[39;24m {#8372
+        [34mstatus[39m: [32m"[39m[32mpending[39m[32m"[39m,
+        [34muser_id[39m: [35m1[39m,
+        [34mtitle[39m: [32m"[39m[32mIn nemo ab ratione quasi neque totam aut.[39m[32m"[39m,
+        [34mdescription[39m: [32m"[39m[32mNobis asperiores fugit velit cupiditate perspiciatis quis maxime. Dolorum sit libero repudiandae delectus sunt. Nemo qui quia inventore.[39m[32m"[39m,
+        [34mlinks[39m: [32m"[39m[32m[[39m\"[32mhttp:[39m\\[32m/[39m\\[32m/www.miller.net[39m\\[32m/[39m\"[32m][39m[32m"[39m,
+        [34mupdated_at[39m: [32m"[39m[32m2026-11-12 08:29:19[39m[32m"[39m,
+        [34mcreated_at[39m: [32m"[39m[32m2026-11-12 08:29:19[39m[32m"[39m,
+        [34mid[39m: [35m4[39m,
+      },
+    ],
+  }

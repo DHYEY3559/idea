@@ -5,7 +5,7 @@
             <p class="text-center text-muted-foreground mt-1">Create and Share Your Ideas {{ Auth::user()->name }}</p>
         </header>
         <div class="mt-10">
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 ">
+            <div class="grid md:grid-cols-2 gap-6 ">
                 @forelse ($ideas as $idea)
                     <div class="border border-border rounded-lg p-4 md:test-sm block">
                         <h2 class="text-lg font-semibold">{{ $idea->title }}</h2>
