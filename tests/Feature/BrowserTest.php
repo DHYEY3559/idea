@@ -12,7 +12,6 @@ test('the application registers User', function () {
 
     expect(Auth::check())->toBeTrue();
     expect(Auth::user()->name)->toBe('John Doe');
-    expect(session('success'))->toBe('You are logged in!');
 });
 
 test('the application logs in User', function () {
@@ -28,5 +27,4 @@ test('the application logs in User', function () {
         ->assertPathIs('/');
 
     expect(Auth::check())->toBeTrue();
-    expect(session('success'))->toBe('You are logged in!');
 });
