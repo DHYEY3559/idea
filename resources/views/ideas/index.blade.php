@@ -7,7 +7,8 @@
         <div class="mt-10">
             <div class="grid md:grid-cols-2 gap-6 ">
                 @forelse ($ideas as $idea)
-                    <x-card>
+                    <x-card href="{{ route('ideas.show', $idea) }}"
+                        class="hover:bg-base-200 transition-colors duration-300">
                         <h2 class="text-lg font-semibold">{{ $idea->title }}</h2>
                         <x-status>
                             {{ $idea->status->label() }}
