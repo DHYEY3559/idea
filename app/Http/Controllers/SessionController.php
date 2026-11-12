@@ -31,6 +31,7 @@ class SessionController extends Controller
 
     public function destroy()
     {
+        Auth::logout();
         session()->invalidate();
         session()->regenerateToken();
 
