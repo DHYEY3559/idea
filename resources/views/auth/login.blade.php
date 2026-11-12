@@ -6,8 +6,9 @@
 
 
                 <x-form.feild name='email' label='E-mail' />
-
+                <x-form.error name="email" class="text-error text-sm" />
                 <x-form.feild name='password' label='Password' />
+                <x-form.error name="password" class="text-error text-sm" />
 
                 <div class="grid grid-cols-1 gap-4">
                     <button class="btn btn-neutral mt-4 text-lg font-semibold" type="submit">Login</button>
