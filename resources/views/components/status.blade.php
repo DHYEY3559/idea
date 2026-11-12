@@ -8,7 +8,7 @@
     } elseif ($status == 'in-progress') {
         $classes .= ' bg-blue-500/10 border border-blue-500/20 text-blue-500';
     } elseif ($status == 'completed') {
-        $classes .= ' bg-green-500/10 border border-green-500/20 text-green-500';
+        $classes .= ' bg-primary/10 border border-primary/20 text-primary';
     }
 @endphp
 
