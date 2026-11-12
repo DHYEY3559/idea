@@ -14,6 +14,11 @@
     <main class="mx-auto flex max-w-7xl items-center justify-center px-4 sm:px-6 lg:px-8">
         {{ $slot }}
     </main>
+    @session('success')
+        <div class="alert alert-success mt-4">
+            {{ $value }}
+        </div>
+    @endsession
 </body>
 
 </html>
