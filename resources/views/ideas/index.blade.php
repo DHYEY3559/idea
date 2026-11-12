@@ -7,9 +7,9 @@
         <div class="mt-10">
             <div class="grid md:grid-cols-2 gap-6 ">
                 @forelse ($ideas as $idea)
-                    <div class="border border-border rounded-lg p-4 md:test-sm block">
+                    <x-card>
                         <h2 class="text-lg font-semibold">{{ $idea->title }}</h2>
-                    </div>
+                    </x-card>
                 @empty
                     <div class="col-span-1 md:col-span-2 lg:col-span-3 text-center">
                         <p class="text-muted-foreground">You have no ideas yet. Start creating your first idea!</p>
