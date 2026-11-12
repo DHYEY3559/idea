@@ -1,7 +1,15 @@
 <?php
 
-test('the application returns a successful response', function () {
-    $response = $this->get('/');
+use Illuminate\Support\Facades\Auth;
 
-    $response->assertStatus(200);
+test('the application registers User', function () {
+    visit('/register')
+        ->type('name', 'John Doe')
+        ->type('email', 'john@example.com')
+        ->type('password', 'password123')
+        ->press('Create Account')
+        ->assertPathIs('/');
+
+    expect(Auth::check())->toBeTrue();
+    expect(Auth::user()->name)->toBe('John Doe');
 });
