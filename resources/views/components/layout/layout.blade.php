@@ -15,7 +15,7 @@
         {{ $slot }}
     </main>
     @session('success')
-        <div class="alert alert-success mt-4">
+        <div class="bg-primary text-primary-content fixed bottom-4 right-4 rounded-lg p-4 shadow-lg">
             {{ $value }}
         </div>
     @endsession
