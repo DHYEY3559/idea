@@ -14,11 +14,11 @@ class IdeaController extends Controller
      */
     public function index()
     {
-       
-        return view('ideas.index', $ideas = auth()->user()->ideas;
-            [
-                'ideas' => $ideas,
-            ]);
+        $ideas = Auth::user()->ideas;
+
+        return view('ideas.index', [
+            'ideas' => $ideas,
+        ]);
     }
 
     /**
