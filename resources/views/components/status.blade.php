@@ -3,11 +3,11 @@
 @php
     $classes = 'text-sm rounded-full px-2 py-1';
 
-    if ($status == 'pending') {
+    if ($status === 'pending') {
         $classes .= ' bg-yellow-500/10 border border-yellow-500/20 text-yellow-500';
-    } elseif ($status == 'in-progress') {
+    } elseif ($status === 'in_progress') {
         $classes .= ' bg-blue-500/10 border border-blue-500/20 text-blue-500';
-    } elseif ($status == 'completed') {
+    } elseif ($status === 'completed') {
         $classes .= ' bg-primary/10 border border-primary/20 text-primary';
     }
 @endphp
