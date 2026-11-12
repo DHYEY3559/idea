@@ -1,9 +1,10 @@
 //
-jq = $no.conflict();
+import $ from "jquery";
+window.$ = window.jQuery = $;
 
-jq(document).ready(function() {
+$(document).ready(function () {
     // Hide the success message after 3 seconds
-    setTimeout(function() {
-        jq('#success-message').fadeOut('slow');
+    setTimeout(function () {
+        $("#success-message").fadeOut("slow");
     }, 3000);
 });
