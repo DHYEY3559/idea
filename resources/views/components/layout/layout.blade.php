@@ -23,7 +23,7 @@
         <div id="success-message" class="bg-red-600 text-primary-content text-semibold fixed bottom-4 right-4 rounded-lg p-4 shadow-lg">
             {{ $value }}
         </div>
-    @endsession
+        @endsession
 </body>
 
 </html>
