@@ -20,10 +20,7 @@
         </div>
 
         <div
-            class="flex mt-10 px-100 justify-items-start  ">
-            <!-- Description -->
-
-
+            class="mt-10 px-100 justify-items-start">
             <!-- Detail -->
             <div class="w-full my-auto py-6 flex flex-col justify-center gap-2">
                 <div class="w-full flex sm:flex-row flex-col gap-2 justify-center">
@@ -53,6 +50,10 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="flex justify-center mt-10">
+            <a class="btn btn-primary" href="/profile/edit" type="button">Edit Profile</a>
+        </div>
     </div>
 </div>
 </x-layout>
