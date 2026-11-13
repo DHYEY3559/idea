@@ -39,6 +39,6 @@ class SessionController extends Controller
     }
 
     public function profile(){
-        return view('profile');
+        return view('profile.profile');
     }
 }
