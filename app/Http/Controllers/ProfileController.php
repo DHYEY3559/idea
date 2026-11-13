@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Profile;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
@@ -42,11 +43,11 @@ class ProfileController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Profile $profile)
+    public function edit()
     {
-        return view('profile.edit', [
-            'profile' => $profile,
-        ]);
+        $profile = Profile::where('user_id', Auth::id())->firstOrFail();
+
+        return view('profile.edit', compact('profile'));
     }
 
     /**
