@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Profile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class ProfileController extends Controller
 {
@@ -53,9 +54,29 @@ class ProfileController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Profile $profile)
+    public function update(Request $request)
     {
-        //
+        $profile = Profile::where('user_id', Auth::id())->firstOrFail();
+
+        $validated = $request->validate([
+            'profile_image' => ['required', 'image', 'max:2048'],
+        ]);
+
+        $profileImagePath = $request->file('profile_image')->storePublicly('profile-images', 'public');
+
+        if ($profileImagePath === false) {
+            abort(500, 'The profile image could not be stored.');
+        }
+
+        if ($profile->profile_image !== null) {
+            Storage::disk('public')->delete($profile->profile_image);
+        }
+
+        $profile->update([
+            'profile_image' => $profileImagePath,
+        ]);
+
+        return redirect('/profile/edit')->with('success', 'Profile picture updated.');
     }
 
     /**

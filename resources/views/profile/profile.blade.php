@@ -3,7 +3,7 @@
     <div class="">
         <!-- Profile Image -->
         <div class="sm:w-[80%] w-[90%] mx-auto flex">
-            <img src="https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHw3fHxwZW9wbGV8ZW58MHwwfHx8MTcxMTExMTM4N3ww&ixlib=rb-4.0.3&q=80&w=1080" alt="User Profile"
+            <img src="{{ $profile->profile_image ? asset('storage/'.$profile->profile_image) : 'https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHw3fHxwZW9wbGV8ZW58MHwwfHx8MTcxMTExMTM4N3ww&ixlib=rb-4.0.3&q=80&w=1080' }}" alt="{{ $profile->user->name }}'s profile photo"
                     class="rounded-md lg:w-48 lg:h-48 md:w-40 md:h-40 sm:w-32 sm:h-32 w-28 h-28 outline outline-offset-2 outline-blue-500" />
 
             <!-- FullName -->

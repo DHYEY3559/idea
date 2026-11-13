@@ -13,6 +13,7 @@ class Profile extends Model
         'profile_description',
         'DOB',
         'Gender',
+        'profile_image',
     ];
 
     public function user()

@@ -21,4 +21,5 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/ideas/{idea}', [IdeaController::class, 'show'])->name('ideas.show');
     Route::get('/profile', [SessionController::class, 'profile']);
     Route::get('/profile/edit', [ProfileController::class, 'edit']);
+    Route::patch('/profile/edit', [ProfileController::class, 'update'])->name('profile.update');
 });

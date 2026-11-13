@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Profile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -38,7 +39,10 @@ class SessionController extends Controller
         return redirect('/login');
     }
 
-    public function profile(){
-        return view('profile.profile');
+    public function profile()
+    {
+        $profile = Profile::where('user_id', Auth::id())->firstOrFail();
+
+        return view('profile.profile', compact('profile'));
     }
 }
