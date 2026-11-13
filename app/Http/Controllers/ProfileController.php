@@ -54,7 +54,7 @@ class ProfileController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request)
+    /*public function update(Request $request)
     {
         $profile = Profile::where('user_id', Auth::id())->firstOrFail();
 
@@ -77,7 +77,7 @@ class ProfileController extends Controller
         ]);
 
         return redirect('/profile/edit')->with('success', 'Profile picture updated.');
-    }
+    }*/
 
     /**
      * Remove the specified resource from storage.
