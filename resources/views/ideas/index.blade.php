@@ -1,9 +1,17 @@
-<x-layout>
-    <div class="mx-auto flex flex-col max-w-7xl items-center justify-center px-4 sm:px-6 lg:px-8">
+ Logo <x-layout>
+    <div class="mx-auto flex flex-col max-w-7xl justify-center px-4 sm:px-6 lg:px-8">
         <header class="py-8 md:py-12">
             <h1 class="text-center text-3xl font-bold tracking-tight">Your Ideas</h1>
             <p class="text-center text-muted-foreground mt-1">Create and Share Your Ideas {{ Auth::user()->name }}</p>
         </header>
+
+        <div class="flex align-items-left gap-2">
+            <a class="btn btn-primary flex" href="/ideas">All</a>
+            @foreach ( App\IdeaStatus::cases() as $status)
+            <a class="btn btn-outline flex" href="/ideas?status={{ $status->value }}">{{ $status->label() }}</a>
+            @endforeach
+        </div>
+
         <div class="mt-10">
             <div class="grid md:grid-cols-2 gap-6 ">
                 @forelse ($ideas as $idea)
