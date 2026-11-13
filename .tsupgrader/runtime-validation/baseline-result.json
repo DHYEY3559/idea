@@ -1,0 +1,94 @@
+{
+  "planHash": "611cfe40c7938d23cb534200db6f0f84785a4f465c99e47c560f0c1a5cf8aa5e",
+  "phase": "baseline",
+  "recordedAtUtc": "2026-11-13T03:34:20.7748774Z",
+  "retryCount": 0,
+  "resetBaseline": false,
+  "complete": true,
+  "result": {
+    "setupSucceeded": true,
+    "setupDurationMs": 2792,
+    "setupFailureOutput": null,
+    "assertions": [
+      {
+        "name": "vite-build",
+        "kind": "process",
+        "verificationMethod": "exit-code",
+        "passed": true,
+        "timedOut": false,
+        "skipped": false,
+        "skippedReason": null,
+        "exitCode": 0,
+        "outputSample": "\n\u003E build\n\u003E vite build\n\nvite v8.3.6 building client environment for production...\n[plugin laravel:fonts] Optimized font fallbacks require the optional \u0022fontaine\u0022 package. Install it, or set \u0022optimizedFallbacks: false\u0022 on your fonts to disable the feature.\ntransforming...\nFound 2 warnings while optimizing generated CSS:\n\nIssue #1:\n\u001B[2m\u2502     box-shadow: 0 0 0 calc(var(--spacing) * 0.5) var(--color-background) 0 0 0 calc(var(--spacing) * 1) var(--color-primary);\u001B[22m\n\u001B[2m\u2502   }\u001B[22m\n\u001B[2m\u2502\u001B[22m   @media (min-width: var(--min-width: 48rem)) {\n\u001B[2m\u2506\u001B[22m                    \u001B[33m\u001B[2m^--\u001B[22m Invalid media query\u001B[39m\n\u001B[2m\u2506\u001B[22m\n\u001B[2m\u2502     .input {\u001B[22m\n\u001B[2m\u2502       font-size: var(--text-sm);\u001B[22m\n\nIssue #2:\n\u001B[2m\u2502     box-shadow: 0 0 0 calc(var(--spacing) * 0.5) var(--color-background) 0 0 0 calc(var(--spacing) * 1) var(--color-primary);\u001B[22m\n\u001B[2m\u2502   }\u001B[22m\n\u001B[2m\u2502\u001B[22m   @media (min-width: var(--min-width: 48rem)) {\n\u001B[2m\u2506\u001B[22m                                     \u001B[33m\u001B[2m^--\u001B[22m Unexpected token Colon\u001B[39m\n\u001B[2m\u2506\u001B[22m\n\u001B[2m\u2502     .input {\u001B[22m\n\u001B[2m\u2502       font-size: var(--text-sm);\u001B[22m\n\n\u2713 4 modules transformed.\nrendering chunks...\ncomputing gzip size...\npublic/build/manifest.json                                      1.47 kB \u2502 gzip:  0.33 kB\npublic/build/fonts-manifest.json                                5.74 kB \u2502 gzip:  0.71 kB\npublic/build/assets/instrument-sans-400-normal-DRC__1Mx.woff2  16.86 kB\npublic/build/assets/instrument-sans-500-normal-Dk9ku72i.woff2  17.23 kB\npublic/build/assets/instrument-sans-600-normal-B7fBEWYG.woff2  17.40 kB\npublic/build/assets/instrument-sans-400-normal-D1W7dsQl.woff   21.24 kB\npublic/build/assets/instrument-sans-500-normal-Z6ESRlEs.woff   21.65 kB\npublic/build/assets/instrument-sans-600-normal-B9e8oLYv.woff   21.67 kB\npublic/build/assets/fonts-C9MNnjVw.css                          2.35 kB \u2502 gzip:  0.38 kB\npublic/build/assets/app-CBg-1FmT.css                           40.87 kB \u2502 gzip:  7.88 kB\npublic/build/assets/app-BR9Veq5k.js                            78.45 kB \u2502 gzip: 27.78 kB\n\n\u2713 built in 568ms\n",
+        "durationMs": 1091
+      },
+      {
+        "name": "dev-server-serves-home",
+        "kind": "http-probe",
+        "verificationMethod": "http-status",
+        "passed": false,
+        "timedOut": false,
+        "skipped": false,
+        "skippedReason": null,
+        "exitCode": null,
+        "outputSample": "HTTP 404\n\u003C!DOCTYPE html\u003E\n\u003Chtml\u003E\n    \u003Chead\u003E\n        \u003Cmeta charset=\u0022utf-8\u0022\u003E\n        \u003Cmeta name=\u0022viewport\u0022 content=\u0022width=device-width, initial-scale=1\u0022\u003E\n\n        \u003Ctitle\u003ELaravel Vite\u003C/title\u003E\n\n        \u003C!-- Fonts --\u003E\n        \u003Clink href=\u0022https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700\u0026display=swap\u0022 rel=\u0022stylesheet\u0022\u003E\n\n        \u003C!-- Styles --\u003E\n        \u003Cstyle\u003E\n            /* ! tailwindcss v3.1.4 | MIT License | https://tailwindcss.com */*,:before,:after{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}:before,:after{--tw-content: \u0022\u0022}html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;-o-tab-size:4;tab-size:4;font-family:Nunito,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,\u0022Apple Color Emoji\u0022,\u0022Segoe UI Emoji\u0022,Segoe UI Symbol,\u0022Noto Color Emoji\u0022}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,samp,pre{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;font-weight:inherit;line-height:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,[type=button],[type=reset],[type=submit]{-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dl,dd,h1,h2,h3,h4,h5,h6,hr,figure,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}ol,ul,menu{list-style:none;margin:0;padding:0}textarea{resize:vertical}input::-moz-placeholder,textarea::-moz-placeholder{opacity:1;color:#9ca3af}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}button,[role=button]{cursor:pointer}:disabled{cursor:default}img,svg,video,canvas,audio,iframe,embed,object{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}*,:before,:after{--tw-border-spacing-x: 0;--tw-border-spacing-y: 0;--tw-translate-x: 0;--tw-translate-y: 0;--tw-rotate: 0;--tw-skew-x: 0;--tw-skew-y: 0;--tw-scale-x: 1;--tw-scale-y: 1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness: proximity;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width: 0px;--tw-ring-offset-color: #fff;--tw-ring-color: rgb(59 130 246 / .5);--tw-ring-offset-shadow: 0 0 #0000;--tw-ring-shadow: 0 0 #0000;--tw-shadow: 0 0 #0000;--tw-shadow-colored: 0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }::backdrop{--tw-border-spacing-x: 0;--tw-border-spacing-y: 0;--tw-translate-x: 0;--tw-translate-y: 0;--tw-rotate: 0;--tw-skew-x: 0;--tw-skew-y: 0;--tw-scale-x: 1;--tw-scale-y: 1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness: proximity;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width: 0px;--tw-ring-offset-color: #fff;--tw-ring-color: rg\n\u2026[truncated]",
+        "durationMs": 18
+      }
+    ],
+    "executions": [
+      {
+        "source": "setup[0]",
+        "resolvedExecutable": "/home/dell/.nvm/versions/node/v24.21.0/bin/npm",
+        "args": [
+          "ci"
+        ],
+        "cwd": "/home/dell/Desktop/Plan/laravel/idea",
+        "env": {},
+        "prependPath": [],
+        "platform": "linux"
+      },
+      {
+        "source": "devServer",
+        "resolvedExecutable": "/home/dell/.nvm/versions/node/v24.21.0/bin/npm",
+        "args": [
+          "run",
+          "dev",
+          "--",
+          "--host",
+          "127.0.0.1"
+        ],
+        "cwd": "/home/dell/Desktop/Plan/laravel/idea",
+        "env": {},
+        "prependPath": [],
+        "platform": "linux"
+      },
+      {
+        "source": "vite-build",
+        "resolvedExecutable": "/home/dell/.nvm/versions/node/v24.21.0/bin/npm",
+        "args": [
+          "run",
+          "build"
+        ],
+        "cwd": "/home/dell/Desktop/Plan/laravel/idea",
+        "env": {},
+        "prependPath": [],
+        "platform": "linux"
+      },
+      {
+        "source": "dev-server-serves-home",
+        "resolvedExecutable": "/home/dell/.nvm/versions/node/v24.21.0/bin/npm",
+        "args": [
+          "run",
+          "dev",
+          "--",
+          "--host",
+          "127.0.0.1"
+        ],
+        "cwd": "/home/dell/Desktop/Plan/laravel/idea",
+        "env": {},
+        "prependPath": [],
+        "platform": "linux"
+      }
+    ]
+  }
+}
