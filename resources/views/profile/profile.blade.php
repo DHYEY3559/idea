@@ -33,42 +33,24 @@
                     <div class="w-full">
                         <dl class="text-gray-900 divide-y divide-gray-200 dark:text-white dark:divide-gray-700">
                             <div class="flex flex-col pb-3">
-                                <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">First Name</dt>
+                                <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Name</dt>
                                 <dd class="text-lg font-semibold">Samuel</dd>
-                            </div>
-                            <div class="flex flex-col py-3">
-                                <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Last Name</dt>
-                                <dd class="text-lg font-semibold">Abera</dd>
                             </div>
                             <div class="flex flex-col py-3">
                                 <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Date Of Birth</dt>
                                 <dd class="text-lg font-semibold">14/05/1977</dd>
                             </div>
-                            <div class="flex flex-col py-3">
-                                <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Gender</dt>
-                                <dd class="text-lg font-semibold">Male</dd>
-                            </div>
                         </dl>
                     </div>
                     <div class="w-full">
                         <dl class="text-gray-900 divide-y divide-gray-200 dark:text-white dark:divide-gray-700">
-                            <div class="flex flex-col pb-3">
-                                <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Location</dt>
-                                <dd class="text-lg font-semibold">Ethiopia, Addis Ababa</dd>
-                            </div>
-
-                            <div class="flex flex-col pt-3">
-                                <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Phone Number</dt>
-                                <dd class="text-lg font-semibold">+251913****30</dd>
+                            <div class="flex flex-col py-3">
+                                <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Gender</dt>
+                                <dd class="text-lg font-semibold">Male</dd>
                             </div>
                             <div class="flex flex-col pt-3">
                                 <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Email</dt>
                                 <dd class="text-lg font-semibold">samuel@example.com</dd>
-                            </div>
-
-                            <div class="flex flex-col pt-3">
-                                <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Website</dt>
-                                <dd class="text-lg font-semibold hover:text-blue-500"><a href="https://techakim.com">https://www.teclick.com</a></dd>
                             </div>
                         </dl>
                     </div>
