@@ -10,13 +10,10 @@
             <div class="pl-6 font-semibold">
                 <h1
                     class="h-auto w-full text-left text-gray-800 dark:text-white lg:text-4xl md:text-3xl sm:text-3xl text-xl">
-                    Samuel Abera
+                    {{ $profile->user->name }}
                 </h1>
-                <p class=" text-gray-700 dark:text-gray-400 text-md mt-12">Lorem, ipsum dolor sit amet
-                        consectetur adipisicing elit. Quisquam debitis labore consectetur voluptatibus mollitia dolorem
-                        veniam omnis ut quibusdam minima sapiente repellendus asperiores explicabo, eligendi odit, dolore
-                        similique fugiat dolor, doloremque eveniet. Odit, consequatur. Ratione voluptate exercitationem hic
-                        eligendi vitae animi nam in, est earum culpa illum aliquam.
+                <p class=" text-gray-700 dark:text-gray-400 text-md mt-12">
+                        {{ $profile->profile_description }}
                 </p>
             </div>
 
@@ -34,11 +31,11 @@
                         <dl class="text-gray-900 divide-y divide-gray-200 dark:text-white dark:divide-gray-700">
                             <div class="flex flex-col pb-3">
                                 <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Name</dt>
-                                <dd class="text-lg font-semibold">Samuel</dd>
+                                <dd class="text-lg font-semibold">{{ $profile->user->name }}</dd>
                             </div>
                             <div class="flex flex-col py-3">
                                 <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Date Of Birth</dt>
-                                <dd class="text-lg font-semibold">14/05/1977</dd>
+                                <dd class="text-lg font-semibold">{{ $profile->DOB ?? 'Not Provided' }}</dd>
                             </div>
                         </dl>
                     </div>
@@ -46,11 +43,11 @@
                         <dl class="text-gray-900 divide-y divide-gray-200 dark:text-white dark:divide-gray-700">
                             <div class="flex flex-col py-3">
                                 <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Gender</dt>
-                                <dd class="text-lg font-semibold">Male</dd>
+                                <dd class="text-lg font-semibold">{{ $profile->Gender ?? 'Not Provided' }}</dd>
                             </div>
                             <div class="flex flex-col pt-3">
                                 <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Email</dt>
-                                <dd class="text-lg font-semibold">samuel@example.com</dd>
+                                <dd class="text-lg font-semibold">{{ $profile->user->email ?? 'Not Provided' }}</dd>
                             </div>
                         </dl>
                     </div>
