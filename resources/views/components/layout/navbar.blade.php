@@ -7,11 +7,11 @@
         </div>
         @auth()
             <div class="flex gap-x-4 items-center">
-                <!--<a href="/profile" class="btn"> Profile </a>-->
+                <a href="/profile">
                 <img
-                    src="{{ Auth::user()->profile?->profile_image ? asset('storage/'.Auth::user()->profile->profile_image) : asset('images/logo.png') }}"
-                    alt="{{ Auth::user()->name }}'s profile image"
-                    class="h-8 w-8 rounded-full object-cover">
+                src="{{ Auth::user()->profile?->profile_image ? asset('storage/'.Auth::user()->profile->profile_image) : asset('images/logo.png') }}"
+                class="h-8 w-8 rounded-full object-cover">
+                </a>
                 <a href="/logout" class="btn"> Logout </a>
             </div>
         @endauth
