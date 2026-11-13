@@ -17,6 +17,7 @@ return new class extends Migration
             $table->text('profile_description')->nullable();
             $table->date('DOB')->nullable();
             $table->string('Gender')->nullable();
+            $table->string('profile_image')->nullable();
             $table->timestamps();
         });
     }
