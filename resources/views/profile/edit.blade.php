@@ -2,19 +2,21 @@
     <div class="mt-5">
     <div class="">
         <!-- Profile Image -->
-        <form action="" method="POST">
+        <form action="{{ route('profile.update') }}" method="POST" enctype="multipart/form-data">
             @csrf
+            @method('PATCH')
             <div class="sm:w-[80%] w-[90%] mx-auto">
                 <!--<img src="https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHw3fHxwZW9wbGV8ZW58MHwwfHx8MTcxMTExMTM4N3ww&ixlib=rb-4.0.3&q=80&w=1080" alt="User Profile"
                 class="rounded-md lg:w-48 lg:h-48 md:w-40 md:h-40 sm:w-32 sm:h-32 w-28 h-28 outline outline-offset-2 outline-blue-500" />
                 -->
                 <!-- Profile Image -->
                         <div
-                            class="m-auto flex justify-center w-35.25 h-35.25 bg-blue-300/20 rounded-full bg-[url('https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHw3fHxwZW9wbGV8ZW58MHwwfHx8MTcxMTExMTM4N3ww&ixlib=rb-4.0.3&q=80&w=1080')] bg-cover bg-center bg-no-repeat">
+                            class="m-auto flex justify-center w-35.25 h-35.25 bg-blue-300/20 rounded-full bg-cover bg-center bg-no-repeat"
+                            style="background-image: url('{{ $profile->profile_image ? asset('storage/'.$profile->profile_image) : 'https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHw3fHxwZW9wbGV8ZW58MHwwfHx8MTcxMTExMTM4N3ww&ixlib=rb-4.0.3&q=80&w=1080' }}')">
 
                             <div class="bg-white/90 rounded-full w-6 h-6 text-center ml-28 mt-4">
 
-                                <input type="file" name="profile" id="upload_profile" hidden required>
+                                <input type="file" name="profile_image" id="upload_profile" hidden required>
 
                                 <label for="upload_profile">
                                         <svg data-slot="icon" class="w-6 h-5 text-blue-700" fill="none"
@@ -34,10 +36,9 @@
                 <!-- FullName -->
                 <div class="flex m-auto max-w-3xl pl-6 font-semibold">
                     <input type="text"
-                                    class="mt-2 p-4 w-full  border-2 rounded-lg"
+                                    class="mt-6 p-4 w-full  border-2 rounded-lg"
                                     placeholder="Description" value="{{ $profile->profile_description }}">
                 </div>
-            </form>
         </div>
 
         <div
@@ -75,5 +76,9 @@
                 </div>
             </div>
     </div>
+    <div class="px-100">
+        <button class="btn btn-primary sm:w-auto lg:h-12" type="submit">Update</button>
+    </div>
+</form>
 </div>
 </x-layout>

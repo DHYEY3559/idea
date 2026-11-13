@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Profile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class ProfileController extends Controller
 {
@@ -53,7 +54,7 @@ class ProfileController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    /*public function update(Request $request)
+    public function update(Request $request)
     {
         $profile = Profile::where('user_id', Auth::id())->firstOrFail();
 
@@ -75,8 +76,32 @@ class ProfileController extends Controller
             'profile_image' => $profileImagePath,
         ]);
 
+        $name = $request->input('name');
+        if ($name) {
+            $profile->update(['name' => $name]);
+        }
+        else {
+            return back()->withErrors(['name' => 'The name field is required.']);
+        }
+
+        $Gender = $request->input('Gender');
+        if ($Gender) {
+            $profile->update(['Gender' => $Gender]);
+        }
+        else {
+            return back()->withErrors(['Gender' => 'The Gender field is required.']);
+        }
+
+        $DOB = $request->input('DOB');
+        if ($DOB) {
+            $profile->update(['DOB' => $DOB]);
+        }
+        else {
+            return back()->withErrors(['DOB' => 'The DOB field is required.']);
+        }
+
         return redirect('/profile/edit')->with('success', 'Profile picture updated.');
-    }*/
+    }
 
     /**
      * Remove the specified resource from storage.
