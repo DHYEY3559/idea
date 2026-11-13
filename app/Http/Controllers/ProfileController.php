@@ -59,48 +59,40 @@ class ProfileController extends Controller
         $profile = Profile::where('user_id', Auth::id())->firstOrFail();
 
         $validated = $request->validate([
-            'profile_image' => ['required', 'image', 'max:2048'],
+            'name' => ['required', 'string', 'max:255'],
+            'profile_description' => ['nullable', 'string'],
+            'DOB' => ['nullable', 'date'],
+            'Gender' => ['nullable', 'string', 'max:255'],
+            'profile_image' => ['nullable', 'image', 'max:2048'],
         ]);
 
-        $profileImagePath = $request->file('profile_image')->storePublicly('profile-images', 'public');
-
-        if ($profileImagePath === false) {
-            abort(500, 'The profile image could not be stored.');
-        }
-
-        if ($profile->profile_image !== null) {
-            Storage::disk('public')->delete($profile->profile_image);
-        }
+        $profile->user->update([
+            'name' => $validated['name'],
+        ]);
 
         $profile->update([
-            'profile_image' => $profileImagePath,
+            'DOB' => $validated['DOB'] ?? null,
+            'profile_description' => $validated['profile_description'] ?? null,
+            'Gender' => $validated['Gender'] ?? null,
         ]);
 
-        $name = $request->input('name');
-        if ($name) {
-            $profile->update(['name' => $name]);
-        }
-        else {
-            return back()->withErrors(['name' => 'The name field is required.']);
+        if ($request->hasFile('profile_image')) {
+            $profileImagePath = $request->file('profile_image')->storePublicly('profile-images', 'public');
+
+            if ($profileImagePath === false) {
+                abort(500, 'The profile image could not be stored.');
+            }
+
+            if ($profile->profile_image !== null) {
+                Storage::disk('public')->delete($profile->profile_image);
+            }
+
+            $profile->update([
+                'profile_image' => $profileImagePath,
+            ]);
         }
 
-        $Gender = $request->input('Gender');
-        if ($Gender) {
-            $profile->update(['Gender' => $Gender]);
-        }
-        else {
-            return back()->withErrors(['Gender' => 'The Gender field is required.']);
-        }
-
-        $DOB = $request->input('DOB');
-        if ($DOB) {
-            $profile->update(['DOB' => $DOB]);
-        }
-        else {
-            return back()->withErrors(['DOB' => 'The DOB field is required.']);
-        }
-
-        return redirect('/profile/edit')->with('success', 'Profile picture updated.');
+        return redirect('/profile/edit')->with('success', 'Profile updated.');
     }
 
     /**

@@ -16,7 +16,7 @@
 
                             <div class="bg-white/90 rounded-full w-6 h-6 text-center ml-28 mt-4">
 
-                                <input type="file" name="profile_image" id="upload_profile" hidden required>
+                                <input type="file" name="profile_image" id="upload_profile" hidden>
 
                                 <label for="upload_profile">
                                         <svg data-slot="icon" class="w-6 h-5 text-blue-700" fill="none"
@@ -36,8 +36,10 @@
                 <!-- FullName -->
                 <div class="flex m-auto max-w-3xl pl-6 font-semibold">
                     <input type="text"
+                                    name="profile_description"
                                     class="mt-6 p-4 w-full  border-2 rounded-lg"
-                                    placeholder="Description" value="{{ $profile->profile_description }}">
+                                    placeholder="Description"
+                                    value="{{ old('profile_description', $profile->profile_description) }}">
                 </div>
         </div>
 
@@ -53,11 +55,11 @@
                         <dl class="text-gray-900 divide-y divide-gray-200 dark:text-white dark:divide-gray-700">
                             <div class="flex flex-col pb-3">
                                 <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Name</dt>
-                                <dd class="text-lg font-semibold">{{ $profile->user->name }}</dd>
+                                <input name="name" class="text-lg font-semibold" value="{{ old('name', $profile->user->name) }}">
                             </div>
                             <div class="flex flex-col py-3">
                                 <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Date of Birth</dt>
-                                <dd class="text-lg font-semibold">{{ $profile->DOB ?? 'Not Provided' }}</dd>
+                                <input type="date" name="DOB" class="text-lg font-semibold" value="{{ old('DOB', $profile->DOB) }}">
                             </div>
                         </dl>
                     </div>
@@ -65,11 +67,11 @@
                         <dl class="text-gray-900 divide-y divide-gray-200 dark:text-white dark:divide-gray-700">
                             <div class="flex flex-col py-3">
                                 <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Gender</dt>
-                                <dd class="text-lg font-semibold">{{ $profile->gender ?? 'Not Provided' }}</dd>
+                                <input name="Gender" class="text-lg font-semibold" value="{{ old('Gender', $profile->Gender) }}">
                             </div>
                             <div class="flex flex-col pt-3">
                                 <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Email</dt>
-                                <dd class="text-lg font-semibold">{{ $profile->user->email }}</dd>
+                                <input class="text-lg font-semibold" value="{{ $profile->user->email ?? 'Not Provided' }}"></input>
                             </div>
                         </dl>
                     </div>
