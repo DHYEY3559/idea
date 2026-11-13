@@ -66,6 +66,12 @@ class ProfileController extends Controller
             'profile_image' => ['nullable', 'image', 'max:2048'],
         ]);
 
+        if($validated['DOB'] && $validated['DOB'] > now()->toDateString()) {
+            return redirect('/profile/edit')->with([
+                'error' => 'The date of birth must be a date before today.',
+            ]);
+        }
+
         $profile->user->update([
             'name' => $validated['name'],
         ]);
