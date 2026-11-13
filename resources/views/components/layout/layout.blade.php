@@ -11,7 +11,7 @@
 
 <body class="bg-background text-foreground">
     <x-layout.navbar />
-    <main class="mx-auto flex max-w-7xl items-center justify-center px-4 sm:px-6 lg:px-8">
+    <main class="">
         {{ $slot }}
     </main>
     @session('success')

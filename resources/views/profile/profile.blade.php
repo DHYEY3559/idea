@@ -8,7 +8,7 @@
         <!-- Profile Image -->
         <div class="sm:w-[80%] w-[90%] mx-auto flex">
             <img src="https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHw3fHxwZW9wbGV8ZW58MHwwfHx8MTcxMTExMTM4N3ww&ixlib=rb-4.0.3&q=80&w=1080" alt="User Profile"
-                    class="rounded-md lg:w-48 lg:h-48 md:w-40 md:h-40 sm:w-32 sm:h-32 w-28 h-28 outline outline-offset-2 outline-blue-500 relative lg:bottom-[5rem] sm:bottom-[4rem] bottom-[3rem]" />
+                    class="rounded-md lg:w-48 lg:h-48 md:w-40 md:h-40 sm:w-32 sm:h-32 w-28 h-28 outline outline-offset-2 outline-blue-500 relative lg:bottom-20 sm:bottom-16 bottom-12" />
 
             <!-- FullName -->
             <h1
@@ -74,7 +74,7 @@
                     </div>
                 </div>
 
-                <div class="my-10 lg:w-[70%] md:h-[14rem] w-full h-[10rem]">
+                <div class="my-10 lg:w-[70%] md:h-56 w-full h-40">
                     <!--  -->
                     <h1
                         class="w-fit font-serif my-4 pb-1 pr-2 rounded-b-md border-b-4 border-blue-600 dark:border-b-4 dark:border-yellow-600 dark:text-white lg:text-4xl md:text-3xl text-xl">
