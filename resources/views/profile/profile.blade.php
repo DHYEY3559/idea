@@ -1,30 +1,30 @@
 <x-layout>
-    <section class="w-full overflow-hidden dark:bg-gray-900">
-    <div class="flex flex-col">
-        <!-- Cover Image -->
-        <img src="https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHw2fHxlYXJ0aHxlbnwwfDB8fHwxNzQ2NTM0MzY3fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="User Cover"
-                class="w-full xl:h-80 lg:h-72 md:h-64 sm:h-56 h-44" />
-
+    <div class="mt-5">
+    <div class="">
         <!-- Profile Image -->
         <div class="sm:w-[80%] w-[90%] mx-auto flex">
             <img src="https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHw3fHxwZW9wbGV8ZW58MHwwfHx8MTcxMTExMTM4N3ww&ixlib=rb-4.0.3&q=80&w=1080" alt="User Profile"
-                    class="rounded-md lg:w-48 lg:h-48 md:w-40 md:h-40 sm:w-32 sm:h-32 w-28 h-28 outline outline-offset-2 outline-blue-500 relative lg:bottom-20 sm:bottom-16 bottom-12" />
+                    class="rounded-md lg:w-48 lg:h-48 md:w-40 md:h-40 sm:w-32 sm:h-32 w-28 h-28 outline outline-offset-2 outline-blue-500" />
 
             <!-- FullName -->
-            <h1
-                class="w-full text-left my-4 sm:mx-4 pl-4 text-gray-800 dark:text-white lg:text-4xl md:text-3xl sm:text-3xl text-xl font-serif">
-                Samuel Abera</h1>
+            <div class="pl-6 font-semibold">
+                <h1
+                    class="h-auto w-full text-left text-gray-800 dark:text-white lg:text-4xl md:text-3xl sm:text-3xl text-xl">
+                    Samuel Abera
+                </h1>
+                <p class=" text-gray-700 dark:text-gray-400 text-md mt-12">Lorem, ipsum dolor sit amet
+                        consectetur adipisicing elit. Quisquam debitis labore consectetur voluptatibus mollitia dolorem
+                        veniam omnis ut quibusdam minima sapiente repellendus asperiores explicabo, eligendi odit, dolore
+                        similique fugiat dolor, doloremque eveniet. Odit, consequatur. Ratione voluptate exercitationem hic
+                        eligendi vitae animi nam in, est earum culpa illum aliquam.
+                </p>
+            </div>
 
         </div>
 
         <div
-            class="xl:w-[80%] lg:w-[90%] md:w-[90%] sm:w-[92%] w-[90%] mx-auto flex flex-col gap-4 items-center relative lg:-top-8 md:-top-6 -top-4">
+            class="flex mt-10 px-100 justify-items-start  ">
             <!-- Description -->
-            <p class="w-fit text-gray-700 dark:text-gray-400 text-md">Lorem, ipsum dolor sit amet
-                consectetur adipisicing elit. Quisquam debitis labore consectetur voluptatibus mollitia dolorem
-                veniam omnis ut quibusdam minima sapiente repellendus asperiores explicabo, eligendi odit, dolore
-                similique fugiat dolor, doloremque eveniet. Odit, consequatur. Ratione voluptate exercitationem hic
-                eligendi vitae animi nam in, est earum culpa illum aliquam.</p>
 
 
             <!-- Detail -->
@@ -73,26 +73,13 @@
                         </dl>
                     </div>
                 </div>
-
-                <div class="my-10 lg:w-[70%] md:h-56 w-full h-40">
-                    <!--  -->
-                    <h1
-                        class="w-fit font-serif my-4 pb-1 pr-2 rounded-b-md border-b-4 border-blue-600 dark:border-b-4 dark:border-yellow-600 dark:text-white lg:text-4xl md:text-3xl text-xl">
-                        My Location</h1>
-
-                    <!-- Location -->
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d252230.02028974562!2d38.613328040215286!3d8.963479542403238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b85cef5ab402d%3A0x8467b6b037a24d49!2sAddis%20Ababa!5e0!3m2!1sen!2set!4v1710567234587!5m2!1sen!2set"
-                        class="rounded-lg w-full h-full" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-                </div>
             </div>
 
             <!-- Social Links -->
+            <!--
             <div
                 class="fixed right-2 bottom-20 flex flex-col rounded-sm bg-gray-200 text-gray-500 dark:bg-gray-200/80 dark:text-gray-700 hover:text-gray-600 hover:dark:text-gray-400">
-                <a href="https://www.linkedin.com/in/samuel-abera-6593a2209/">
+                <a href="">
                     <div class="p-2 hover:text-primary hover:dark:text-primary">
                         <svg class="lg:w-6 lg:h-6 w-4 h-4 text-blue-500" aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
@@ -105,7 +92,7 @@
 
                     </div>
                 </a>
-                <a href="https://twitter.com/Samuel7Abera7">
+                <a href="">
                     <div class="p-2 hover:text-primary hover:dark:text-primary">
                         <svg class="lg:w-6 lg:h-6 w-4 h-4 text-gray-900" aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
@@ -127,7 +114,7 @@
                         </svg>
                     </div>
                 </a>
-                <a href="https://www.youtube.com/@silentcoder7">
+                <a href="">
                     <div class="p-2 hover:text-primary hover:dark:text-primary">
                         <svg class="lg:w-6 lg:h-6 w-4 h-4 text-red-600" aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
@@ -139,10 +126,7 @@
                     </div>
                 </a>
             </div>
-
-        </div>
+        </div>-->
     </div>
-    </section>
-
-<!-- Photo by '@jessbaileydesigns' & '@von_co' on Unsplash -->
+</div>
 </x-layout>
