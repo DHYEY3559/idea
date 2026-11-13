@@ -62,7 +62,7 @@ class ProfileController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'profile_description' => ['nullable', 'string'],
             'DOB' => ['nullable', 'date'],
-            'Gender' => ['nullable', 'string', 'max:255'],
+            'Gender' => ['nullable', 'string', 'max:255', 'in:Male,Female,Other'],
             'profile_image' => ['nullable', 'image', 'max:2048'],
         ]);
 
