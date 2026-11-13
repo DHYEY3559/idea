@@ -71,7 +71,7 @@
                             </div>
                             <div class="flex flex-col pt-3">
                                 <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Email</dt>
-                                <input class="text-lg font-semibold" value="{{ $profile->user->email ?? 'Not Provided' }}"></input>
+                                <input name="email" class="text-lg font-semibold" value="{{ $profile->user->email ?? 'Not Provided' }}"></input>
                             </div>
                         </dl>
                     </div>
