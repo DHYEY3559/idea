@@ -60,6 +60,7 @@ class ProfileController extends Controller
 
         $validated = $request->validate([
             'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255'],
             'profile_description' => ['nullable', 'string'],
             'DOB' => ['nullable', 'date'],
             'Gender' => ['nullable', 'string', 'max:255', 'in:Male,Female,Other'],
@@ -69,6 +70,11 @@ class ProfileController extends Controller
         if($validated['DOB'] && $validated['DOB'] > now()->toDateString()) {
             return redirect('/profile/edit')->with([
                 'error' => 'The date of birth must be a date before today.',
+            ]);
+        }
+        if($validated['email']){
+            return redirect('/profile/edit')->with([
+                'error' => 'Please Give valid email address.',
             ]);
         }
 
