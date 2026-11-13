@@ -1,5 +1,5 @@
 <x-layout>
-    <div>
+    <div class="mx-auto flex flex-col max-w-7xl items-center justify-center px-4 sm:px-6 lg:px-8">
         <header class="py-8 md:py-12">
             <h1 class="text-center text-3xl font-bold tracking-tight">Your Ideas</h1>
             <p class="text-center text-muted-foreground mt-1">Create and Share Your Ideas {{ Auth::user()->name }}</p>
