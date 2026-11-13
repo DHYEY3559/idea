@@ -72,11 +72,6 @@ class ProfileController extends Controller
                 'error' => 'The date of birth must be a date before today.',
             ]);
         }
-        if($validated['email']){
-            return redirect('/profile/edit')->with([
-                'error' => 'Please Give valid email address.',
-            ]);
-        }
 
         $profile->user->update([
             'name' => $validated['name'],
