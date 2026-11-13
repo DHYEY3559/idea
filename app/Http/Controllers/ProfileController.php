@@ -99,7 +99,7 @@ class ProfileController extends Controller
             ]);
         }
 
-        return redirect('/profile/edit')->with('success', 'Profile updated.');
+        return redirect('/profile')->with('success', 'Profile updated.');
     }
 
     /**
