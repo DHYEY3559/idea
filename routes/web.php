@@ -18,4 +18,5 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/ideas', [IdeaController::class, 'index']);
     Route::get('/ideas/create', [IdeaController::class, 'create']);
     Route::get('/ideas/{idea}', [IdeaController::class, 'show'])->name('ideas.show');
+    Route::get('/profile', [SessionController::class, 'profile']);
 });

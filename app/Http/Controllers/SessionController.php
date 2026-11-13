@@ -37,4 +37,8 @@ class SessionController extends Controller
 
         return redirect('/login');
     }
+
+    public function profile(){
+        return view('profile');
+    }
 }
