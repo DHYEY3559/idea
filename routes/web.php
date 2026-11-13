@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\IdeaController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisteredUserController;
 use App\Http\Controllers\SessionController;
 use Illuminate\Support\Facades\Route;
@@ -19,4 +20,5 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/ideas/create', [IdeaController::class, 'create']);
     Route::get('/ideas/{idea}', [IdeaController::class, 'show'])->name('ideas.show');
     Route::get('/profile', [SessionController::class, 'profile']);
+    Route::get('/profile/edit', [ProfileController::class, 'edit']);
 });
