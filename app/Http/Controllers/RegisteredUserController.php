@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Profile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -22,6 +23,9 @@ class RegisteredUserController extends Controller
         ]);
 
         $user = User::create($validated);
+        $profile = Profile::create([
+            'user_id' => User::where('email', $validated['email'])->first()->id,
+        ]);
 
         Auth::login($user);
 
