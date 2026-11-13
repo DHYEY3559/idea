@@ -41,13 +41,9 @@
                                     placeholder="Description"
                                     value="{{ old('profile_description', $profile->profile_description) }}">
                 </div>
-        </div>
-
+            </div>
         <div
             class="flex mt-10 px-100 justify-items-start  ">
-            <!-- Description -->
-
-
             <!-- Detail -->
             <div class="w-full m-auto py-6 flex flex-col justify-center gap-2">
                 <div class="w-full flex sm:flex-row flex-col gap-2 justify-center">
