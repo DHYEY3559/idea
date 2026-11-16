@@ -9,7 +9,7 @@
                     <img
                         src="{{ $profile->profile_image ? asset('storage/'.$profile->profile_image) : asset('images/logo.png') }}"
                         alt="{{ $profile->user->name }}'s profile photo"
-                        class="h-full w-full rounded-full object-cover outline outline-2 outline-offset-2 outline-primary"
+                        class="h-full w-full rounded-full object-cover outline outline-offset-2 outline-primary"
                     >
                     <input type="file" name="profile_image" id="upload_profile" accept="image/*" class="sr-only">
                     <label
