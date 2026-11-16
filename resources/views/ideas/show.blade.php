@@ -19,10 +19,11 @@
             </div>
         </div>
 
-        <div>
+        <div class="flex gap-x-2 items-center">
             <x-status status="{{ $idea->status->value }}">
                 {{ $idea->status->label() }}
             </x-status>
+            <div class="text-sm text-muted-foreground mt-2">Created at: {{ $idea->created_at->format('Y-m-d H:i:s') }}</div>
         </div>
 
 
