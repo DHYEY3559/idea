@@ -1,9 +1,11 @@
 <x-layout>
     <div class="flex flex-col gap-y-4 py-8 mx-auto">
 
-        <div class="flex gap-x-2 items-center">
-            <x-icons.back_arrow class="inline-block h-4 w-4" />
-            <a href="/ideas" class="font-medium text-xl">Back</a>
+        <div class="flex justify-between ">
+
+            <a href="/ideas" class="flex items-center text-xl font-bold">
+                <x-icons.back_arrow/>
+                Back</a>
         </div>
 
         <h1 class="text-2xl font-bold">{{ $idea->title }}</h1>
