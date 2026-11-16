@@ -19,6 +19,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/ideas', [IdeaController::class, 'index']);
     Route::get('/ideas/create', [IdeaController::class, 'create']);
     Route::get('/ideas/{idea}', [IdeaController::class, 'show'])->name('ideas.show');
+    Route::post('ideas/{idea}', [IdeaController::class, 'destroy'])->name('ideas.destroy');
     Route::get('/profile', [SessionController::class, 'profile']);
     Route::get('/profile/edit', [ProfileController::class, 'edit']);
     Route::patch('/profile/edit', [ProfileController::class, 'update'])->name('profile.update');
