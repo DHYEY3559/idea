@@ -8,7 +8,14 @@
         <div class="flex align-items-left gap-2">
             <a class="btn {{ request()->has('status') ? 'btn-outlined' : '' }}" href="/ideas">All</a>
             @foreach ( App\IdeaStatus::cases() as $status)
-            <a href="/ideas?status={{ $status->value }}" class="btn {{ request('status') === $status->value ? '' : 'btn-outlined' }}">{{ $status->label() }}</a>
+            <a href="/ideas?status={{ $status->value }}" class="
+                btn
+                {{ request('status') === $status->value ? '' : 'btn-outlined' }}">
+                {{ $status->label() }}
+                <span>
+                    {{ $statusCounts->get($status->value, 0) }}
+                </span>
+            </a>
             @endforeach
         </div>
 
