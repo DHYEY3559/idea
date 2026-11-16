@@ -78,6 +78,8 @@ class IdeaController extends Controller
      */
     public function destroy(Idea $idea)
     {
-        //
+        $idea->delete();
+
+        return redirect()->route('ideas.index')->with('success', 'Idea deleted successfully.');
     }
 }
