@@ -21,7 +21,7 @@
         </div>
 
         <div
-            class="mt-10 px-100 justify-items-start">
+            class="mt-10 px-40 justify-items-start">
             <!-- Detail -->
             <div class="w-full my-auto py-6 flex flex-col justify-center gap-2">
                 <div class="w-full flex sm:flex-row flex-col gap-2 justify-center">

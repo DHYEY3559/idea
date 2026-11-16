@@ -35,7 +35,7 @@
                 </div>
             </div>
 
-            <div class="mt-10 flex px-100">
+            <div class="mt-10 flex px-60">
                 <div class="m-auto flex w-full flex-col justify-center gap-2 py-6">
                     <div class="flex w-full flex-col justify-center gap-2 sm:flex-row">
                         <div class="w-full">
