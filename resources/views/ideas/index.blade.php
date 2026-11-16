@@ -58,7 +58,10 @@
             <form action="POST" route="{{ route('ideas.store') }}">
                 @csrf
                 <div class="space-y-6">
-                    <x-form.feild label='Title' type="text" name="title" placeholder="Enter your idea title" />
+                    <x-form.feild label='Title' type="text"  name="title" placeholder="Enter your idea title" />
+                </div>
+                <div class="space-y-6">
+                    <x-form.feild label='Description' type="textarea"  name="description" placeholder="Enter your idea description" />
                 </div>
             </form>
         </div>
