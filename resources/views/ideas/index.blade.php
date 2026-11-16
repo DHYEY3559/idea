@@ -13,7 +13,7 @@
                 {{ request('status') === $status->value ? '' : 'btn-outlined' }}">
                 {{ $status->label() }}
                 <span>
-                    {{ $statusCounts->get($status->value, 0) }}
+                    {{ $statusCounts->get($status->value) }}
                 </span>
             </a>
             @endforeach
