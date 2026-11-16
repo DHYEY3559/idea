@@ -24,11 +24,11 @@
                 @forelse ($ideas as $idea)
                     <x-card href="{{ route('ideas.show', $idea) }}"
                         class="hover:bg-base-200 transition-colors duration-300">
-                        <h2 class="text-lg font-semibold">{{ $idea->title }}</h2>
+                        <h2 class="text-lg font-semibold mb-5">{{ $idea->title }}</h2>
                         <x-status status="{{ $idea->status->value }}">
                             {{ $idea->status->label() }}
                         </x-status>
-                        <div class="text-muted-foreground mt-1">{{ $idea->description }}</div>
+                        <div class="text-muted-foreground mt-3">{{ $idea->description }}</div>
                         <div class="text-sm text-muted-foreground mt-2">Created at:
                             {{ $idea->created_at->diffForHumans() }}
                         </div>
