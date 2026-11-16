@@ -7,13 +7,19 @@
                 <x-icons.back_arrow/>
                 Back
             </a>
+            <div class="flex gap-x-2">
+                <button class="btn btn-outlined">Edit Idea
+                    <x-icons.external/>
+                </button>
+                <form action="{{ route('ideas.destroy', $idea) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this idea?');">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-outlined text-red-500">Delete Idea</button>
+                </form>
+                <button class="btn btn-outlined text-red-500">Delete Idea</button>
+            </div>
         </div>
 
-        <div>
-            <a href="" class="btn btn-outlined">Edit Idea
-                <x-icons.external bg-primary/>
-            </a>
-        </div>
 
         <h1 class="text-2xl font-bold">{{ $idea->title }}</h1>
         <x-card>
