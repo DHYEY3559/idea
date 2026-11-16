@@ -16,6 +16,8 @@
             id="{{ $name }}"
             class="input
                 rounded-2xl
+                w-full
+                h-64
                 focus:ring-2
                 focus:ring-primary"
                 placeholder="{{ $label }}"
