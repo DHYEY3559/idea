@@ -18,8 +18,6 @@
                 </form>
             </div>
         </div>
-
-
         <h1 class="text-2xl font-bold">{{ $idea->title }}</h1>
         <x-card>
             <div class="text-foreground max-w-none cursor-pointer">
