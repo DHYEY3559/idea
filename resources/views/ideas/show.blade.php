@@ -26,9 +26,6 @@
             <div class="text-sm text-muted-foreground mt-2">Created at: {{ $idea->created_at->format('Y-m-d H:i:s') }}</div>
         </div>
 
-
-
-
         <h1 class="text-2xl font-bold">{{ $idea->title }}</h1>
         <x-card>
             <div class="text-foreground max-w-none cursor-pointer">

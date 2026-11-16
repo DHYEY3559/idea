@@ -5,6 +5,12 @@
             <p class="text-center text-muted-foreground mt-1">Create and Share Your Ideas {{ Auth::user()->name }}</p>
         </header>
 
+        <x-card class="mt-10 curssor-pointer h-32 w-full text-left mb-10">
+
+            <p> what is your idea? </p>
+
+        </x-card>
+
         <div class="flex align-items-left gap-2">
             <a class="btn {{ request()->has('status') ? 'btn-outlined' : '' }}" href="/ideas">All</a>
             @foreach ( App\IdeaStatus::cases() as $status)
@@ -41,5 +47,10 @@
             </div>
         </div>
     </div>
+
+
+
+    <!--modal-->
+
 
 </x-layout>
