@@ -53,14 +53,12 @@
 
 
     <!--modal-->
-    <x-modal>
+    <x-modal name="create" title="Create New Idea">
         <div>
             <form action="POST" route="{{ route('ideas.store') }}">
                 @csrf
                 <div class="space-y-6">
-                    <x-form.feild label="Title" name="title" placeholder="Enter your idea title" />
-
-                    </x-form.feild>
+                    <x-form.feild label='Title' name="title" placeholder="Enter your idea title" />
                 </div>
             </form>
         </div>

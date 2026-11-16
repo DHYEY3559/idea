@@ -8,7 +8,7 @@
     aria-modal="true"
     role="dialog"
     class="fixed hidden
-        inset-0 flex
+        inset-0 flex flex-col
         items-center
         justify-center
         z-50
@@ -17,7 +17,7 @@
 
     <h2 id="modal-{{ $name }}-title" class="text-2xl font-bold mb-4">{{ $title }}</h2>
 
-    <x-card>
+    <x-card class="w-full max-w-2xl font-bold">
         {{ $slot }}
     </x-card>
 </div>
