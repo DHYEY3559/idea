@@ -16,7 +16,7 @@ $(document).ready(function () {
     });
 
     $(document).on("click", function (event) {
-        const clickedInsideModal = $(event.target).closest("#create-modal").length > 0;
+        const clickedInsideModal = $(event.target).closest("#create-modal > *").length > 0;
         const clickedModalButton = $(event.target).closest("#create-modal-button").length > 0;
 
         if (!clickedInsideModal && !clickedModalButton) {
@@ -26,5 +26,4 @@ $(document).ready(function () {
         }
     });
 });
-
 
