@@ -5,7 +5,14 @@
 
             <a href="/ideas" class="flex items-center text-xl font-bold">
                 <x-icons.back_arrow/>
-                Back</a>
+                Back
+            </a>
+        </div>
+
+        <div>
+            <a href="" class="btn btn-outlined">Edit Idea
+                <x-icons.external bg-primary/>
+            </a>
         </div>
 
         <h1 class="text-2xl font-bold">{{ $idea->title }}</h1>
