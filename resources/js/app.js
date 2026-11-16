@@ -9,18 +9,17 @@ $(document).ready(function () {
     }, 3000);
 
     //modal toggle
-    const modalButton = document.getElementById("create-modal-button");
-    const modal = document.getElementById("create-modal");
-    const closeModalButton = document.getElementById("close-modal-button");
+    const modal = $('#create-modal');
 
-    modalButton.addEventListener("click", function () {
-        modal.classList.remove("hidden");
+    $("#create-modal-button").click(function () {
+        modal.removeClass("hidden").hide().fadeIn("slow");
     });
 
-    closeModalButton.addEventListener("click", function () {
-        modal.classList.add("hidden");
+    $("#close-modal-button").click(function () {
+        modal.fadeOut("slow", function () {
+            modal.addClass("hidden");
+        });
     });
-
 });
 
 
