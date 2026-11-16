@@ -16,7 +16,6 @@
                     @method('DELETE')
                     <button type="submit" class="btn btn-outlined text-red-500">Delete Idea</button>
                 </form>
-                <button class="btn btn-outlined text-red-500">Delete Idea</button>
             </div>
         </div>
 
