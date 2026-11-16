@@ -15,10 +15,15 @@ $(document).ready(function () {
         modal.removeClass("hidden").hide().fadeIn("slow");
     });
 
-    $("#close-modal-button").click(function () {
-        modal.fadeOut("slow", function () {
-            modal.addClass("hidden");
-        });
+    $(document).on("click", function (event) {
+        const clickedInsideModal = $(event.target).closest("#create-modal").length > 0;
+        const clickedModalButton = $(event.target).closest("#create-modal-button").length > 0;
+
+        if (!clickedInsideModal && !clickedModalButton) {
+            modal.fadeOut("slow", function () {
+                modal.addClass("hidden");
+            });
+        }
     });
 });
 

@@ -53,19 +53,7 @@
 
 
     <!--modal-->
-    <div id="create-modal" tabindex="-1" :aria-hidden="!show" role="dialog" aria-modal="true" role="dialog"
-        class="fixed inset-0 flex items-center justify-center z-50 bg-black/50 backdrop-blur-xs hidden">
-        <x-card>
-            <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Create New Idea</h3>
-            <form class="space-y-6" action="" method="POST">
-                @csrf
-                <x-form.feild label="Title" name="title"/>
-                <x-form.feild label="Description" name="description"/>
-                <x-form.feild label="Links" name="links"/>
-                <button type="submit" class="btn w-full">Create Idea</button>
-            </form>
-        </x-card>
-    </div>
+
 
 
 </x-layout>
