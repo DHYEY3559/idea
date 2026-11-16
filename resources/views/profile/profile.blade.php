@@ -3,7 +3,7 @@
     <div class="">
         <!-- Profile Image -->
         <div class="sm:w-[80%] w-[90%] max-w-3xl mx-auto flex">
-            <div class="relative h-40 w-40 shrink-0">
+            <div class="relative h-40 w-40 shrink-0 ">
             <img src="{{ $profile->profile_image ? asset('storage/'.$profile->profile_image) : 'https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHw3fHxwZW9wbGV8ZW58MHwwfHx8MTcxMTExMTM4N3ww&ixlib=rb-4.0.3&q=80&w=1080' }}" alt="{{ $profile->user->name }}'s profile photo"
                     class="h-full w-full rounded-full object-cover outline outline-offset-2 outline-primary" />
         </div>
