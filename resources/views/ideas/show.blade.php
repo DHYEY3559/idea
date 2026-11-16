@@ -35,9 +35,7 @@
                 {{ $idea->description }}
             </div>
         </x-card>
-        @if($idea->links->count()
-
-        @endforeach
+        @if($idea->links->count())
         <div>
             <div class="text-2xl font-bold max-w-none">
                 Links
