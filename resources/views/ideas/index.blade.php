@@ -63,6 +63,16 @@
                 <div class="space-y-6">
                     <x-form.feild label='Description' type="textarea"  name="description" placeholder="Enter your idea description" />
                 </div>
+                <div class="space-y-06">
+                    <label for="Status" class="label">Status</label>
+
+                    <div class="flex gap-2">
+                        @foreach( App\IdeaStatus::cases() as $status)
+                            <button>{{ $status->label() }}</button>
+                        @endforeach
+                    </div>
+
+                </div>
             </form>
         </div>
     </x-modal>
