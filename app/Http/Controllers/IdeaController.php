@@ -18,8 +18,8 @@ class IdeaController extends Controller
     {
         /** @var \App\Models\User $user */
         $user = Auth::user();
-        $ideas = $user
-                ->ideas()
+        $ideas = Auth::user()
+                ->ideas
                 ->when($request->status, fn($query, $status) => $query->where('status', $status));
 
         $counts = $user
