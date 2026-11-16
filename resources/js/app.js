@@ -20,6 +20,7 @@ $(document).ready(function () {
     closeModalButton.addEventListener("click", function () {
         modal.classList.add("hidden");
     });
+
 });
 
 
