@@ -11,7 +11,7 @@
                 <button class="btn btn-outlined">Edit Idea
                     <x-icons.external/>
                 </button>
-                <form action="{{ route('ideas.destroy', $idea) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this idea?');">
+                <form action="{{ route('ideas.destroy', $idea) }}" method="POST">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-outlined text-red-500">Delete Idea</button>
