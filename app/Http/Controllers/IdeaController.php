@@ -17,8 +17,7 @@ class IdeaController extends Controller
     {
         $ideas = Auth::user()
                 ->ideas
-                ->when($request->status, fn($query, $status) => $query->where('status', $status))
-                ->get();
+                ->when($request->status, fn($query, $status) => $query->where('status', $status));
 
         return view('ideas.index', [
             'ideas' => $ideas,

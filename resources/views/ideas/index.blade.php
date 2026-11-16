@@ -6,9 +6,9 @@
         </header>
 
         <div class="flex align-items-left gap-2">
-            <a class="btn btn-primary flex" href="/ideas">All</a>
+            <a class="btn {{ request()->has('status') ? 'btn-outlined' : '' }}" href="/ideas">All</a>
             @foreach ( App\IdeaStatus::cases() as $status)
-            <a class="btn btn-outline flex" href="/ideas?status={{ $status->value }}">{{ $status->label() }}</a>
+            <a href="/ideas?status={{ $status->value }}" class="btn {{ request('status') === $status->value ? '' : 'btn-outlined' }}">{{ $status->label() }}</a>
             @endforeach
         </div>
 
