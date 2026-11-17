@@ -6,6 +6,7 @@
 
 
                 <x-form.feild name='email' label='E-mail' type="email" />
+
                 <x-form.feild name='password' label='Password' type="password" />
 
                 <div class="grid grid-cols-1 gap-4">
