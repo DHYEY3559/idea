@@ -1,5 +1,10 @@
 <x-layout>
-    <div class="mt-5 flex justify-center items-center max-w-3xl mx-auto">
+    <div class="mt-5 relative justify-center items-center max-w-3xl mx-auto">
+        <div class="mx-auto absolute mt-10 flex w-full justify-end">
+            <a href="/profile" class="btn btn-primary">
+                Back
+            </a>
+        </div>
         <form action="{{ route('profile.update') }}" method="POST" enctype="multipart/form-data" class="w-full">
             @csrf
             @method('PATCH')
@@ -71,4 +76,5 @@
             </div>
         </form>
     </div>
+
 </x-layout>
