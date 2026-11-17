@@ -61,7 +61,7 @@
             <form action="{{ route('ideas.store') }}" method="POST">
                 @csrf
                 <div class="space-y-6">
-                    <x-form.feild label='Title' type="text" name="title" placeholder="Enter your idea title" required/>
+                    <x-form.feild label='Title' data-test="modal-idea-title" type="text" name="title" placeholder="Enter your idea title" required/>
                 </div>
 
                 <div class="mt-4">
@@ -81,7 +81,7 @@
                     <input type="hidden" name="status" value="" id="status">
 
                     <div class="mt-4">
-                        <x-form.feild label='Description' type="textarea" name="description" placeholder="Enter your idea description" />
+                        <x-form.feild label='Description' type="textarea" data-test="modal-idea-description" name="description" placeholder="Enter your idea description" />
                     </div>
                     <div>
                         <button type="submit" class="btn btn-primary mt-4">Create Idea</button>
