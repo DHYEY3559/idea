@@ -83,11 +83,23 @@
                     <div class="mt-4">
                         <x-form.feild label='Description' type="textarea" data-test="modal-idea-description" name="description" placeholder="Enter your idea description" />
                     </div>
-                    <div>
-                        <x-form.feild label='Links' type="text" data-test="modal-idea-links" name="links" placeholder="Enter your idea link" />
-                        <button class="button">
-                            <x-icons.add class="rotate-45"/>
-                        </button>
+                    <div class="flex gap-2 mt-4">
+                        <fieldset class="flex space-y-4 w-full justify-center">
+                            <legend class="label">Links</legend>
+                            <div class="flex w-full gap-2">
+                                <input
+                                    type="url"
+                                    id="new-link"
+                                    placeholder="example.com"
+                                    autocomplete="true"
+                                    spellcheck="false"
+                                    class="input flex-1 -mt-1.5 w-full">
+
+                                <button>
+                                    <x-icons.add/>
+                                </button>
+                            </div>
+                        </fieldset>
                     </div>
                     <div>
                         <button type="submit" class="btn btn-primary mt-4">Create Idea</button>
