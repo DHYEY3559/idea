@@ -6,11 +6,14 @@
         </header>
 
         <x-card
-        is="button" id="create-modal-button" data-modal-toggle="create-modal"
-        class="mt-10 cursor-pointer w-full text-left mb-10">
-
-            <p> what is your idea? </p>
-
+        is="button"
+            id="create-modal-button"
+            data-modal-toggle="create-modal"
+            data-test="create-idea-button"
+            class="mt-10 cursor-pointer w-full text-left mb-10">
+            <p>
+                what is your idea?
+            </p>
         </x-card>
 
         <div class="flex align-items-left gap-2">
