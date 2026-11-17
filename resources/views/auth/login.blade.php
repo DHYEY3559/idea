@@ -3,8 +3,6 @@
         <form action="/login" method="POST" class="mt-5 w-full max-w-md">
             @csrf
             <fieldset class="flex flex-col gap-y-3 fieldset bg-base-200 border-primary rounded-2xl w-100 border p-4">
-
-
                 <x-form.feild name='email' label='E-mail' type="email" />
 
                 <x-form.feild name='password' label='Password' type="password" />

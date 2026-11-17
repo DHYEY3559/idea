@@ -69,13 +69,14 @@
                     <div class="mt-2">
                         @foreach( App\IdeaStatus::cases() as $status)
                             <button type="button"
+                            data-status="{{ $status->value }}"
                             class="btn status-btn
                             {{ request('status') === $status->value ? '' : 'btn-outlined' }}">
                             {{ $status->label() }}
                         </button>
                         @endforeach
                     </div>
-                    <input type="hidden" name="status" id="status">
+                    <input type="text" name="status" value="" id="status">
                 </div>
             </form>
         </div>
