@@ -55,20 +55,20 @@
     <!--modal-->
     <x-modal name="create" title="Create New Idea">
         <div>
-            <form action="POST" route="{{ route('ideas.store') }}">
+            <form action="{{ route('ideas.store') }}" method="POST">
                 @csrf
                 <div class="space-y-6">
-                    <x-form.feild label='Title' type="text"  name="title" placeholder="Enter your idea title" />
+                    <x-form.feild label='Title' type="text" name="title" placeholder="Enter your idea title" />
                 </div>
                 <div class="space-y-6">
-                    <x-form.feild label='Description' type="textarea"  name="description" placeholder="Enter your idea description" />
+                    <x-form.feild label='Description' type="textarea" name="description" placeholder="Enter your idea description" />
                 </div>
-                <div class="space-y-06">
+                <div class="space-y-6">
                     <label for="Status" class="label">Status</label>
 
                     <div class="flex gap-2">
                         @foreach( App\IdeaStatus::cases() as $status)
-                            <button>{{ $status->label() }}</button>
+                            <button type="button">{{ $status->label() }}</button>
                         @endforeach
                     </div>
 

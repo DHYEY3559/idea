@@ -5,13 +5,10 @@
             <fieldset class="flex flex-col gap-y-3 fieldset bg-base-200 border-primary rounded-2xl w-100 border p-4">
 
                 <x-form.feild name='name' label='Name' />
-                <x-form.error name="name" class="text-error text-sm" />
 
-                <x-form.feild name='email' label='E-mail' />
-                <x-form.error name="email" class="text-error text-sm" />
+                <x-form.feild name='email' label='E-mail' type="email" />
 
-                <x-form.feild name='password' label='Password' />
-                <x-form.error name="password" class="text-error text-sm" />
+                <x-form.feild name='password' label='Password' type="password" />
 
                 <div class="grid grid-cols-1 gap-4">
                     <button class="btn btn-neutral mt-4 text-lg font-semibold">Create Account</button>

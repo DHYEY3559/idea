@@ -20,7 +20,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/ideas/create', [IdeaController::class, 'create']);
     Route::get('/ideas/{idea}', [IdeaController::class, 'show'])->name('ideas.show');
     Route::delete('ideas/{idea}', [IdeaController::class, 'destroy'])->name('ideas.destroy');
-    Route::post('/ideas', [IdeaController::class, 'sto  re'])->name('ideas.store');
+    Route::post('/ideas', [IdeaController::class, 'store'])->name('ideas.store');
     Route::get('/profile', [SessionController::class, 'profile']);
     Route::get('/profile/edit', [ProfileController::class, 'edit']);
     Route::patch('/profile/edit', [ProfileController::class, 'update'])->name('profile.update');
