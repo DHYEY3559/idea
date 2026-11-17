@@ -8,7 +8,7 @@ test('the application registers User', function () {
         ->type('email', 'john@example.com')
         ->type('password', 'password123')
         ->press('Create Account')
-        ->assertPathIs('/');
+        ->assertPathIs('/ideas');
 
     expect(Auth::check())->toBeTrue();
     expect(Auth::user()->name)->toBe('John Doe');
@@ -24,7 +24,7 @@ test('the application logs in User', function () {
         ->type('email', 'david@example.com')
         ->type('password', 'password123')
         ->press('Login')
-        ->assertPathIs('/');
+        ->assertPathIs('/ideas');
 
     expect(Auth::check())->toBeTrue();
 });
