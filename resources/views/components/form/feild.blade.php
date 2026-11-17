@@ -1,4 +1,4 @@
-@props(['label'=>'false', 'name', 'type'=>'text'])
+@props(['label'=> false, 'name', 'type'=>'text'])
 
 <div class="flex flex-col gap-0.5" {{ $attributes }}>
 
