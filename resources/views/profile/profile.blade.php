@@ -1,6 +1,9 @@
 <x-layout>
     <div class="mt-5">
     <div class="">
+        <div class="flex justify-end items-center px-40">
+            <a class="btn btn-primary" href="{{ route('ideas.index') }}" type="button">Back</a>
+        </div>
         <!-- Profile Image -->
         <div class="sm:w-[80%] w-[90%] max-w-3xl mx-auto flex">
             <div class="relative h-40 w-40 shrink-0 ">
