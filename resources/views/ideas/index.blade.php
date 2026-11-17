@@ -7,7 +7,7 @@
 
         <x-card
         is="button" id="create-modal-button" data-modal-toggle="create-modal"
-        class="mt-10 cursor-pointer h-32 w-full text-left mb-10">
+        class="mt-10 cursor-pointer w-full text-left mb-10">
 
             <p> what is your idea? </p>
 
