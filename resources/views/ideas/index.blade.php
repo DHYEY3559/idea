@@ -60,9 +60,7 @@
                 <div class="space-y-6">
                     <x-form.feild label='Title' type="text" name="title" placeholder="Enter your idea title" />
                 </div>
-                <div class="mt-4">
-                    <x-form.feild label='Description' type="textarea" name="description" placeholder="Enter your idea description" />
-                </div>
+
                 <div class="mt-4">
                     <label for="Status" class="label">Status</label>
 
@@ -76,7 +74,12 @@
                         </button>
                         @endforeach
                     </div>
-                    <input type="text" name="status" value="" id="status">
+                    <input type="hidden" name="status" value="" id="status">
+
+                    <div class="mt-4">
+                        <x-form.feild label='Description' type="textarea" name="description" placeholder="Enter your idea description" />
+                    </div>
+
                 </div>
             </form>
         </div>
