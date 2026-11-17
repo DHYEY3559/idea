@@ -15,7 +15,7 @@ test('a user can create an idea', function () {
         ->press('Create Idea')
         ->assertPathIs('/ideas');
 
-    expect(Idea::first())->toMatchArray([
+    expect($user->ideas()->first())->toMatchArray([
         'title' => 'My First Idea',
         'status' => 'completed',
         'description' => 'This is my first idea description.',
