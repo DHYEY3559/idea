@@ -60,16 +60,16 @@
                 <div class="space-y-6">
                     <x-form.feild label='Title' type="text" name="title" placeholder="Enter your idea title" />
                 </div>
-                <div class="space-y-6">
+                <div class="mt-4">
                     <x-form.feild label='Description' type="textarea" name="description" placeholder="Enter your idea description" />
                 </div>
-                <div class="space-y-6">
+                <div class="mt-4">
                     <label for="Status" class="label">Status</label>
 
-                    <div class="flex gap-2">
+                    <div class="mt-2">
                         @foreach( App\IdeaStatus::cases() as $status)
                             <button type="button" class="btn
-                            {{ request('status') === $status->value ? '' : 'btn-outlined' }}"
+                            {{ request('status') === $status->value ? '' : 'btn-outlined' }}">
                             {{ $status->label() }}
                         </button>
                         @endforeach
