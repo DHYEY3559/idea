@@ -22,6 +22,7 @@
                 focus:ring-primary"
                 placeholder="{{ $label }}"
             {{ $attributes }}>{{ old($name) }}</textarea>
+        <x-form.error name="{{ $name }}" class="text-error text-sm" />
     @else
     <input
         type="{{ $type }}"
