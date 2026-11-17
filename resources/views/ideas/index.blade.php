@@ -71,6 +71,7 @@
                         @foreach( App\IdeaStatus::cases() as $status)
                             <button type="button"
                             data-status="{{ $status->value }}"
+                            data-test="status-button-{{ $status->value }}"
                             class="btn status-btn
                             {{ request('status') === $status->value ? '' : 'btn-outlined' }}">
                             {{ $status->label() }}
