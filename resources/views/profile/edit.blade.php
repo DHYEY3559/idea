@@ -1,10 +1,10 @@
 <x-layout>
-    <div class="mt-5">
-        <form action="{{ route('profile.update') }}" method="POST" enctype="multipart/form-data">
+    <div class="mt-5 flex justify-center items-center max-w-3xl mx-auto">
+        <form action="{{ route('profile.update') }}" method="POST" enctype="multipart/form-data" class="w-full">
             @csrf
             @method('PATCH')
 
-            <div class="mx-auto flex w-[90%] max-w-3xl items-start gap-6 sm:w-[80%]">
+            <div class="mx-auto flex w-full items-start gap-6 sm:w-[80%]">
                 <div class="relative h-40 w-40 shrink-0">
                     <img
                         src="{{ $profile->profile_image ? asset('storage/'.$profile->profile_image) : asset('images/logo.png') }}"
@@ -24,7 +24,7 @@
                     </label>
                 </div>
 
-                <div class="flex w-full max-w-3xl font-semibold">
+                <div class="flex w-full font-semibold">
                     <input
                         type="text"
                         name="profile_description"
@@ -35,7 +35,7 @@
                 </div>
             </div>
 
-            <div class="mt-10 flex px-60">
+            <div class="mx-auto mt-10 flex w-full px-4 sm:px-6">
                 <div class="m-auto flex w-full flex-col justify-center gap-2 py-6">
                     <div class="flex w-full flex-col justify-center gap-2 sm:flex-row">
                         <div class="w-full">
@@ -66,8 +66,8 @@
                 </div>
             </div>
 
-            <div class="px-100">
-                <button class="btn btn-primary sm:w-auto lg:h-12" type="submit">Update</button>
+            <div class="mx-auto mt-10 flex w-full justify-center">
+                <button href="/profile" class="btn btn-primary sm:w-auto lg:h-12" type="submit">Update</button>
             </div>
         </form>
     </div>
