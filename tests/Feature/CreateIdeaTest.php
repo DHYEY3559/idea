@@ -1,11 +1,12 @@
 <?php
 
 use App\Models\Idea;
+use App\Models\User;
 
 
 test('a user can create an idea', function () {
     /** @var \Tests\TestCase $this */
-    $this->actingAs(\App\Models\User::factory()->create());
+    $this->actingAs($user = User::factory()->create());
     visit('/ideas')
         ->click('@create-idea-button')
         ->fill('title', 'My First Idea')
