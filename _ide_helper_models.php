@@ -19,7 +19,7 @@ namespace App\Models{
  * @property string|null $description
  * @property \App\IdeaStatus $status
  * @property string|null $image_path
- * @property \Illuminate\Database\Eloquent\Casts\ArrayObject<array-key, mixed> $links
+ * @property string $links
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Step> $steps

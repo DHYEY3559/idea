@@ -54,12 +54,10 @@ class IdeaController extends Controller
         $idea->user_id = Auth::id();
         $idea->description = $validated['description'] ?? null;
         $idea->status = $validated['status'] ?? 'pending';
-        $idea->links = $validated['links'] ?? '';
+        $idea->links = $validated['link'] ?? '';
         $idea->save();
 
-        dd($request->all());
-
-        //return redirect()->route('ideas.index')->with('success', 'Idea created successfully.');
+        return redirect()->route('ideas.index')->with('success', 'Idea created successfully.');
     }
 
     /**
