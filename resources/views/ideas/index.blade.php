@@ -58,7 +58,7 @@
             <form action="{{ route('ideas.store') }}" method="POST">
                 @csrf
                 <div class="space-y-6">
-                    <x-form.feild label='Title' type="text" name="title" placeholder="Enter your idea title" />
+                    <x-form.feild label='Title' type="text" name="title" placeholder="Enter your idea title" required/>
                 </div>
 
                 <div class="mt-4">
