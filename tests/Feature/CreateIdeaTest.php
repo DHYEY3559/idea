@@ -14,5 +14,9 @@ test('a user can create an idea', function () {
         ->press('Create Idea')
         ->assertPathIs('/ideas');
 
-    expect(Idea::count())->toBe(1);
+    expect(Idea::first())->toMatchArray([
+        'title' => 'My First Idea',
+        'status' => 'completed',
+        'description' => 'This is my first idea description.',
+        ]);
     });
