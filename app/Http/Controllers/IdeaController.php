@@ -6,6 +6,7 @@ use App\Http\Requests\StoreIdeaRequest;
 use App\Http\Requests\UpdateIdeaRequest;
 use App\Models\Idea;
 use Illuminate\Http\Request;
+use App\IdeaStatus;
 use Illuminate\Support\Facades\Auth;
 
 class IdeaController extends Controller
@@ -17,8 +18,10 @@ class IdeaController extends Controller
     {
 
         $ideas = Auth::user()
-                ->ideas
-                ->when($request->status, fn($query, $status) => $query->where('status', $status));
+                ->ideas()
+                ->when(in_array($request->status, IdeaStatus::values()), fn($query) => $query->where('status', $request->status))
+                ->latest()
+                ->get();
 
 
 
