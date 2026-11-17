@@ -52,9 +52,6 @@
             </div>
         </div>
     </div>
-
-
-
     <!--modal-->
     <x-modal name="create" title="Create New Idea">
         <div>
@@ -94,7 +91,6 @@
                                     autocomplete="true"
                                     spellcheck="false"
                                     class="input flex-1 -mt-1.5 w-full">
-
                                 <button>
                                     <x-icons.add/>
                                 </button>
