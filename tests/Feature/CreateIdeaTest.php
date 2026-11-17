@@ -11,6 +11,7 @@ test('a user can create an idea', function () {
         ->fill('title', 'My First Idea')
         ->click('@status-button-completed')
         ->fill('description', 'This is my first idea description.')
+        ->fill('link', 'http://localhost:8000/ideas')
         ->press('Create Idea')
         ->assertPathIs('/ideas');
 
@@ -18,5 +19,6 @@ test('a user can create an idea', function () {
         'title' => 'My First Idea',
         'status' => 'completed',
         'description' => 'This is my first idea description.',
+        'links' => 'http://localhost:8000/ideas',
         ]);
     });

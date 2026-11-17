@@ -23,7 +23,7 @@ class IdeaFactory extends Factory
             'title' => fake()->sentence(),
             'description' => fake()->paragraph(),
             'status' => fake()->randomElement(['pending', 'in_progress', 'completed']),
-            'links' => [fake()->url()],
+            'links' => fake()->url(),
             'created_at' => fake()->dateTime(),
             'updated_at' => fake()->dateTime()
         ];
