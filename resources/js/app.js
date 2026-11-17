@@ -25,5 +25,11 @@ $(document).ready(function () {
             });
         }
     });
+
+    $(document).on("click", ".status-btn", function () {
+        $("#status").val($(this).data("status"));
+        $(".status-btn").removeClass("btn-primary").addClass("btn-outlined");
+        $(this).removeClass("btn-outlined").addClass("btn-primary");
+    });
 });
 

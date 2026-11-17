@@ -68,18 +68,16 @@
 
                     <div class="mt-2">
                         @foreach( App\IdeaStatus::cases() as $status)
-                            <button type="button" class="btn
+                            <button type="button"
+                            class="btn status-btn
                             {{ request('status') === $status->value ? '' : 'btn-outlined' }}">
                             {{ $status->label() }}
                         </button>
                         @endforeach
                     </div>
-
+                    <input type="hidden" name="status" id="status">
                 </div>
             </form>
         </div>
     </x-modal>
-
-
-
 </x-layout>
