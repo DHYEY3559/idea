@@ -68,7 +68,10 @@
 
                     <div class="flex gap-2">
                         @foreach( App\IdeaStatus::cases() as $status)
-                            <button type="button">{{ $status->label() }}</button>
+                            <button type="button" class="btn
+                            {{ request('status') === $status->value ? '' : 'btn-outlined' }}"
+                            {{ $status->label() }}
+                        </button>
                         @endforeach
                     </div>
 
