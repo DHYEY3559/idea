@@ -79,7 +79,13 @@
                     <div class="mt-4">
                         <x-form.feild label='Description' type="textarea" name="description" placeholder="Enter your idea description" />
                     </div>
-
+                    <div>
+                        <button type="submit" class="btn btn-primary mt-4">Create Idea</button>
+                        <button type="button" class="btn btn-outlined mt-4"
+                            data-modal-toggle="create-modal">
+                            Cancel
+                        </button>
+                    </div>
                 </div>
             </form>
         </div>

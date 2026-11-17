@@ -18,8 +18,13 @@ $(document).ready(function () {
     $(document).on("click", function (event) {
         const clickedInsideModal = $(event.target).closest("#create-modal > *").length > 0;
         const clickedModalButton = $(event.target).closest("#create-modal-button").length > 0;
-
+        const clickedCancelButton = $(event.target).closest("#create-modal .btn-outlined").length > 0;
         if (!clickedInsideModal && !clickedModalButton) {
+            modal.fadeOut("slow", function () {
+                modal.addClass("hidden");
+            });
+        }
+        if (clickedCancelButton) {
             modal.fadeOut("slow", function () {
                 modal.addClass("hidden");
             });
