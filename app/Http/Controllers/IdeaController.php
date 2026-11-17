@@ -57,7 +57,9 @@ class IdeaController extends Controller
         $idea->links = $validated['links'] ?? '';
         $idea->save();
 
-        return redirect()->route('ideas.index')->with('success', 'Idea created successfully.');
+        dd($request->all());
+
+        //return redirect()->route('ideas.index')->with('success', 'Idea created successfully.');
     }
 
     /**
@@ -92,7 +94,6 @@ class IdeaController extends Controller
     public function destroy(Idea $idea)
     {
         $idea->delete();
-
         return redirect()->route('ideas.index')->with('success', 'Idea deleted successfully.');
     }
 }
