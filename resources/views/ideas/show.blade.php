@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="flex flex-col gap-y-4 py-8 mx-auto">
+    <div class="max-w-3xl flex flex-col gap-y-4 py-8 mx-auto">
 
         <div class="flex justify-between ">
 
@@ -18,15 +18,19 @@
                 </form>
             </div>
         </div>
+        @if ($idea->image_path)
+            <div class="w-3xl h-auto mx-auto">
+                <img src="{{ asset('storage/' . $idea->image_path) }}" alt="Idea Image" class="w-full h-auto object-cover rounded-lg">
+            </div>
+        @endif
 
+        <h1 class="text-2xl font-bold">{{ $idea->title }}</h1>
         <div class="flex gap-x-2 items-center">
             <x-status status="{{ $idea->status->value }}">
                 {{ $idea->status->label() }}
             </x-status>
             <div class="text-sm text-muted-foreground mt-2">Created at: {{ $idea->created_at->format('Y-m-d H:i:s') }}</div>
         </div>
-
-        <h1 class="text-2xl font-bold">{{ $idea->title }}</h1>
         <x-card>
             <div class="text-foreground max-w-none cursor-pointer">
                 {{ $idea->description }}
