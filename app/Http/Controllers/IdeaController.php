@@ -48,6 +48,7 @@ class IdeaController extends Controller
      */
     public function store(StoreIdeaRequest $request)
     {
+        
         /*$validated = $request->validated();
 
         $idea = new Idea();
@@ -58,7 +59,12 @@ class IdeaController extends Controller
         $idea->links = $validated['links'] ?? [];
         $idea->save();*/
 
-        (new CreateIdea)->handle($request->safe()->all());
+        //(new CreateIdea)->handle($request->safe()->all());
+        $validated = $request->validated();
+        $validated['links'] ??= [];
+        Auth::user()->ideas()->create($request->safe()->except('image'));
+
+        $request->image->store('images', 'public');
 
         return redirect()->route('ideas.index')->with('success', 'Idea created successfully.');
     }
