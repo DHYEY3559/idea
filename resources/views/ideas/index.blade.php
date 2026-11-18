@@ -89,7 +89,6 @@
                                     id="new-link"
                                     placeholder="example.com"
                                     name="link"
-                                    label="links"
                                     autocomplete="true"
                                     spellcheck="false"
                                     class="input flex-1 -mt-1.5 w-full" />
