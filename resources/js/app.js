@@ -56,20 +56,21 @@ $(document).ready(function () {
 
     function RenderLinks() {
         $("#linkStack").html(linkStack.map((link, index) =>
-            `<input class=input flex-1
-                        -mt-1.5 w-full
-                        rounded"
-                        type="text"
-                        data-indes="${index}"
-                        name="links[]"
-                        value="${link}">
-            </input>
-            <button class="absolute right-110 remove-link"
-                    type="button"
-                    data-test="remove-link">
-                <x-icons.close/>
-            </button>
-
+            `   
+            <div class="flex w-full items-center gap-2">
+                <input class=input w-full
+                            rounded pr-12"
+                            type="text"
+                            data-indes="${index}"
+                            name="links[]"
+                            value="${link}">
+                </input>
+                <button class="remove-link shrink-0 text-2xl leading-none text-red-500"
+                        type="button"
+                        data-test="remove-link">
+                    &times;
+                </button>
+            </div>
             `
     ).join(""));
     };
