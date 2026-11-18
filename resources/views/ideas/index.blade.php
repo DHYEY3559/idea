@@ -55,7 +55,8 @@
     <!--modal-->
     <x-modal name="create" title="Create New Idea">
         <div>
-            <form action="{{ route('ideas.store') }}" method="POST">
+            <form action="{{ route('ideas.store') }}" method="POST" 
+                enctype="multipart/form-data">
                 @csrf
                 <div class="space-y-6">
                     <x-form.feild label='Title' data-test="modal-idea-title" type="text" name="title" placeholder="Enter your idea title" required/>
