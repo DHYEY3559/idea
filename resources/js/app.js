@@ -39,12 +39,20 @@ $(document).ready(function () {
 
     let linkStack = [];
     $(document).on("click","#add-link", function(){
-        if($("#new-link").val().trim() !== ""){
-            const value = $("#new-link").val();
-            linkStack.push(value);
-            RenderLinks();
-            $("#new-link").val("");
+        const newLink = $("#new-link")[0];
+        if(!newLink.checkValidity()){
+            newLink.reportValidity();
+            return;
         }
+
+        const value = newLink.value.trim();
+
+        if(linkStack.includes(value)){
+            return;
+        }
+        linkStack.push(value);
+        RenderLinks();
+        $("#new-link").val("");
     });
 
     $(document).on("click", ".remove-link", function (e) {
