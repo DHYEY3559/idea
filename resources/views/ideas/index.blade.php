@@ -87,11 +87,12 @@
                                 <input
                                     type="url"
                                     id="new-link"
+                                    data-test="new-link"
                                     placeholder="example.com"
                                     autocomplete="true"
                                     spellcheck="false"
                                     class="input flex-1 -mt-1.5 w-full"/>
-                                    <button class="absolute right-110" type="button" id="add-link">
+                                    <button class="absolute right-110" type="button" data-test="add-link" id="add-link">
                                         <x-icons.add/>
                                     </button>
                                 <div id="linkStack" type="hidden" name="links[]"></div>

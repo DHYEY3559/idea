@@ -11,14 +11,16 @@ test('a user can create an idea', function () {
         ->fill('title', 'My First Idea')
         ->click('@status-button-completed')
         ->fill('description', 'This is my first idea description.')
-        ->fill('link', 'http://localhost:8000/ideas')
+        ->fill('new-link', 'http://localhost:8000/ideas')
+        ->click('add-link')
         ->press('Create Idea')
-        ->assertPathIs('/ideas');
+        ->assertPathIs('/ideas')
+        ->debug();
 
     expect($user->ideas()->first())->toMatchArray([
         'title' => 'My First Idea',
         'status' => 'completed',
         'description' => 'This is my first idea description.',
-        'links' => 'http://localhost:8000/ideas',
+        'links' => ['http://localhost:8000/ideas'],
         ]);
     });
