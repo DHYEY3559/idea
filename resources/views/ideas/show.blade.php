@@ -37,9 +37,11 @@
                 <h2 class="text-2xl font-bold">Link</h2>
 
                 <div class="mt-2">
-                    <x-card href="{{ $idea->links }}">
-                        {{ $idea->links }}
+                    @foreach ($idea->links as $link )
+                    <x-card href="{{ $link }}">
+                        {{ $link }}
                     </x-card>
+                    @endforeach
                 </div>
             </div>
         @endif
