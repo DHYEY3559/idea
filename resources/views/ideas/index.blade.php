@@ -77,6 +77,15 @@
                     </div>
                     <input type="hidden" name="status" value="" id="status">
 
+                    <div class="space-y-2">
+                        <label for="Image" class="label mt-2">Image</label>
+                        <input type="file" name="image" accept="image/">
+
+                        <x-form.error name="image" class="text-error text-sm" />
+
+                    </div>
+
+
                     <div class="mt-4">
                         <x-form.feild label='Description' type="textarea" data-test="modal-idea-description" name="description" placeholder="Enter your idea description" />
                     </div>
