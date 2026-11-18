@@ -34,14 +34,12 @@
         </x-card>
         @if (!empty($idea->links))
             <div>
-                <h2 class="text-2xl font-bold">Link</h2>
-                <div class="mt-2">
+                <h2 class="text-2xl mb-4 font-bold">Link</h2>
+                <div class="flex gap-x-4">
                     @foreach ($idea->links as $key => $link)
                     <x-card>
-                            <a href="{{ $link }}" target="_blank" rel="noopener noreferrer">
-                                {{  $link }}
-                            </a>
-                        </x-card>
+                        {{  $link }}
+                    </x-card>
                     @endforeach
                 </div>
             </div>
