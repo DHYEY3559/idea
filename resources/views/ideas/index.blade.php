@@ -35,7 +35,16 @@
                 @forelse ($ideas as $idea)
                     <x-card href="{{ route('ideas.show', $idea) }}"
                         class="hover:bg-base-200 transition-colors duration-300">
-                        <h2 class="text-lg font-semibold mb-5">{{ $idea->title }}</h2>
+                        
+                        
+                        @if ($idea->image_path)
+                        <div class="mb-3 h-auto mx-auto">
+                            <img src="{{ asset('storage/' . $idea->image_path) }}" alt="Idea Image" class="block h-auto w-full rounded-lg object-cover">
+                        </div>
+                        @endif
+                        
+                        <h2 class="text-lg font-semibold mb-2">{{ $idea->title }}</h2>
+
                         <x-status status="{{ $idea->status->value }}">
                             {{ $idea->status->label() }}
                         </x-status>
