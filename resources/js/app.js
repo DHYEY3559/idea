@@ -55,13 +55,7 @@ $(document).ready(function () {
     });
 
     function RenderLinks() {
-        $("#linkStack").html(linkStack.map((link,i) => `
-                 <div class="flex items-center gap-2 text-sm">
-                    <span>${link}</span>
-                    <input type="hidden" name="links[]" value="${link}">
-                    <button type="button" class="remove-link" data-index="${i}">✕</button>
-                </div>`
-            ).join(""));
+        $("#linkStack").text(linkStack.map((link,i) => `${link} , ${i}`).join(""));
     };
 });
 
