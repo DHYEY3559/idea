@@ -16,7 +16,7 @@ class Idea extends Model
     use HasFactory;
 
     protected $casts = [
-        //'links' => AsArrayObject::class,
+        'links' => AsArrayObject::class,
         'status' => IdeaStatus::class,
     ];
 
