@@ -14,8 +14,7 @@ test('a user can create an idea', function () {
         ->fill('new-link', 'http://localhost:8000/ideas')
         ->click('add-link')
         ->press('Create Idea')
-        ->assertPathIs('/ideas')
-        ->debug();
+        ->assertPathIs('/ideas');
 
     expect($user->ideas()->first())->toMatchArray([
         'title' => 'My First Idea',
