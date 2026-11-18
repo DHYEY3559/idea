@@ -81,7 +81,7 @@
                         <x-form.feild label='Description' type="textarea" data-test="modal-idea-description" name="description" placeholder="Enter your idea description" />
                     </div>
                     <div class="flex gap-2 mt-4">
-                        <fieldset class="flex space-y-4 w-full justify-center">
+                        <fieldset class="flex flex-col space-y-4 w-full justify-center">
                             <legend class="label">Links</legend>
                             <div class="flex w-full gap-2">
                                 <input
@@ -90,11 +90,11 @@
                                     placeholder="example.com"
                                     autocomplete="true"
                                     spellcheck="false"
-                                    class="input flex-1 -mt-1.5 w-full" />
-                                <button type="button" id="add-link">
-                                    <x-icons.add/>
-                                </button>
-                                <pre id="linkStack" type="hidden" name="links[]"></pre>
+                                    class="input flex-1 -mt-1.5 w-full"/>
+                                    <button type="button" id="add-link">
+                                        <x-icons.add/>
+                                    </button>
+                                <div id="linkStack" type="hidden" name="links[]"></div>
                             </div>
                         </fieldset>
                     </div>
