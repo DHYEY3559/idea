@@ -83,7 +83,7 @@
                     <div class="flex gap-2 mt-4">
                         <fieldset class="flex flex-col space-y-4 w-full justify-center">
                             <legend class="label">Links</legend>
-                            <div class="flex w-full gap-2">
+                            <div class="flex flex-col w-full gap-2">
                                 <input
                                     type="url"
                                     id="new-link"
@@ -91,7 +91,7 @@
                                     autocomplete="true"
                                     spellcheck="false"
                                     class="input flex-1 -mt-1.5 w-full"/>
-                                    <button type="button" id="add-link">
+                                    <button class="absolute right-110" type="button" id="add-link">
                                         <x-icons.add/>
                                     </button>
                                 <div id="linkStack" type="hidden" name="links[]"></div>
