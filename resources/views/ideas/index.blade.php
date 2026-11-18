@@ -95,7 +95,7 @@
                                     <button class="absolute right-110" type="button" data-test="add-link" id="add-link">
                                         <x-icons.add/>
                                     </button>
-                                <div id="linkStack" type="hidden" name="links[]"></div>
+                                <input id="linkStack" class="flex w-full" type="hidden" name="links[]"></input>
                             </div>
                         </fieldset>
                     </div>
