@@ -36,10 +36,12 @@
             <div>
                 <h2 class="text-2xl font-bold">Link</h2>
                 <div class="mt-2">
-                    @foreach ($idea->links as $key => $link )
+                    @foreach ($idea->links as $key => $link)
                     <x-card>
-                        {{ $key}}{{  $link }}
-                    </x-card>
+                            <a href="{{ $link }}" target="_blank" rel="noopener noreferrer">
+                                {{  $link }}
+                            </a>
+                        </x-card>
                     @endforeach
                 </div>
             </div>
