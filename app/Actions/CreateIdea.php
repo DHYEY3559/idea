@@ -14,7 +14,6 @@ class CreateIdea
         $idea->links = $data['links'] ?? [];
         $idea->save();
 
-
         return $idea;
     }
 }
