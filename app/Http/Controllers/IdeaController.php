@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreIdeaRequest;
 use App\Http\Requests\UpdateIdeaRequest;
 use App\Models\Idea;
+use App\Actions\CreateIdea;
 use Illuminate\Http\Request;
 use App\IdeaStatus;
 use Illuminate\Support\Facades\Auth;
@@ -47,7 +48,7 @@ class IdeaController extends Controller
      */
     public function store(StoreIdeaRequest $request)
     {
-        $validated = $request->validated();
+        /*$validated = $request->validated();
 
         $idea = new Idea();
         $idea->title = $validated['title'];
@@ -55,7 +56,9 @@ class IdeaController extends Controller
         $idea->description = $validated['description'] ?? null;
         $idea->status = $validated['status'] ?? 'pending';
         $idea->links = $validated['links'] ?? [];
-        $idea->save();
+        $idea->save();*/
+
+        (new CreateIdea)->handle($request->safe()->all());
 
         return redirect()->route('ideas.index')->with('success', 'Idea created successfully.');
     }
