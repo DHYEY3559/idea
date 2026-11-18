@@ -19,7 +19,7 @@
         <h2 id="modal-{{ $name }}-title" class="flex text-2xl font-bold mb-4">{{ $title }}</h2>
     </div>
 
-    <x-card class="w-full max-w-2xl font-bold">
+    <x-card class="w-full max-w-2xl font-bold" style="overflow-y: auto;">
         {{ $slot }}
     </x-card>
 </div>
