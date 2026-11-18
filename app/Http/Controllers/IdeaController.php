@@ -15,7 +15,7 @@ class IdeaController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(Request $request, Idea $idea)
+    public function index(Request $request, Idea $ideas)
     {
 
         $ideas = Auth::user()
@@ -62,9 +62,11 @@ class IdeaController extends Controller
         //(new CreateIdea)->handle($request->safe()->all());
         $validated = $request->validated();
         $validated['links'] ??= [];
-        Auth::user()->ideas()->create($request->safe()->except('image'));
+        $idea = Auth::user()->ideas()->create($request->safe()->except('image'));
 
-        $request->image->store('images', 'public');
+        $imagePath = $request->image->store('images', 'public');
+        
+        $idea->update(['image_path' => $imagePath]);
 
         return redirect()->route('ideas.index')->with('success', 'Idea created successfully.');
     }
