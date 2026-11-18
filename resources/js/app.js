@@ -1,4 +1,4 @@
-//
+
 import $ from "jquery";
 window.$ = window.jQuery = $;
 
@@ -47,7 +47,7 @@ $(document).ready(function () {
         }
     });
 
-    $(document).on("click", ".remove-link", function () {
+    $(document).on("click", ".remove-link", function (e) {
         const index = $(this).data("index");
         linkStack.splice(index, 1);
         RenderLinks();
@@ -55,7 +55,23 @@ $(document).ready(function () {
     });
 
     function RenderLinks() {
-        $("#linkStack").text(linkStack.map((link,i) => `${link} , ${i}`).join(""));
+        $("#linkStack").html(linkStack.map((link, index) =>
+            `<input class=input flex-1
+                        -mt-1.5 w-full
+                        rounded"
+                        type="text"
+                        data-indes="${index}"
+                        name="links[]"
+                        value="${link}">
+            </input>
+            <button class="absolute right-110 remove-link"
+                    type="button"
+                    data-test="remove-link">
+                <x-icons.close/>
+            </button>
+
+            `
+    ).join(""));
     };
 });
 
