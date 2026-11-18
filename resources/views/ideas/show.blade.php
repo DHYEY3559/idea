@@ -32,14 +32,13 @@
                 {{ $idea->description }}
             </div>
         </x-card>
-        @if (filled($idea->links))
+        @if (!empty($idea->links))
             <div>
                 <h2 class="text-2xl font-bold">Link</h2>
-
                 <div class="mt-2">
-                    @foreach ($idea->links as $link )
-                    <x-card href="{{ $link }}">
-                        {{ $link }}
+                    @foreach ($idea->links as $key => $link )
+                    <x-card>
+                        {{ $key}}{{  $link }}
                     </x-card>
                     @endforeach
                 </div>

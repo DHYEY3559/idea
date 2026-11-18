@@ -88,13 +88,13 @@
                                     type="url"
                                     id="new-link"
                                     placeholder="example.com"
-                                    name="link"
                                     autocomplete="true"
                                     spellcheck="false"
                                     class="input flex-1 -mt-1.5 w-full" />
-                                <button>
+                                <button type="button" id="add-link">
                                     <x-icons.add/>
                                 </button>
+                                <pre id="linkStack" type="hidden" name="links[]"></pre>
                             </div>
                         </fieldset>
                     </div>
