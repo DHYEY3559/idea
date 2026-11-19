@@ -44,7 +44,7 @@ class IdeaController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreIdeaRequest $request)
+    public function store(StoreIdeaRequest $request, CreateIdea $createIdea)
     {
 
         /*$validated = $request->validated();
@@ -75,7 +75,7 @@ class IdeaController extends Controller
             ]);
         }*/
 
-        (new CreateIdea)->handle($request->safe()->all());
+        $createIdea->handle($request->safe()->all());
 
         return redirect()->route('ideas.index')->with('success', 'Idea created successfully.');
     }
