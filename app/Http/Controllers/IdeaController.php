@@ -60,13 +60,16 @@ class IdeaController extends Controller
         $idea->save();*/
 
         //(new CreateIdea)->handle($request->safe()->all());
-        dd($request->all());
         $validated = $request->validated();
 
         $idea = $request->user()->ideas()->create([
             ...$request->safe()->except('image', 'steps'),
             'links' => $validated['links'] ?? [],
         ]);
+
+        $idea->steps()->createMany(
+            collect($request->steps)->map(fn($step) => ['description' => $step])
+        );
 
         if($request->hasFile('image')) {
             $idea->update([
