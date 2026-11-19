@@ -36,7 +36,6 @@
                     <x-card href="{{ route('ideas.show', $idea) }}"
                         class="hover:bg-base-200 transition-colors duration-300">
 
-
                         @if ($idea->image_path)
                         <div class="mb-3 h-auto mx-auto">
                             <img src="{{ asset('storage/' . $idea->image_path) }}" alt="Idea Image" class="block h-auto w-full rounded-lg object-cover">

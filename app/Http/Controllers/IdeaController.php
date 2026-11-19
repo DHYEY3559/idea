@@ -60,12 +60,17 @@ class IdeaController extends Controller
 
         //(new CreateIdea)->handle($request->safe()->all());
         $validated = $request->validated();
-        $idea = Auth::user()->ideas()->create($request->safe()->except('image'));
-        $idea->links = $validated['links'] ?? [];
 
-        $imagePath = $request->image->store('images', 'public');
+        $idea = $request->user()->ideas()->create([
+            ...$request->safe()->except('image'),
+            'links' => $validated['links'] ?? [],
+        ]);
 
-        $idea->update(['image_path' => $imagePath]);
+        if($request->hasFile('image')) {
+            $idea->update([
+                'image_path' => $request->file('image')->store('images', 'public'),
+            ]);
+        }
 
         return redirect()->route('ideas.index')->with('success', 'Idea created successfully.');
     }
