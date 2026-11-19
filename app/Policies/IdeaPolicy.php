@@ -4,6 +4,7 @@ namespace App\Policies;
 
 use App\Models\Idea;
 use App\Models\User;
+use Illuminate\Auth\Access\Response;
 
 class IdeaPolicy
 {
@@ -12,7 +13,7 @@ class IdeaPolicy
      */
     public function viewAny(User $user): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -20,7 +21,7 @@ class IdeaPolicy
      */
     public function view(User $user, Idea $idea): bool
     {
-        return false;
+        return $user->is($idea->user);
     }
 
     /**
@@ -28,15 +29,17 @@ class IdeaPolicy
      */
     public function create(User $user): bool
     {
-        return false;
+        return true;
     }
 
     /**
      * Determine whether the user can update the model.
      */
-    public function update(User $user, Idea $idea): bool
+    public function update(User $user, Idea $idea): Response
     {
-        return false;
+        return $user->id === $idea->user_id
+                ? Response::allow()
+                : Response::denyAsNotFound();
     }
 
     /**
@@ -44,7 +47,7 @@ class IdeaPolicy
      */
     public function delete(User $user, Idea $idea): bool
     {
-        return false;
+        return $user->is($idea->user);
     }
 
     /**
