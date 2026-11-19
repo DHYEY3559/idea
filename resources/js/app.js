@@ -117,7 +117,7 @@ $(document).ready(function () {
                             rounded pr-12"
                             type="text"
                             data-index="${index}"
-                            name="steps"
+                            name="steps[]"
                             value="${Step}">
                 </input>
                 <button class="remove-step shrink-0 text-2xl leading-none text-red-500"
