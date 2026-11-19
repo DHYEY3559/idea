@@ -1,6 +1,6 @@
 @props(['name', 'title'])
 
-<div id="create-modal"
+<div id="{{ $name }}-modal"
     tabindex="-1"
     aria-hidden="true"
     aria-labelledby="modal-{{ $name }}-title"
