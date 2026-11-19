@@ -36,6 +36,22 @@
                 {{ $idea->description }}
             </div>
         </x-card>
+
+        @if (!empty($idea->steps))
+            <div>
+                <h2 class="text-2xl mb-4 font-bold">Steps</h2>
+                <div class="flex flex-col gap-y-2">
+                    @foreach ($idea->steps as $key => $step)
+                    <x-card>
+                        {{ $step->description }}
+                    </x-card>
+                    @endforeach
+                </div>
+            </div>
+        @endif
+
+
+
         @if (!empty($idea->links))
             <div>
                 <h2 class="text-2xl mb-4 font-bold">Link</h2>
