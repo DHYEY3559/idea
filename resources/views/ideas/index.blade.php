@@ -148,7 +148,7 @@
                     </div>
                     <div>
                         <button type="submit" class="btn btn-primary mt-4">Create Idea</button>
-                        <button type="button" class="btn btn-outlined mt-4"
+                        <button type="button" class="create-modal-close btn btn-outlined mt-4"
                             data-modal-toggle="create-modal">
                             Cancel
                         </button>
