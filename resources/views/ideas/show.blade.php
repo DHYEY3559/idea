@@ -9,7 +9,9 @@
             </a>
             <div class="flex gap-x-2">
                 <button class="btn btn-outlined"
+                    data-modal-toggle="edit-modal"
                     data-test="edit-idea-button"
+                    id="edit-idea-button"
                 >
                     Edit Idea
                     <x-icons.external/>
@@ -77,4 +79,44 @@
             </div>
         @endif
     </div>
+
+    <!--modal-->
+
+    <x-modal name="edit" title="Edit Idea">
+        <div>
+            <form action="{{ route('ideas.update', $idea) }}" method="POST"
+                enctype="multipart/form-data">
+                @csrf
+                @method('PATCH')
+                <div class="space-y-6">
+                    <div>
+                        <label for="title" class="mb-2 block text-sm font-medium">Title</label>
+                        <input type="text" name="title" id="title" value="{{ $idea->title }}" class="input w-full">
+                    </div>
+                    <div>
+                        <label for="description" class="mb-2 block text-sm font-medium">Description</label>
+                        <textarea name="description" id="description" rows="4" class="input w-full">{{ $idea->description }}</textarea>
+                    </div>
+                    <div>
+                        <label for="image_path" class="mb-2 block text-sm font-medium">Image</label>
+                        <input type="file" name="image_path" id="image_path" class="input w-full">
+                    </div>
+                    <div class="flex justify-end gap-x-2">
+                        <button type="submit" class="btn btn-primary mt-4">Update Idea</button>
+                        <button type="button"
+                            class="edit-modal-close btn btn-outlined mt-4"
+                            data-modal-toggle="edit-modal">
+                            Cancel
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
+    </x-modal>
+
+
+
+
 </x-layout>
