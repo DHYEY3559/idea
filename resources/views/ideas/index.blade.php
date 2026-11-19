@@ -98,6 +98,32 @@
                     <div class="mt-4">
                         <x-form.feild label='Description' type="textarea" data-test="modal-idea-description" name="description" placeholder="Enter your idea description" />
                     </div>
+
+                    <div class="flex gap-2 mt-4">
+                        <fieldset class="flex flex-col space-y-4 w-full justify-center">
+                            <legend class="label">Steps</legend>
+                            <div class="relative w-full">
+                                <input
+                                    type="text"
+                                    id="new-step"
+                                    data-test="new-step"
+                                    placeholder="Write Your To Dos"
+                                    class="input w-full pr-12"
+                                >
+
+                                <button
+                                    type="button"
+                                    id="add-step"
+                                    data-test="add-step"
+                                    class="absolute right-2 top-1/2 -translate-y-1/2 text-2xl"
+                                >
+                                    <x-icons.add />
+                                </button>
+                            </div>
+                            <div id="StepStack" class="flex flex-col w-full" ></div>
+                        </fieldset>
+                    </div>
+
                     <div class="flex gap-2 mt-4">
                         <fieldset class="flex flex-col space-y-4 w-full justify-center">
                             <legend class="label">Links</legend>
