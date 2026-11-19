@@ -16,8 +16,9 @@ enum IdeaStatus: string
             self::COMPLETED => 'Completed',
         };
     }
+
     public static function values(): array
     {
-        return array_map(fn($status) => $status->value, self::cases());
+        return array_map(fn ($status) => $status->value, self::cases());
     }
 }
