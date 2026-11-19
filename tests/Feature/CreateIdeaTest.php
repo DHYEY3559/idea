@@ -26,8 +26,8 @@ test('a user can create an idea through the browser', function () {
         ->click('add-link')
         ->attach('image', $imagePath)
         ->press('Create Idea')
-        ->assertPathIs('/ideas')
-        ->debug();
+        ->assertPathIs('/ideas');
+
     $idea = $user->ideas()->firstOrFail();
 
     expect($idea->toArray())->toMatchArray([
