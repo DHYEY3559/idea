@@ -64,12 +64,12 @@ $(document).ready(function () {
 
     function RenderLinks() {
         $("#linkStack").html(linkStack.map((link, index) =>
-            `   
-            <div class="flex w-full items-center gap-2">
+            `
+            <div class="flex w-full items-center gap-2" style="margin-bottom: 10px;">
                 <input class=input w-full
                             rounded pr-12"
                             type="text"
-                            data-indes="${index}"
+                            data-index="${index}"
                             name="links[]"
                             value="${link}">
                 </input>
@@ -82,5 +82,53 @@ $(document).ready(function () {
             `
     ).join(""));
     };
+
+
+    let StepStack = [];
+    $(document).on("click","#add-step", function(){
+        const newLink = $("#new-step")[0];
+        if(!newLink.checkValidity()){
+            newLink.reportValidity();
+            return;
+        }
+
+        const value = newLink.value.trim();
+
+        if(StepStack.includes(value)){
+            return;
+        }
+        StepStack.push(value);
+        RenderSteps();
+        $("#new-step").val("");
+    });
+
+    $(document).on("click", ".remove-step", function (e) {
+        const index = $(this).data("index");
+        StepStack.splice(index, 1);
+        RenderSteps();
+        e.stopPropagation();
+    });
+
+    function RenderSteps() {
+        $("#StepStack").html(StepStack.map((Step, index) =>
+            `
+            <div class="flex w-full items-center gap-2" style="margin-bottom: 10px;">
+                <input class=input w-full
+                            rounded pr-12"
+                            type="text"
+                            data-index="${index}"
+                            name="steps"
+                            value="${Step}">
+                </input>
+                <button class="remove-step shrink-0 text-2xl leading-none text-red-500"
+                        type="button"
+                        data-test="remove-step">
+                    &times;
+                </button>
+            </div>
+            `
+    ).join(""));
+    };
+
 });
 
