@@ -14,12 +14,7 @@
         <textarea
             name="{{ $name }}"
             id="{{ $name }}"
-            class="input
-            rounded-2xl
-            w-full
-            h-24
-            focus:ring-2
-            focus:ring-primary"
+            class="input focus:ring-primary h-24 w-full rounded-2xl focus:ring-2"
             placeholder="{{ $label }}"
             {{ $attributes }}>{{ old($name) }}</textarea>
         <x-form.error name="{{ $name }}" class="text-error text-sm" />
