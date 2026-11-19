@@ -5,10 +5,10 @@ namespace App\Models;
 use App\IdeaStatus;
 use Illuminate\Database\Eloquent\Casts\AsArrayObject;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Collection;
-use Illuminate\Database\Eloquent\Model;
 
 class Idea extends Model
 {
@@ -33,10 +33,9 @@ class Idea extends Model
             ->pluck('count', 'status');
 
         return collect(IdeaStatus::cases())
-                    ->mapWithKeys(fn($status)
-                    => [$status->value => $counts->get($status->value, 0)
-                    ])
-                    ->put('all', $user->ideas()->count());
+            ->mapWithKeys(fn ($status) => [$status->value => $counts->get($status->value, 0),
+            ])
+            ->put('all', $user->ideas()->count());
 
     }
 

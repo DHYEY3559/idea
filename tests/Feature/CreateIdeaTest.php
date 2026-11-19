@@ -2,12 +2,12 @@
 
 use App\Models\User;
 use Illuminate\Support\Facades\Storage;
-
+use Tests\TestCase;
 
 test('a user can create an idea through the browser', function () {
     Storage::fake('public');
 
-    /** @var \Tests\TestCase $this */
+    /** @var TestCase $this */
     $this->actingAs($user = User::factory()->create());
 
     $imagePath = sys_get_temp_dir().'/idea-browser-test.png';
@@ -37,4 +37,3 @@ test('a user can create an idea through the browser', function () {
         'links' => ['http://localhost:8000/ideas'],
     ]);
 });
-

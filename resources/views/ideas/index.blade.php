@@ -1,59 +1,57 @@
 <x-layout>
-    <div class="mx-auto flex flex-col max-w-7xl justify-center px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto flex max-w-7xl flex-col justify-center px-4 sm:px-6 lg:px-8">
         <header class="py-8 md:py-12">
             <h1 class="text-center text-7xl font-bold tracking-tight">Your Ideas</h1>
-            <p class="text-center text-4xl text-muted-foreground mt-1">Create and Share Your Ideas {{ Auth::user()->name }}</p>
+            <p class="text-muted-foreground mt-1 text-center text-4xl">Create and Share Your Ideas {{ Auth::user()->name }}</p>
         </header>
 
         <x-card
-        is="button"
+            is="button"
             id="create-modal-button"
             data-modal-toggle="create-modal"
             data-test="create-idea-button"
-            class="cursor-pointer w-full text-left mb-3">
+            class="mb-3 w-full cursor-pointer text-left">
             <p>
                 What is your idea?
             </p>
         </x-card>
 
-        <div class="mt-3 flex align-items-left gap-2">
+        <div class="align-items-left mt-3 flex gap-2">
             <a class="btn {{ request()->has('status') ? 'btn-outlined' : '' }}" href="/ideas">All</a>
             @foreach ( App\IdeaStatus::cases() as $status)
-            <a href="/ideas?status={{ $status->value }}" class="
-                btn
-                {{ request('status') === $status->value ? '' : 'btn-outlined' }}">
-                {{ $status->label() }}
-                <span>
-                    {{ $statusCounts->get($status->value) }}
-                </span>
-            </a>
+                <a href="/ideas?status={{ $status->value }}" class="btn {{ request('status') === $status->value ? '' : 'btn-outlined' }}">
+                    {{ $status->label() }}
+                    <span>
+                        {{ $statusCounts->get($status->value) }}
+                    </span>
+                </a>
             @endforeach
         </div>
 
         <div class="mt-10">
-            <div class="grid md:grid-cols-2 gap-6 ">
+            <div class="grid gap-6 md:grid-cols-2">
                 @forelse ($ideas as $idea)
                     <x-card href="{{ route('ideas.show', $idea) }}"
                         class="hover:bg-base-200 transition-colors duration-300">
 
                         @if ($idea->image_path)
-                        <div class="mb-3 h-auto mx-auto">
-                            <img src="{{ asset('storage/' . $idea->image_path) }}" alt="Idea Image" class="block h-auto w-full rounded-lg object-cover">
-                        </div>
+                            <div class="mx-auto mb-3 h-auto">
+                                <img src="{{ asset('storage/' . $idea->image_path) }}" alt="Idea Image" class="block h-auto w-full rounded-lg object-cover">
+                            </div>
                         @endif
 
-                        <h2 class="text-lg font-semibold mb-2">{{ $idea->title }}</h2>
+                        <h2 class="mb-2 text-lg font-semibold">{{ $idea->title }}</h2>
 
                         <x-status status="{{ $idea->status->value }}">
                             {{ $idea->status->label() }}
                         </x-status>
                         <div class="text-muted-foreground mt-3">{{ $idea->description }}</div>
-                        <div class="text-sm text-muted-foreground mt-2">Created at:
+                        <div class="text-muted-foreground mt-2 text-sm">Created at:
                             {{ $idea->created_at->diffForHumans() }}
                         </div>
                     </x-card>
                 @empty
-                    <div class="col-span-1 md:col-span-2 lg:col-span-3 text-center">
+                    <div class="col-span-1 text-center md:col-span-2 lg:col-span-3">
                         <p class="text-muted-foreground">You have no ideas yet. Start creating your first idea!</p>
                     </div>
                 @endforelse
@@ -76,12 +74,11 @@
                     <div class="mt-2">
                         @foreach( App\IdeaStatus::cases() as $status)
                             <button type="button"
-                            data-status="{{ $status->value }}"
-                            data-test="status-button-{{ $status->value }}"
-                            class="btn status-btn
-                            {{ request('status') === $status->value ? '' : 'btn-outlined' }}">
-                            {{ $status->label() }}
-                        </button>
+                                data-status="{{ $status->value }}"
+                                data-test="status-button-{{ $status->value }}"
+                                class="btn status-btn {{ request('status') === $status->value ? '' : 'btn-outlined' }}">
+                                {{ $status->label() }}
+                            </button>
                         @endforeach
                     </div>
                     <input type="hidden" name="status" value="" id="status">
@@ -94,13 +91,12 @@
 
                     </div>
 
-
                     <div class="mt-4">
                         <x-form.feild label='Description' type="textarea" data-test="modal-idea-description" name="description" placeholder="Enter your idea description" />
                     </div>
 
-                    <div class="flex gap-2 mt-4">
-                        <fieldset class="flex flex-col space-y-4 w-full justify-center">
+                    <div class="mt-4 flex gap-2">
+                        <fieldset class="flex w-full flex-col justify-center space-y-4">
                             <legend class="label">Steps</legend>
                             <div class="relative w-full">
                                 <input
@@ -115,17 +111,17 @@
                                     type="button"
                                     id="add-step"
                                     data-test="add-step"
-                                    class="absolute right-2 top-1/2 -translate-y-1/2 text-2xl"
+                                    class="absolute top-1/2 right-2 -translate-y-1/2 text-2xl"
                                 >
                                     <x-icons.add />
                                 </button>
                             </div>
-                            <div id="StepStack" class="flex flex-col w-full" ></div>
+                            <div id="StepStack" class="flex w-full flex-col" ></div>
                         </fieldset>
                     </div>
 
-                    <div class="flex gap-2 mt-4">
-                        <fieldset class="flex flex-col space-y-4 w-full justify-center">
+                    <div class="mt-4 flex gap-2">
+                        <fieldset class="flex w-full flex-col justify-center space-y-4">
                             <legend class="label">Links</legend>
                             <div class="relative w-full">
                                 <input
@@ -142,12 +138,12 @@
                                     type="button"
                                     id="add-link"
                                     data-test="add-link"
-                                    class="absolute right-2 top-1/2 -translate-y-1/2 text-2xl"
+                                    class="absolute top-1/2 right-2 -translate-y-1/2 text-2xl"
                                 >
                                     <x-icons.add />
                                 </button>
                             </div>
-                            <div id="linkStack" class="flex flex-col w-full" ></div>
+                            <div id="linkStack" class="flex w-full flex-col" ></div>
                         </fieldset>
                     </div>
                     <div>

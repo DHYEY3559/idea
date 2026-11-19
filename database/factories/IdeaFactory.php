@@ -25,7 +25,7 @@ class IdeaFactory extends Factory
             'status' => fake()->randomElement(['pending', 'in_progress', 'completed']),
             'links' => [fake()->url()],
             'created_at' => fake()->dateTime(),
-            'updated_at' => fake()->dateTime()
+            'updated_at' => fake()->dateTime(),
         ];
     }
 }

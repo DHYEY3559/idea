@@ -2,7 +2,7 @@
     <x-form title="Glad, To Have You Back" description="Start creating Ideas Today">
         <form action="/login" method="POST" class="mt-5 w-full max-w-md">
             @csrf
-            <fieldset class="flex flex-col gap-y-3 fieldset bg-base-200 border-primary rounded-2xl w-100 border p-4">
+            <fieldset class="fieldset bg-base-200 border-primary flex w-100 flex-col gap-y-3 rounded-2xl border p-4">
                 <x-form.feild name='email' label='E-mail' type="email" />
 
                 <x-form.feild name='password' label='Password' type="password" />

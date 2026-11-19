@@ -1,6 +1,6 @@
 <x-layout>
-    <div class="mt-5 relative justify-center items-center max-w-3xl mx-auto">
-        <div class="mx-auto absolute mt-10 flex w-full justify-end">
+    <div class="relative mx-auto mt-5 max-w-3xl items-center justify-center">
+        <div class="absolute mx-auto mt-10 flex w-full justify-end">
             <a href="/profile" class="btn btn-primary">
                 Back
             </a>
@@ -14,12 +14,12 @@
                     <img
                         src="{{ $profile->profile_image ? asset('storage/'.$profile->profile_image) : asset('images/logo.png') }}"
                         alt="{{ $profile->user->name }}'s profile photo"
-                        class="h-full w-full rounded-full object-cover outline outline-offset-2 outline-primary"
+                        class="outline-primary h-full w-full rounded-full object-cover outline outline-offset-2"
                     >
                     <input type="file" name="profile_image" id="upload_profile" accept="image/*" class="sr-only">
                     <label
                         for="upload_profile"
-                        class="absolute bottom-1 right-1 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-white text-primary shadow-md"
+                        class="text-primary absolute right-1 bottom-1 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-white shadow-md"
                         title="Choose a profile photo"
                     >
                         <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">

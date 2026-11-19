@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 test('the application registers User', function () {
@@ -15,9 +16,9 @@ test('the application registers User', function () {
 });
 
 test('the application logs in User', function () {
-    $user = \App\Models\User::factory()->create([
+    $user = User::factory()->create([
         'email' => 'david@example.com',
-        'password' => bcrypt('password123')
+        'password' => bcrypt('password123'),
     ]);
 
     visit('/login')
