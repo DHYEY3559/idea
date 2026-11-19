@@ -93,14 +93,67 @@
                         <label for="title" class="mb-2 block text-sm font-medium">Title</label>
                         <input type="text" name="title" id="title" value="{{ $idea->title }}" class="input w-full">
                     </div>
+
+                    <div class="mt-4">
+                        <label for="Status" class="label">Status</label>
+
+                        <div class="mt-2">
+                            @foreach( App\IdeaStatus::cases() as $status)
+                                <button type="button"
+                                    data-status="{{ $status->value }}"
+                                    data-test="status-button-{{ $status->value }}"
+                                    class="btn status-btn {{ $idea->status->value === $status->value ? '' : 'btn-outlined' }}">
+                                    {{ $status->label() }}
+                                </button>
+                            @endforeach
+                        </div>
+                        <input type="hidden" name="status" value="{{ $idea->status->value }}" id="status">
+                    </div>
+
+
+
                     <div>
                         <label for="description" class="mb-2 block text-sm font-medium">Description</label>
                         <textarea name="description" id="description" rows="4" class="input w-full">{{ $idea->description }}</textarea>
                     </div>
-                    <div>
-                        <label for="image_path" class="mb-2 block text-sm font-medium">Image</label>
-                        <input type="file" name="image_path" id="image_path" class="input w-full">
+                    <div class="space-y-2">
+                        <label for="Image" label="Image" class="label mt-2">Image</label>
+                        <input type="file" name="image" accept="image/*">
+
+                        <x-form.error name="image" class="text-error text-sm" />
+
                     </div>
+
+                    <div class="mt-4">
+                        <label for="links" class="mb-2 block text-sm font-medium">Links</label>
+                        <div id="links-container" class="flex flex-col gap-y-2">
+                            @foreach ($idea->steps as $key => $steps)
+                                <div class="flex items-center gap-x-2">
+                                    <input type="text" name="steps[]" value="{{ $steps->description }}" class="input w-full">
+                                    <button type="button" class="btn btn-outlined remove-link-button">Remove</button>
+                                </div>
+                            @endforeach
+                        </div>
+                        <button type="button" id="add-link-button" class="btn btn-outlined mt-2">Add Link</button>
+                    </div>
+
+                    <div class="mt-4">
+                        <label for="links" class="mb-2 block text-sm font-medium">Links</label>
+                        <div id="links-container" class="flex flex-col gap-y-2">
+                            @foreach ($idea->links as $key => $link)
+                                <div class="flex items-center gap-x-2">
+                                    <input type="text" name="links[]" value="{{ $link }}" class="input w-full">
+                                    <button type="button" class="btn btn-outlined remove-link-button">Remove</button>
+                                </div>
+                            @endforeach
+                        </div>
+                        <button type="button" id="add-link-button" class="btn btn-outlined mt-2">Add Link</button>
+                    </div>
+
+
+
+
+
                     <div class="flex justify-end gap-x-2">
                         <button type="submit" class="btn btn-primary mt-4">Update Idea</button>
                         <button type="button"
