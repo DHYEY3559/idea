@@ -1,8 +1,8 @@
 <x-layout>
     <div class="mx-auto flex flex-col max-w-7xl justify-center px-4 sm:px-6 lg:px-8">
         <header class="py-8 md:py-12">
-            <h1 class="text-center text-3xl font-bold tracking-tight">Your Ideas</h1>
-            <p class="text-center text-muted-foreground mt-1">Create and Share Your Ideas {{ Auth::user()->name }}</p>
+            <h1 class="text-center text-7xl font-bold tracking-tight">Your Ideas</h1>
+            <p class="text-center text-4xl text-muted-foreground mt-1">Create and Share Your Ideas {{ Auth::user()->name }}</p>
         </header>
 
         <x-card
@@ -10,13 +10,13 @@
             id="create-modal-button"
             data-modal-toggle="create-modal"
             data-test="create-idea-button"
-            class="mt-10 cursor-pointer w-full text-left mb-10">
+            class="cursor-pointer w-full text-left mb-3">
             <p>
-                what is your idea?
+                What is your idea?
             </p>
         </x-card>
 
-        <div class="flex align-items-left gap-2">
+        <div class="mt-3 flex align-items-left gap-2">
             <a class="btn {{ request()->has('status') ? 'btn-outlined' : '' }}" href="/ideas">All</a>
             @foreach ( App\IdeaStatus::cases() as $status)
             <a href="/ideas?status={{ $status->value }}" class="
@@ -35,14 +35,14 @@
                 @forelse ($ideas as $idea)
                     <x-card href="{{ route('ideas.show', $idea) }}"
                         class="hover:bg-base-200 transition-colors duration-300">
-                        
-                        
+
+
                         @if ($idea->image_path)
                         <div class="mb-3 h-auto mx-auto">
                             <img src="{{ asset('storage/' . $idea->image_path) }}" alt="Idea Image" class="block h-auto w-full rounded-lg object-cover">
                         </div>
                         @endif
-                        
+
                         <h2 class="text-lg font-semibold mb-2">{{ $idea->title }}</h2>
 
                         <x-status status="{{ $idea->status->value }}">
@@ -64,7 +64,7 @@
     <!--modal-->
     <x-modal name="create" title="Create New Idea">
         <div>
-            <form action="{{ route('ideas.store') }}" method="POST" 
+            <form action="{{ route('ideas.store') }}" method="POST"
                 enctype="multipart/form-data">
                 @csrf
                 <div class="space-y-6">
