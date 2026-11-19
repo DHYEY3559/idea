@@ -49,20 +49,4 @@ class IdeaPolicy
     {
         return $user->is($idea->user);
     }
-
-    /**
-     * Determine whether the user can restore the model.
-     */
-    public function restore(User $user, Idea $idea): bool
-    {
-        return false;
-    }
-
-    /**
-     * Determine whether the user can permanently delete the model.
-     */
-    public function forceDelete(User $user, Idea $idea): bool
-    {
-        return false;
-    }
 }

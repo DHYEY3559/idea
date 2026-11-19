@@ -16,15 +16,15 @@ Route::group(['middleware' => 'guest'], function () {
 });
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('/logout', [SessionController::class, 'destroy'])->name('logout');
-    Route::get('/ideas', [IdeaController::class, 'index'])->name('ideas.index');
-    Route::get('/ideas/create', [IdeaController::class, 'create']);
+    Route::get('/logout', [SessionController::class, 'destroy'])->name('logout')->can('view', 'idea');
+    Route::get('/ideas', [IdeaController::class, 'index'])->name('ideas.index')->can('view', 'idea');
+    Route::get('/ideas/create', [IdeaController::class, 'create'])->can('view', 'idea');
     Route::get('/ideas/{idea}', [IdeaController::class, 'show'])->name('ideas.show')->can('view', 'idea');
     Route::delete('ideas/{idea}', [IdeaController::class, 'destroy'])->name('ideas.destroy')->can('delete', 'idea');
-    Route::post('/ideas', [IdeaController::class, 'store'])->name('ideas.store');
-    Route::get('/profile', [SessionController::class, 'profile']);
-    Route::get('/profile/edit', [ProfileController::class, 'edit']);
-    Route::patch('/profile/edit', [ProfileController::class, 'update'])->name('profile.update');
+    Route::post('/ideas', [IdeaController::class, 'store'])->name('ideas.store')->can('view', 'idea');
+    Route::get('/profile', [SessionController::class, 'profile'])->can('view', 'idea');
+    Route::get('/profile/edit', [ProfileController::class, 'edit'])->can('view', 'idea');
+    Route::patch('/profile/edit', [ProfileController::class, 'update'])->name('profile.update')->can('view', 'idea');
 
     Route::patch('steps/{step}', [StepController::class, 'update'])->name('steps.update');
 });
