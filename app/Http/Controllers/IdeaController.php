@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreIdeaRequest;
 use App\Http\Requests\UpdateIdeaRequest;
 use App\Models\Idea;
+use App\Models\Step;
 use Illuminate\Http\Request;
 use App\IdeaStatus;
 use Illuminate\Support\Facades\Auth;
@@ -59,10 +60,11 @@ class IdeaController extends Controller
         $idea->save();*/
 
         //(new CreateIdea)->handle($request->safe()->all());
+        dd($request->safe()->except( 'steps'));
         $validated = $request->validated();
 
         $idea = $request->user()->ideas()->create([
-            ...$request->safe()->except('image'),
+            ...$request->safe()->except('image', 'steps'),
             'links' => $validated['links'] ?? [],
         ]);
 
