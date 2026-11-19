@@ -7,13 +7,7 @@
     role="dialog"
     aria-modal="true"
     role="dialog"
-    class="fixed hidden
-    inset-0 flex flex-col
-    items-center
-    justify-center
-    z-50
-    bg-black/50
-    backdrop-blur-xs">
+    class="fixed inset-0 z-50 flex hidden flex-col items-center justify-center bg-black/50 backdrop-blur-xs">
 
     <div class="flex justify-between">
         <h2 id="modal-{{ $name }}-title" class="mb-4 flex text-2xl font-bold">{{ $title }}</h2>
