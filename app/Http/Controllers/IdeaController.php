@@ -7,7 +7,6 @@ use App\Http\Requests\StoreIdeaRequest;
 use App\Http\Requests\UpdateIdeaRequest;
 use App\IdeaStatus;
 use App\Models\Idea;
-use App\Models\Step;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -20,16 +19,14 @@ class IdeaController extends Controller
     {
 
         $ideas = Auth::user()
-                ->ideas()
-                ->when(in_array($request->status, IdeaStatus::values()), fn($query) => $query->where('status', $request->status))
-                ->latest()
-                ->get();
-
-
+            ->ideas()
+            ->when(in_array($request->status, IdeaStatus::values()), fn ($query) => $query->where('status', $request->status))
+            ->latest()
+            ->get();
 
         return view('ideas.index', [
             'ideas' => $ideas,
-            'statusCounts' =>Idea::statusCounts(Auth::user()),
+            'statusCounts' => Idea::statusCounts(Auth::user()),
         ]);
 
         // SELECT status, COUNT(*) AS Count FROM `ideas` GROUP BY status;
@@ -60,7 +57,7 @@ class IdeaController extends Controller
         $idea->links = $validated['links'] ?? [];
         $idea->save();*/
 
-        //(new CreateIdea)->handle($request->safe()->all());
+        // (new CreateIdea)->handle($request->safe()->all());
         /*$validated = $request->validated();
 
         $idea = $request->user()->ideas()->create([
@@ -115,6 +112,7 @@ class IdeaController extends Controller
     public function destroy(Idea $idea)
     {
         $idea->delete();
+
         return redirect()->route('ideas.index')->with('success', 'Idea deleted successfully.');
     }
 }
