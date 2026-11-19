@@ -11,19 +11,19 @@
 
 <body class="bg-background text-foreground">
     <x-layout.navbar />
-    <main class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <main class="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         {{ $slot }}
     </main>
-        @session('success')
-            <div id="success-message" class="bg-primary text-primary-content text-semibold fixed bottom-4 right-4 rounded-lg p-4 shadow-lg">
-                {{ $value }}
-            </div>
-        @endsession
-        @session('error')
-        <div id="success-message" class="bg-red-600 text-primary-content text-semibold fixed bottom-4 right-4 rounded-lg p-4 shadow-lg">
+    @session('success')
+        <div id="success-message" class="bg-primary text-primary-content text-semibold fixed right-4 bottom-4 rounded-lg p-4 shadow-lg">
             {{ $value }}
         </div>
-        @endsession
+    @endsession
+    @session('error')
+        <div id="success-message" class="text-primary-content text-semibold fixed right-4 bottom-4 rounded-lg bg-red-600 p-4 shadow-lg">
+            {{ $value }}
+        </div>
+    @endsession
 </body>
 
 </html>
