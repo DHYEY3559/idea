@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Actions\CreateIdea;
 use App\Http\Requests\StoreIdeaRequest;
 use App\Http\Requests\UpdateIdeaRequest;
+use App\IdeaStatus;
 use App\Models\Idea;
 use App\Models\Step;
 use Illuminate\Http\Request;
-use App\IdeaStatus;
 use Illuminate\Support\Facades\Auth;
 
 class IdeaController extends Controller
@@ -60,7 +61,7 @@ class IdeaController extends Controller
         $idea->save();*/
 
         //(new CreateIdea)->handle($request->safe()->all());
-        $validated = $request->validated();
+        /*$validated = $request->validated();
 
         $idea = $request->user()->ideas()->create([
             ...$request->safe()->except('image', 'steps'),
@@ -75,7 +76,9 @@ class IdeaController extends Controller
             $idea->update([
                 'image_path' => $request->file('image')->store('images', 'public'),
             ]);
-        }
+        }*/
+
+        (new CreateIdea)->handle($request->safe()->all());
 
         return redirect()->route('ideas.index')->with('success', 'Idea created successfully.');
     }
