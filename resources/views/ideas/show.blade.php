@@ -8,7 +8,10 @@
                 Back
             </a>
             <div class="flex gap-x-2">
-                <button class="btn btn-outlined">Edit Idea
+                <button class="btn btn-outlined"
+                    data-test="edit-idea-button"
+                >
+                    Edit Idea
                     <x-icons.external/>
                 </button>
                 <form action="{{ route('ideas.destroy', $idea) }}" method="POST">
