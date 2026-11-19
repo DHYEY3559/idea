@@ -60,7 +60,7 @@ class IdeaController extends Controller
         $idea->save();*/
 
         //(new CreateIdea)->handle($request->safe()->all());
-        dd($request->safe()->except( 'steps'));
+        dd($request->all());
         $validated = $request->validated();
 
         $idea = $request->user()->ideas()->create([
