@@ -20,6 +20,19 @@ $(document).ready(function () {
         });
     });
 
+    const editModal = $('#edit-modal');
+
+    $('#edit-idea-button').click(function () {
+        editModal.removeClass('hidden').fadeIn('slow');
+    });
+
+    $('.edit-modal-close').click(function () {
+        editModal.fadeOut('slow', function () {
+            editModal.addClass('hidden');
+        });
+    });
+
+
     $(document).on('click', '.status-btn', function () {
         $('#status').val($(this).data('status'));
         $('.status-btn').removeClass('btn-primary').addClass('btn-outlined');
