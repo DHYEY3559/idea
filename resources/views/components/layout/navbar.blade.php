@@ -12,7 +12,7 @@
                 src="{{ Auth::user()->profile?->profile_image ? asset('storage/'.Auth::user()->profile->profile_image) : asset('images/logo.png') }}"
                 class="h-8 w-8 rounded-full object-cover">
                 </a>
-                <a href="/logout" class="btn"> Logout </a>
+                <a href="{{ route('logout') }}" class="btn"> Logout </a>
             </div>
         @endauth
         @guest()
