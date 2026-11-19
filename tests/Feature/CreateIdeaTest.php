@@ -25,6 +25,10 @@ test('a user can create an idea through the browser', function () {
         ->fill('new-link', 'http://localhost:8000/ideas')
         ->click('add-link')
         ->attach('image', $imagePath)
+        ->fill('new-step', 'Do a thing')
+        ->click('add-step')
+        ->fill('new-step', 'Do a thing part 2')
+        ->click('add-step')
         ->press('Create Idea')
         ->assertPathIs('/ideas');
 
@@ -35,5 +39,9 @@ test('a user can create an idea through the browser', function () {
         'status' => 'completed',
         'description' => 'This is my first idea description.',
         'links' => ['http://localhost:8000/ideas'],
+        'image_path' => $idea->image_path,
+        'user_id' => $user->id,
     ]);
+
+    expect($idea->steps)->toHaveCount(2);
 });
