@@ -50,8 +50,6 @@
             </div>
         @endif
 
-
-
         @if (!empty($idea->links))
             <div>
                 <h2 class="text-2xl mb-4 font-bold">Link</h2>
