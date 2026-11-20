@@ -253,6 +253,7 @@ $(document).ready(function () {
                 .map(
                     (step, index) => `
             <div class="flex w-full items-center gap-2 mb-2">
+                <input type="hidden" name="step_ids[]" value="${step.id || ''}">
                 <input class="input w-full rounded pr-12" 
                        type="text" 
                        name="steps[]" 
