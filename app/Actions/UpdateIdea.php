@@ -29,9 +29,31 @@ class UpdateIdea
         DB::transaction(function () use ($data, $attributes) {
             $this->idea->update($data);
 
-            $this->idea->steps()->updateMany(
-                collect($attributes['steps'] ?? [])->map(fn ($step) => ['description' => $step])
-            );
+            $stepids = $attributes['steps_ids'] ?? [];
+            $stepDescriptions = $attributes['steps'] ?? [];
+
+
+            $existingSteps = $this->idea->steps()->pluck('id')->toArray();
+            $submittedStepIds = array_filter($stepids);
+
+
+            $stepsToDelete = array_diff($existingSteps, $submittedStepIds);
+
+            if(!empty($stepsToDelete)){
+                $this->idea->steps()->whereIn('id', $stepsToDelete)->delete();
+            }
+
+            foreach ($stepDescriptions as $index => $description){
+                $stepId = $stepIds[$index] ?? null;
+
+                if($stepId && in_array($stepId, $existingSteps)){
+                    $this->idea->steps()->where('id', $stepId)->update(['description' => $description]);
+                }
+                else{
+                    $this->idea->steps()->create(['description' => $description]);
+                }
+            }
+            
         });
 
     }
