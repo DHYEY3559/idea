@@ -140,14 +140,31 @@
                     <div class="mt-4">
                         <label for="links" class="mb-2 block text-sm font-medium">Links</label>
                         <div id="links-container" class="flex flex-col gap-y-2">
+
+                             <input type="text" 
+                                        id="new-link-edit" 
+                                        class="input w-full">
+                            <button type="button" 
+                                class="btn btn-outlined">
+                                    Add Link
+                            </button>
+
                             @foreach ($idea->links as $index=>$link)
                                 <div class="flex items-center gap-x-2">
-                                    <input type="text" id="new-link-edit" name="links[]" value="{{ $link }}" class="input w-full">
-                                    <button type="button" class="btn btn-outlined remove-link-edit" data-index="{{ $index }}">Remove</button>
+                                    <input type="text" 
+                                        id="new-link-edit" 
+                                        name="links[]" 
+                                        value="{{ $link }}" 
+                                        class="input w-full">
+                                    <button type="button" 
+                                        class="btn btn-outlined 
+                                            remove-link-edit" 
+                                        data-index="{{ $index }}">
+                                            Remove
+                                    </button>
                                 </div>
                             @endforeach
                         </div>
-                        <button type="button" id="add-link" class="btn btn-outlined mt-2">Add Link</button>
                         <div  class="editLinkStack flex w-full flex-col" ></div>
                     </div>
 
