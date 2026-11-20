@@ -35,11 +35,9 @@ class IdeaPolicy
     /**
      * Determine whether the user can update the model.
      */
-    public function update(User $user, Idea $idea): Response
+    public function update(User $user, Idea $idea): bool
     {
-        return $user->id === $idea->user_id
-                ? Response::allow()
-                : Response::denyAsNotFound();
+        return true;
     }
 
     /**
