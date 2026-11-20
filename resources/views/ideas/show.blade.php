@@ -52,7 +52,7 @@
                                 @csrf
                                 @method('PATCH')
                                 <div class="text-muted-foreground flex gap-x-3 text-sm">
-                                    <button ype="submit" role="checkbox" class="size-5 flex items-center justify-center rounded-lg text-primary-foreground border border-primary {{ $step->completed ? "bg-primary" : "border border-primary" }}">
+                                    <button type="submit" role="checkbox" class="size-5 flex items-center justify-center rounded-lg text-primary-foreground border border-primary {{ $step->completed ? "bg-primary" : "border border-primary" }}">
                                         &check;
                                     </button>
                                 </span>

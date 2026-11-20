@@ -212,7 +212,7 @@ $(document).ready(function () {
     $('#edit-idea-button').click(function () {
         editStepStack = [];
         $('#steps-container input[name="steps[]"]').each(function () {
-            const value = $(this).val().trim();
+            const value = $(this).closest('div').find('input[name="step_ids[]"]').val();;
             if (value) editStepStack.push(value);
         });
         $('#steps-container').empty();

@@ -75,7 +75,8 @@ class IdeaController extends Controller
      */
     public function update(UpdateIdeaRequest $request, UpdateIdea $updateIdea)
     {
-        $updateIdea->handle($request->safe()->all());
+        dd($request->all());
+        $updateIdea->handle($request->all());
 
         return redirect()->route('ideas.index')->with('success', 'Idea updated successfully.');
     }

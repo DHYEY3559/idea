@@ -34,6 +34,8 @@ class UpdateIdeaRequest extends FormRequest
             'image' => ['nullable', 'image', 'sometimes'],
             'steps' => ['nullable', 'array'],
             'steps.*' => ['required', 'string'],
+            'step_ids' => ['nullable', 'array'],
+            'step_ids.*' => ['nullable', 'integer', 'exists:steps,id'],
         ];
     }
 }
