@@ -123,16 +123,28 @@
                     </div>
 
                     <div class="mt-4">
-                        <label for="links" class="mb-2 block text-sm font-medium">Steps</label>
-                        <div class="flex flex-col gap-y-2">
-                            @foreach ($idea->steps as $key => $steps)
+                        <label for="steps" class="mb-2 block text-sm font-medium">Steps</label>
+                        <div class="mb-4 flex gap-x-2">
+                            <input type="text" id="new-step-edit" placeholder="Add a Step" class="input w-full">
+                            <button type="button" id="add-step-button" class="btn btn-primary">Add Step</button>
+                        </div>
+                        <div id="steps-container" class="flex flex-col gap-y-2">
+                            @foreach ($idea->steps as $index=>$steps)
                                 <div class="flex items-center gap-x-2">
-                                    <input type="text" name="steps[]" value="{{ $steps->description }}" class="input w-full">
-                                    <button type="button" class="btn btn-outlined">Remove</button>
+                                    <input type="text"
+                                        name="steps[]"
+                                        value="{{ $steps }}"
+                                        class="input w-full">
+                                    <button type="button"
+                                        class="btn btn-outlined
+                                        remove-step-edit"
+                                        data-index="{{ $index }}">
+                                        Remove
+                                    </button>
                                 </div>
                             @endforeach
                         </div>
-                        <button type="button" id="add-step-button" class="btn btn-outlined mt-2">Add Step</button>
+                        <div  class="editStepStack flex w-full flex-col" ></div>
                     </div>
 
                     <div class="mt-4">
