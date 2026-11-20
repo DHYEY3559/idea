@@ -131,6 +131,9 @@
                         <div id="steps-container" class="flex flex-col gap-y-2">
                             @foreach ($idea->steps as $index=>$steps)
                                 <div class="flex items-center gap-x-2">
+                                    <input type="hidden" 
+                                        name="step_ids[]" 
+                                        value="{{ $step->id }}">
                                     <input type="text"
                                         name="steps[]"
                                         value="{{ $steps }}"
