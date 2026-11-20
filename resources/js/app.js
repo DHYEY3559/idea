@@ -40,7 +40,7 @@ $(document).ready(function () {
     });
 
     let linkStack = [];
-    $(document).on('click', '#add-link', function () {
+    $("#create-modal").on('click', '#add-link', function () {
         const newLink = $('#new-link')[0];
         if (!newLink.checkValidity()) {
             newLink.reportValidity();
@@ -91,7 +91,7 @@ $(document).ready(function () {
     }
 
     let StepStack = [];
-    $(document).on('click', '#add-step', function () {
+    $("#create-modal").on('click', '#add-step', function () {
         const newLink = $('#new-step')[0];
         if (!newLink.checkValidity()) {
             newLink.reportValidity();
@@ -148,13 +148,13 @@ $(document).ready(function () {
     let editLinkStack = [];
 
     //first to start
-    $(document).on('click', '#add-link', function () {
+    $('#edit-idea-button').click(function () {
         editLinkStack = [];
         $('#links-container input[name="links[]"]').each(function () {
             const value = $(this).val().trim();
             if(value) editLinkStack.push(value);
         });
-        $('#links-container') = [];
+        $('#links-container').empty();
         RenderEditLinks();
     });
 
