@@ -46,35 +46,6 @@ class IdeaController extends Controller
      */
     public function store(StoreIdeaRequest $request, CreateIdea $createIdea)
     {
-
-        /*$validated = $request->validated();
-
-        $idea = new Idea();
-        $idea->title = $validated['title'];
-        $idea->user_id = Auth::id();
-        $idea->description = $validated['description'] ?? null;
-        $idea->status = $validated['status'] ?? 'pending';
-        $idea->links = $validated['links'] ?? [];
-        $idea->save();*/
-
-        // (new CreateIdea)->handle($request->safe()->all());
-        /*$validated = $request->validated();
-
-        $idea = $request->user()->ideas()->create([
-            ...$request->safe()->except('image', 'steps'),
-            'links' => $validated['links'] ?? [],
-        ]);
-
-        $idea->steps()->createMany(
-            collect($request->steps)->map(fn($step) => ['description' => $step])
-        );
-
-        if($request->hasFile('image')) {
-            $idea->update([
-                'image_path' => $request->file('image')->store('images', 'public'),
-            ]);
-        }*/
-
         $createIdea->handle($request->safe()->all());
 
         return redirect()->route('ideas.index')->with('success', 'Idea created successfully.');
