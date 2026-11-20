@@ -204,7 +204,6 @@ $(document).ready(function () {
     }
 });
 
-
 //steps guy
 $(document).ready(function () {
     let editStepStack = [];

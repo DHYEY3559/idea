@@ -136,8 +136,7 @@
                                         value="{{ $steps }}"
                                         class="input w-full">
                                     <button type="button"
-                                        class="btn btn-outlined
-                                        remove-step-edit"
+                                        class="btn btn-outlined remove-step-edit"
                                         data-index="{{ $index }}">
                                         Remove
                                     </button>
@@ -161,8 +160,7 @@
                                         value="{{ $link }}"
                                         class="input w-full">
                                     <button type="button"
-                                        class="btn btn-outlined
-                                        remove-link-edit"
+                                        class="btn btn-outlined remove-link-edit"
                                         data-index="{{ $index }}">
                                         Remove
                                     </button>
