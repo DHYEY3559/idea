@@ -139,30 +139,26 @@
 
                     <div class="mt-4">
                         <label for="links" class="mb-2 block text-sm font-medium">Links</label>
-                        <div class="flex flex-col gap-y-2">
-
-                             <input type="text" 
-                                        id="new-link-edit" 
-                                        class="input w-full">
-                            <button type="button" 
-                                class="btn btn-outlined" id="add-link">
-                                    Add Link
-                            </button>
-
-                            @foreach ($idea->links as $index=>$link)
-                                <div class="flex items-center gap-x-2">
-                                    <input type="text"
-                                        name="links[]" 
-                                        value="{{ $link }}" 
-                                        class="input w-full">
-                                    <button type="button" 
-                                        class="btn btn-outlined 
-                                            remove-link-edit" 
-                                        data-index="{{ $index }}">
-                                            Remove
-                                    </button>
-                                </div>
-                            @endforeach
+                            <div class="flex gap-x-2 mb-4">
+                                <input type="url" id="new-link-edit" placeholder="https://example.com" class="input w-full">
+                                <button type="button" id="add-link" class="btn btn-primary">Add Link</button>
+                            </div>
+                            <div id="links-container" class="flex flex-col gap-y-2">
+                                @foreach ($idea->links as $index=>$link)
+                                    <div class="flex items-center gap-x-2">
+                                        <input type="text"
+                                            name="links[]" 
+                                            value="{{ $link }}" 
+                                            class="input w-full">
+                                        <button type="button" 
+                                            class="btn btn-outlined 
+                                                remove-link-edit" 
+                                            data-index="{{ $index }}">
+                                                Remove
+                                        </button>
+                                    </div>
+                                @endforeach
+                            </div>
                         </div>
                         <div  class="editLinkStack flex w-full flex-col" ></div>
                     </div>
