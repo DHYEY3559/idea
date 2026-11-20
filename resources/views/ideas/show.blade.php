@@ -110,8 +110,6 @@
                         <input type="hidden" name="status" value="{{ $idea->status->value }}" id="status">
                     </div>
 
-
-
                     <div>
                         <label for="description" class="mb-2 block text-sm font-medium">Description</label>
                         <textarea name="description" id="description" rows="4" class="input w-full">{{ $idea->description }}</textarea>
@@ -139,46 +137,42 @@
 
                     <div class="mt-4">
                         <label for="links" class="mb-2 block text-sm font-medium">Links</label>
-                            <div class="flex gap-x-2 mb-4">
-                                <input type="url" id="new-link-edit" placeholder="https://example.com" class="input w-full">
-                                <button type="button" id="add-link" class="btn btn-primary">Add Link</button>
-                            </div>
-                            <div id="links-container" class="flex flex-col gap-y-2">
-                                @foreach ($idea->links as $index=>$link)
-                                    <div class="flex items-center gap-x-2">
-                                        <input type="text"
-                                            name="links[]" 
-                                            value="{{ $link }}" 
-                                            class="input w-full">
-                                        <button type="button" 
-                                            class="btn btn-outlined 
-                                                remove-link-edit" 
-                                            data-index="{{ $index }}">
-                                                Remove
-                                        </button>
-                                    </div>
-                                @endforeach
-                            </div>
+                        <div class="mb-4 flex gap-x-2">
+                            <input type="url" id="new-link-edit" placeholder="https://example.com" class="input w-full">
+                            <button type="button" id="add-link" class="btn btn-primary">Add Link</button>
                         </div>
-                        <div  class="editLinkStack flex w-full flex-col" ></div>
+                        <div id="links-container" class="flex flex-col gap-y-2">
+                            @foreach ($idea->links as $index=>$link)
+                                <div class="flex items-center gap-x-2">
+                                    <input type="text"
+                                        name="links[]"
+                                        value="{{ $link }}"
+                                        class="input w-full">
+                                    <button type="button"
+                                        class="btn btn-outlined
+                                        remove-link-edit"
+                                        data-index="{{ $index }}">
+                                        Remove
+                                    </button>
+                                </div>
+                            @endforeach
+                        </div>
                     </div>
-
-                    <div class="flex justify-end gap-x-2">
-                        <button type="submit" class="btn btn-primary mt-4">Update Idea</button>
-                        <button type="button"
-                            class="edit-modal-close btn btn-outlined mt-4"
-                            data-modal-toggle="edit-modal">
-                            Cancel
-                        </button>
-                    </div>
+                    <div  class="editLinkStack flex w-full flex-col" ></div>
                 </div>
-            </form>
-        </div>
 
+                <div class="flex justify-end gap-x-2">
+                    <button type="submit" class="btn btn-primary mt-4">Update Idea</button>
+                    <button type="button"
+                        class="edit-modal-close btn btn-outlined mt-4"
+                        data-modal-toggle="edit-modal">
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
 
-    </x-modal>
-
-
-
+</x-modal>
 
 </x-layout>
