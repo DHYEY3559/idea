@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Actions\CreateIdea;
+use App\Actions\UpdateIdea;
 use App\Http\Requests\StoreIdeaRequest;
 use App\Http\Requests\UpdateIdeaRequest;
 use App\IdeaStatus;
@@ -72,9 +73,11 @@ class IdeaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateIdeaRequest $request, Idea $idea)
+    public function update(UpdateIdeaRequest $request, UpdateIdea $updateIdea)
     {
-        dd($request->all());
+        $updateIdea->handle($request->safe()->all());
+
+        return redirect()->route('ideas.index')->with('success', 'Idea updated successfully.');
     }
 
     /**
@@ -84,6 +87,6 @@ class IdeaController extends Controller
     {
         $idea->delete();
 
-        return redirect()->route('ideas.index')->with('success', 'Idea deleted successfully.');
+        return redirect()->route('ideas.show')->with('success', 'Idea deleted successfully.');
     }
 }
