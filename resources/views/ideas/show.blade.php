@@ -140,7 +140,7 @@
                     <div class="mt-4">
                         <label for="links" class="mb-2 block text-sm font-medium">Links</label>
                         <div id="links-container" class="flex flex-col gap-y-2">
-                            @foreach ($idea->links as $key => $link)
+                            @foreach ($idea->links as $link)
                                 <div class="flex items-center gap-x-2">
                                     <input type="text" name="links[]" value="{{ $link }}" class="input w-full">
                                     <button type="button" class="btn btn-outlined remove-link-button">Remove</button>
