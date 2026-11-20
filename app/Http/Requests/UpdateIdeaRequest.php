@@ -2,7 +2,11 @@
 
 namespace App\Http\Requests;
 
+use App\IdeaStatus;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
+
+
 
 class UpdateIdeaRequest extends FormRequest
 {
@@ -22,7 +26,14 @@ class UpdateIdeaRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'title' => ['required', 'string', 'max:255'],
+            'description' => ['nullable', 'string'],
+            'status' => ['nullable', Rule::enum(IdeaStatus::class)],
+            'links' => ['nullable', 'array'],
+            'links.*' => ['nullable', 'url'],
+            'image' => ['nullable', 'image', 'sometimes'],
+            'steps' => ['nullable', 'array'],
+            'steps.*' => ['required', 'string'],
         ];
     }
 }
