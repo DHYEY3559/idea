@@ -1,0 +1,55 @@
+# Base image with PHP 8.4
+FROM php:8.4-fpm-alpine
+
+# Install system dependencies
+RUN apk add --no-cache \
+    nginx \
+    git \
+    curl \
+    libpng-dev \
+    libjpeg-turbo-dev \
+    freetype-dev \
+    libzip-dev \
+    zip \
+    unzip \
+    oniguruma-dev \
+    linux-headers \
+    $PHPIZE_DEPS \
+    netcat-openbsd
+
+# Install PHP extensions
+RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install -j$(nproc) \
+    pdo_mysql \
+    mbstring \
+    exif \
+    pcntl \
+    bcmath \
+    gd \
+    zip \
+    opcache
+
+# Install Redis extension
+RUN pecl install redis && docker-php-ext-enable redis
+
+# Install Composer
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+
+# Install Node.js and npm
+RUN apk add --no-cache nodejs npm
+
+# Set working directory
+WORKDIR /var/www/html
+
+# Copy nginx dev configuration
+COPY docker/nginx.dev.conf /etc/nginx/nginx.conf
+
+# Copy entrypoint script
+COPY docker/entrypoint.dev.sh /usr/local/bin/entrypoint.sh
+RUN chmod +x /usr/local/bin/entrypoint.sh
+
+# Expose ports
+EXPOSE 8000 5173
+
+# Use entrypoint
+ENTRYPOINT ["entrypoint.sh"]
