@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\IdeaStatus;
 use Illuminate\Database\Eloquent\Casts\AsArrayObject;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -14,6 +15,13 @@ class Idea extends Model
 {
     /** @use HasFactory<IdeaFactory> */
     use HasFactory;
+
+    protected function links(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($value) => $value ?? new \ArrayObject(),
+        );
+    }
 
     protected $casts = [
         'links' => AsArrayObject::class,
