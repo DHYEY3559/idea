@@ -32,7 +32,6 @@ $(document).ready(function () {
         });
     });
 
-
     $(document).on('click', '.status-btn', function () {
         $('#status').val($(this).data('status'));
         $('.status-btn').removeClass('btn-primary').addClass('btn-outlined');
@@ -40,7 +39,7 @@ $(document).ready(function () {
     });
 
     let linkStack = [];
-    $("#create-modal").on('click', '#add-link', function () {
+    $('#create-modal').on('click', '#add-link', function () {
         const newLink = $('#new-link')[0];
         if (!newLink.checkValidity()) {
             newLink.reportValidity();
@@ -91,7 +90,7 @@ $(document).ready(function () {
     }
 
     let StepStack = [];
-    $("#create-modal").on('click', '#add-step', function () {
+    $('#create-modal').on('click', '#add-step', function () {
         const newLink = $('#new-step')[0];
         if (!newLink.checkValidity()) {
             newLink.reportValidity();
@@ -140,9 +139,7 @@ $(document).ready(function () {
     }
 });
 
-
 // show.blade.php js here
-
 
 $(document).ready(function () {
     let editLinkStack = [];
@@ -152,7 +149,7 @@ $(document).ready(function () {
         editLinkStack = [];
         $('#links-container input[name="links[]"]').each(function () {
             const value = $(this).val().trim();
-            if(value) editLinkStack.push(value);
+            if (value) editLinkStack.push(value);
         });
         $('#links-container').empty();
         RenderEditLinks();
@@ -166,9 +163,9 @@ $(document).ready(function () {
             newLink.reportValidity();
             return;
         }
-        
+
         const value = newLink.value.trim();
-        if(editLinkStack.includes(value)) {
+        if (editLinkStack.includes(value)) {
             return;
         }
         editLinkStack.push(value);
@@ -184,11 +181,13 @@ $(document).ready(function () {
         e.stopPropagation();
     });
 
-
     //render the links guy
     function RenderEditLinks() {
-    $('.editLinkStack').html(  // Changed from $('#editLinkStack')
-        editLinkStack.map((link, index) => `
+        $('.editLinkStack').html(
+            // Changed from $('#editLinkStack')
+            editLinkStack
+                .map(
+                    (link, index) => `
             <div class="flex w-full items-center gap-2 mb-2">
                 <input class="input w-full rounded pr-12" 
                        type="text" 
@@ -198,7 +197,9 @@ $(document).ready(function () {
                         class="remove-link-edit shrink-0 text-2xl leading-none text-red-500" 
                         data-index="${index}">&times;</button>
             </div>
-        `).join('')
-    );
-}
+        `,
+                )
+                .join(''),
+        );
+    }
 });
