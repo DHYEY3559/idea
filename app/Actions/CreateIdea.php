@@ -16,7 +16,10 @@ class CreateIdea
     public function handle(array $attributes)
     {
 
-        $data = collect($attributes)->only(['title', 'description', 'status', 'links'])->toArray();
+        $data = array_merge(
+            ['title' => '', 'description' => '', 'status' => 'pending', 'links' => []],
+            collect($attributes)->only(['title', 'description', 'status', 'links' ?? []])->toArray(),
+            );
 
         if ($attributes['image'] ?? false) {
             $data['image_path'] = $attributes['image']->store('images', 'public');
