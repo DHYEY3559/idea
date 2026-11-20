@@ -146,53 +146,27 @@ $(document).ready(function () {
 
 $(document).ready(function () {
     let editLinkStack = [];
-    $(document).on('click', '.editLinkStack', function () {
-        const newLink = $('#new-link-edit')[0];
-        if (!newLink.checkValidity()) {
-            newLink.reportValidity();
-            return;
-        }
-
-        const value = newLink.value.trim();
-
-        if (editLinkStack.includes(value)) {
-            return;
-        }
-        editLinkStack.push(value);
+    $(document).on('click', '#add-link', function () {
+        editLinkStack = [];
+        $('#editLinkStack input[name="links[]"]').each(function () {
+            editLinkStack.push($(this).val());
+        });
         RenderEditLinks();
-        $('#new-link-edit').val('');
-    });
-
-    $(document).on('click', '.remove-link-edit', function (e) {
-        const index = $(this).data('index');
-        editLinkStack.splice(index, 1);
-        RenderEditLinks();
-        e.stopPropagation();
     });
 
     function RenderEditLinks() {
-        $('#editLinkStack').html(
-            editLinkStack
-                .map(
-                    (link, index) =>
-                        `
-            <div class="flex w-full items-center gap-2" style="margin-bottom: 10px;">
-                <input class=input w-full
-                            rounded pr-12"
-                            type="text"
-                            data-index="${index}"
-                            name="links[]"
-                            value="${link}">
-                </input>
-                <button class="remove-link-edit shrink-0 text-2xl leading-none text-red-500"
-                        type="button"
-                        data-test="remove-link-edit">
-                    &times;
-                </button>
+    $('.editLinkStack').html(  // Changed from $('#editLinkStack')
+        editLinkStack.map((link, index) => `
+            <div class="flex w-full items-center gap-2 mb-2">
+                <input class="input w-full rounded pr-12" 
+                       type="text" 
+                       name="links[]" 
+                       value="${link}">
+                <button type="button" 
+                        class="remove-link-edit shrink-0 text-2xl leading-none text-red-500" 
+                        data-index="${index}">&times;</button>
             </div>
-            `,
-                )
-                .join(''),
-        );
-    }
+        `).join('')
+    );
+}
 });
