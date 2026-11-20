@@ -47,7 +47,7 @@ test('a user can create an idea through the browser', function () {
     expect($idea->steps)->toHaveCount(2);
 });
 
-it('a user can edit their idea', function(){
+it('a user can edit their idea', function () {
     /** @var TestCase $this */
     $this->actingAs($user = User::factory()->create());
 
