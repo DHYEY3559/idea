@@ -125,29 +125,30 @@
                     </div>
 
                     <div class="mt-4">
-                        <label for="links" class="mb-2 block text-sm font-medium">Links</label>
-                        <div id="links-container" class="flex flex-col gap-y-2">
+                        <label for="links" class="mb-2 block text-sm font-medium">Steps</label>
+                        <div class="flex flex-col gap-y-2">
                             @foreach ($idea->steps as $key => $steps)
                                 <div class="flex items-center gap-x-2">
                                     <input type="text" name="steps[]" value="{{ $steps->description }}" class="input w-full">
-                                    <button type="button" class="btn btn-outlined remove-link-button">Remove</button>
+                                    <button type="button" class="btn btn-outlined">Remove</button>
                                 </div>
                             @endforeach
                         </div>
-                        <button type="button" id="add-link-button" class="btn btn-outlined mt-2">Add Link</button>
+                        <button type="button" id="add-step-button" class="btn btn-outlined mt-2">Add Step</button>
                     </div>
 
                     <div class="mt-4">
                         <label for="links" class="mb-2 block text-sm font-medium">Links</label>
                         <div id="links-container" class="flex flex-col gap-y-2">
-                            @foreach ($idea->links as $link)
+                            @foreach ($idea->links as $index=>$link)
                                 <div class="flex items-center gap-x-2">
-                                    <input type="text" name="links[]" value="{{ $link }}" class="input w-full">
-                                    <button type="button" class="btn btn-outlined remove-link-button">Remove</button>
+                                    <input type="text" id="new-link-edit" name="links[]" value="{{ $link }}" class="input w-full">
+                                    <button type="button" class="btn btn-outlined remove-link-edit" data-index="{{ $index }}">Remove</button>
                                 </div>
                             @endforeach
                         </div>
-                        <button type="button" id="add-link-button" class="btn btn-outlined mt-2">Add Link</button>
+                        <button type="button" id="add-link" class="btn btn-outlined mt-2">Add Link</button>
+                        <div  class="editLinkStack flex w-full flex-col" ></div>
                     </div>
 
                     <div class="flex justify-end gap-x-2">
