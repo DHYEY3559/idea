@@ -150,10 +150,6 @@
                         <button type="button" id="add-link-button" class="btn btn-outlined mt-2">Add Link</button>
                     </div>
 
-
-
-
-
                     <div class="flex justify-end gap-x-2">
                         <button type="submit" class="btn btn-primary mt-4">Update Idea</button>
                         <button type="button"
