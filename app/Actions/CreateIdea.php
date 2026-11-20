@@ -19,7 +19,7 @@ class CreateIdea
         $data = array_merge(
             ['title' => '', 'description' => '', 'status' => 'pending', 'links' => []],
             collect($attributes)->only(['title', 'description', 'status', 'links' ?? []])->toArray(),
-            );
+        );
 
         if ($attributes['image'] ?? false) {
             $data['image_path'] = $attributes['image']->store('images', 'public');
