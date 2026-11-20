@@ -5,8 +5,8 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisteredUserController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\StepController;
-use Illuminate\Support\Facades\Route;
 use App\Models\Idea;
+use Illuminate\Support\Facades\Route;
 
 Route::redirect('/', '/ideas');
 Route::group(['middleware' => 'guest'], function () {
