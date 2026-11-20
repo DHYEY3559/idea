@@ -53,6 +53,10 @@ class UpdateIdea
                     $this->idea->steps()->create(['description' => $description]);
                 }
             }
+
+            if (isset($attributes['links'])) {
+                $this->idea->update(['links' => $attributes['links']]);
+            }
             
         });
 
