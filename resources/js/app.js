@@ -140,7 +140,7 @@ $(document).ready(function () {
 });
 
 // show.blade.php js here
-
+//links guy
 $(document).ready(function () {
     let editLinkStack = [];
 
@@ -195,6 +195,71 @@ $(document).ready(function () {
                        value="${link}">
                 <button type="button" 
                         class="remove-link-edit shrink-0 text-2xl leading-none text-red-500" 
+                        data-index="${index}">&times;</button>
+            </div>
+        `,
+                )
+                .join(''),
+        );
+    }
+});
+
+
+//steps guy
+$(document).ready(function () {
+    let editStepStack = [];
+
+    //first to start
+    $('#edit-idea-button').click(function () {
+        editStepStack = [];
+        $('#steps-container input[name="steps[]"]').each(function () {
+            const value = $(this).val().trim();
+            if (value) editStepStack.push(value);
+        });
+        $('#steps-container').empty();
+        RenderEditSteps();
+    });
+
+    //add step guy
+
+    $(document).on('click', '#add-step-button', function () {
+        const newStep = $('#new-step-edit')[0];
+        if (!newStep.checkValidity()) {
+            newStep.reportValidity();
+            return;
+        }
+
+        const value = newStep.value.trim();
+        if (editStepStack.includes(value)) {
+            return;
+        }
+        editStepStack.push(value);
+        RenderEditSteps();
+        $('#new-step-edit').val('');
+    });
+
+    //remove step guy
+    $(document).on('click', '.remove-step-edit', function (e) {
+        const index = $(this).data('index');
+        editStepStack.splice(index, 1);
+        RenderEditSteps();
+        e.stopPropagation();
+    });
+
+    //render the steps guy
+    function RenderEditSteps() {
+        $('.editStepStack').html(
+            // Changed from $('#editStepStack')
+            editStepStack
+                .map(
+                    (step, index) => `
+            <div class="flex w-full items-center gap-2 mb-2">
+                <input class="input w-full rounded pr-12" 
+                       type="text" 
+                       name="steps[]" 
+                       value="${step}">
+                <button type="button" 
+                        class="remove-step-edit shrink-0 text-2xl leading-none text-red-500" 
                         data-index="${index}">&times;</button>
             </div>
         `,
