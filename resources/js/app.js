@@ -146,14 +146,46 @@ $(document).ready(function () {
 
 $(document).ready(function () {
     let editLinkStack = [];
+
+    //first to start
     $(document).on('click', '#add-link', function () {
         editLinkStack = [];
-        $('#editLinkStack input[name="links[]"]').each(function () {
-            editLinkStack.push($(this).val());
+        $('#links-container input[name="links[]"]').each(function () {
+            const value = $(this).val().trim();
+            if(value) editLinkStack.push(value);
         });
+        $('#links-container') = [];
         RenderEditLinks();
     });
 
+    //add link guy
+
+    $(document).on('click', '#add-link', function () {
+        const newLink = $('#new-link-edit')[0];
+        if (!newLink.checkValidity()) {
+            newLink.reportValidity();
+            return;
+        }
+        
+        const value = newLink.value.trim();
+        if(editLinkStack.includes(value)) {
+            return;
+        }
+        editLinkStack.push(value);
+        RenderEditLinks();
+        $('#new-link-edit').val('');
+    });
+
+    //remove link guy
+    $(document).on('click', '.remove-link-edit', function (e) {
+        const index = $(this).data('index');
+        editLinkStack.splice(index, 1);
+        RenderEditLinks();
+        e.stopPropagation();
+    });
+
+
+    //render the links guy
     function RenderEditLinks() {
     $('.editLinkStack').html(  // Changed from $('#editLinkStack')
         editLinkStack.map((link, index) => `
