@@ -12,7 +12,7 @@
         </div>
 
         <x-card is="div" class="overflow-hidden p-0">
-            <div class="from-primary/25 via-primary/10 to-card h-28 w-full bg-gradient-to-r"></div>
+            <div class="from-primary/25 via-primary/10 to-card h-28 w-full bg-linear-to-r"></div>
 
             <div class="px-6 pb-8 sm:px-8">
                 <div class="-mt-14 mb-6 flex flex-col items-start gap-5 sm:flex-row sm:items-end">
