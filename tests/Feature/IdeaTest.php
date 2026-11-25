@@ -51,34 +51,39 @@ it('a user can edit their idea', function () {
     /** @var TestCase $this */
     $this->actingAs($user = User::factory()->create());
 
+     $imagePath = sys_get_temp_dir().'/idea-browser-test.png';
+
+    file_put_contents(
+        $imagePath,
+        base64_decode('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=')
+    );
+
     $idea = Idea::factory()->for($user)->create();
 
     visit(route('ideas.show', $idea))
         ->click('@edit-idea-button')
-        ->debug();
-    //     ->fill('title', 'My First Idea')
-    //     ->click('@status-button-completed')
-    //     ->fill('description', 'This is my first idea description.')
-    //     ->fill('new-link', 'http://localhost:8000/ideas')
-    //     ->click('add-link')
-    //     ->attach('image', $imagePath)
-    //     ->fill('new-step', 'Do a thing')
-    //     ->click('add-step')
-    //     ->fill('new-step', 'Do a thing part 2')
-    //     ->click('add-step')
-    //     ->press('Create Idea')
-    //     ->assertPathIs('/ideas');
+        ->fill('title', 'My First Idea')
+        ->click('@status-button-completed')
+        ->fill('description', 'This is my first idea description.')
+        ->fill('new-link-edit', 'http://localhost:8000/ideas')
+        ->click('add-link')
+        ->attach('image', $imagePath)
+        ->fill('new-step-edit', 'Do a thing')
+        ->click('add-step-button')
+        ->fill('new-step-edit', 'Do a thing part 2')
+        ->click('add-step-button')
+        ->press('Update Idea')
+        ->assertPathIs('/ideas');
 
-    // $idea = $user->ideas()->firstOrFail();
+    $idea = $user->ideas()->firstOrFail();
 
-    // expect($idea->toArray())->toMatchArray([
-    //     'title' => 'My First Idea',
-    //     'status' => 'completed',
-    //     'description' => 'This is my first idea description.',
-    //     'links' => ['http://localhost:8000/ideas'],
-    //     'image_path' => $idea->image_path,
-    //     'user_id' => $user->id,
-    // ]);
+    expect($idea->toArray())->toMatchArray([
+        'title' => 'My First Idea',
+        'status' => 'completed',
+        'description' => 'This is my first idea description.',
+        'image_path' => $idea->image_path,
+        'user_id' => $user->id,
+    ]);
 
-    // expect($idea->steps)->toHaveCount(2);
+    expect($idea->steps)->toHaveCount(2);
 });

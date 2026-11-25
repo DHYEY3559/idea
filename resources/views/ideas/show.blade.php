@@ -167,7 +167,7 @@
             <div>
                 <label for="links" class="label mb-2">Links</label>
                 <div class="mb-3 flex gap-2">
-                    <input type="url" id="new-link-edit" placeholder="https://example.com" class="input w-full">
+                    <input type="url" data-test="new-link-edit" id="new-link-edit" placeholder="https://example.com" class="input w-full">
                     <button type="button" id="add-link" class="btn btn-primary shrink-0">Add Link</button>
                 </div>
                 <div id="links-container" class="flex flex-col gap-y-2">
