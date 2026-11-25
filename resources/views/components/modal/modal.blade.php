@@ -12,7 +12,7 @@
         <div class="border-border/80 flex items-center justify-between border-b px-6 py-4">
             <h2 id="modal-{{ $name }}-title" class="text-xl font-bold tracking-tight">{{ $title }}</h2>
             <button type="button"
-                class="{{ $name }}-modal-close text-muted-foreground hover:text-foreground hover:bg-white/8 flex size-8 items-center justify-center rounded-lg text-xl leading-none transition-colors"
+                class="{{ $name }} -modal-close text-muted-foreground hover:text-foreground flex size-8 items-center justify-center rounded-lg text-xl leading-none transition-colors hover:bg-white/8"
                 aria-label="Close modal">
                 &times;
             </button>

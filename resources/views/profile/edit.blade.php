@@ -26,7 +26,7 @@
                         <input type="file" name="profile_image" id="upload_profile" accept="image/*" class="sr-only">
                         <label
                             for="upload_profile"
-                            class="bg-primary text-primary-foreground border-card hover:scale-105 absolute right-0 bottom-0 flex size-9 cursor-pointer items-center justify-center rounded-full border-2 shadow-lg transition-transform"
+                            class="bg-primary text-primary-foreground border-card absolute right-0 bottom-0 flex size-9 cursor-pointer items-center justify-center rounded-full border-2 shadow-lg transition-transform hover:scale-105"
                             title="Choose a profile photo"
                         >
                             <svg class="size-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">

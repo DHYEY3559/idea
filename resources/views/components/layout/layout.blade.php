@@ -12,7 +12,7 @@
     <title>Idea</title>
 </head>
 
-<body class="bg-background text-foreground relative min-h-screen selection:bg-primary/25 selection:text-primary">
+<body class="bg-background text-foreground selection:bg-primary/25 selection:text-primary relative min-h-screen">
     <div aria-hidden="true" class="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
         <div class="bg-primary/10 absolute -top-40 left-1/2 h-112 w-4xl -translate-x-1/2 rounded-full blur-3xl"></div>
     </div>

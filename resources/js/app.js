@@ -210,9 +210,13 @@ $(document).ready(function () {
     $('#edit-idea-button').click(function () {
         editStepStack = [];
         $('#steps-container input[name="steps[]"]').each(function () {
-            const stepId = $(this).closest('div').find('input[name="step_ids[]"]').val();;
+            const stepId = $(this)
+                .closest('div')
+                .find('input[name="step_ids[]"]')
+                .val();
             const description = $(this).val().trim();
-            if (description) editStepStack.push({id: stepId || '', description});
+            if (description)
+                editStepStack.push({ id: stepId || '', description });
         });
         $('#steps-container').empty();
         RenderEditSteps();
@@ -228,8 +232,8 @@ $(document).ready(function () {
         }
 
         const value = newStep.value.trim();
-        
-        editStepStack.push({id:'', description: value});
+
+        editStepStack.push({ id: '', description: value });
         RenderEditSteps();
         $('#new-step-edit').val('');
     });

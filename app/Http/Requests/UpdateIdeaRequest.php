@@ -6,8 +6,6 @@ use App\IdeaStatus;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
-
-
 class UpdateIdeaRequest extends FormRequest
 {
     /**
