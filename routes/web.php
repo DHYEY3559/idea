@@ -21,7 +21,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/ideas', [IdeaController::class, 'index'])->name('ideas.index');
     Route::get('/ideas/create', [IdeaController::class, 'create'])->can('create', Idea::class);
     Route::get('/ideas/{idea}', [IdeaController::class, 'show'])->name('ideas.show')->can('view', 'idea');
-    Route::delete('ideas/{idea}', [IdeaController::class, 'destroy'])->name('ideas.destroy');
+    Route::delete('ideas/{idea}', [IdeaController::class, 'destroy'])->name('ideas.destroy')->can('delete', 'idea');
     Route::post('/ideas', [IdeaController::class, 'store'])->name('ideas.store');
 
     Route::get('/ideas/{idea}/edit', [IdeaController::class, 'edit'])->name('ideas.edit')->can('update', 'idea');
