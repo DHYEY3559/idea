@@ -6,37 +6,56 @@ button {
     background: var(--color-primary);
     border-radius: var(--radius-xl);
     color: var(--color-primary-foreground);
-    padding-inline: calc(var(--spacing) * 3);
+    padding-inline: calc(var(--spacing) * 3.5);
     font-size: var(--text-sm);
-    font-weight: var(--font-weight-medium);
+    font-weight: var(--font-weight-semibold);
     cursor: pointer;
-    height: calc(var(--spacing) * 8);
-    line-height: calc(var(--spacing) * 8);
-    display: inline-block;
+    height: calc(var(--spacing) * 9);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: calc(var(--spacing) * 2);
+    white-space: nowrap;
+    transition:
+        background-color 180ms ease,
+        border-color 180ms ease,
+        color 180ms ease,
+        transform 120ms ease,
+        box-shadow 180ms ease;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn:hover {
+    background: color-mix(in srgb, white 10%, var(--color-primary));
+    text-decoration: none;
 }
 
 .btn.btn-outlined {
-    background: transparent;
+    background: color-mix(in srgb, var(--color-card) 70%, transparent);
     border: 1px solid var(--color-border);
-    border-color: var(--color-border);
     color: var(--color-foreground);
 }
 
 .btn.btn-outlined:hover {
-    background: color-mix(in srgb, black 25%, var(--color-input));
+    background: color-mix(in srgb, white 6%, var(--color-card));
+    border-color: oklch(0.34 0.01 260);
 }
 
 .btn.btn-ghost {
     background: transparent;
+    color: var(--color-muted-foreground);
+}
+
+.btn.btn-ghost:hover {
+    background: color-mix(in srgb, white 6%, transparent);
+    color: var(--color-foreground);
 }
 
 .btn:has(> svg) {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     column-gap: calc(var(--spacing) * 2);
-}
-
-.btn:hover {
-    background: color-mix(in srgb, black 10%, var(--color-primary));
-    text-decoration: none;
 }

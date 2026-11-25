@@ -70,8 +70,7 @@ $(document).ready(function () {
                     (link, index) =>
                         `
             <div class="flex w-full items-center gap-2" style="margin-bottom: 10px;">
-                <input class=input w-full
-                            rounded pr-12"
+                <input class="input w-full rounded pr-12"
                             type="text"
                             data-index="${index}"
                             name="links[]"
@@ -120,8 +119,7 @@ $(document).ready(function () {
                 (Step, index) =>
                     `
             <div class="flex w-full items-center gap-2" style="margin-bottom: 10px;">
-                <input class=input w-full
-                            rounded pr-12"
+                <input class="input w-full rounded pr-12"
                             type="text"
                             data-index="${index}"
                             name="steps[]"
@@ -212,8 +210,9 @@ $(document).ready(function () {
     $('#edit-idea-button').click(function () {
         editStepStack = [];
         $('#steps-container input[name="steps[]"]').each(function () {
-            const value = $(this).closest('div').find('input[name="step_ids[]"]').val();;
-            if (value) editStepStack.push(value);
+            const stepId = $(this).closest('div').find('input[name="step_ids[]"]').val();;
+            const description = $(this).val().trim();
+            if (description) editStepStack.push({id: stepId || '', description});
         });
         $('#steps-container').empty();
         RenderEditSteps();
@@ -229,10 +228,8 @@ $(document).ready(function () {
         }
 
         const value = newStep.value.trim();
-        if (editStepStack.includes(value)) {
-            return;
-        }
-        editStepStack.push(value);
+        
+        editStepStack.push({id:'', description: value});
         RenderEditSteps();
         $('#new-step-edit').val('');
     });
@@ -257,7 +254,7 @@ $(document).ready(function () {
                 <input class="input w-full rounded pr-12" 
                        type="text" 
                        name="steps[]" 
-                       value="${step}">
+                       value="${step.description}">
                 <button type="button" 
                         class="remove-step-edit shrink-0 text-2xl leading-none text-red-500" 
                         data-index="${index}">&times;</button>

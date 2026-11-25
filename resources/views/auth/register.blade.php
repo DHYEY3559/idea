@@ -1,18 +1,20 @@
 <x-layout>
-    <x-form title="Register Your Account" description="Start creating Ideas Today">
-        <form action="/register" method="POST" class="mt-5 w-full max-w-md">
+    <x-form title="Create your account" description="Start capturing and organizing your ideas today.">
+        <form action="/register" method="POST" class="w-full">
             @csrf
-            <fieldset class="fieldset bg-base-200 border-primary flex w-100 flex-col gap-y-3 rounded-2xl border p-4">
+            <fieldset class="border-border/80 bg-card/85 flex w-full flex-col gap-y-4 rounded-2xl border p-6 shadow-xl backdrop-blur-sm">
+                <x-form.feild name='name' label='Name' placeholder="Your full name" />
 
-                <x-form.feild name='name' label='Name' />
+                <x-form.feild name='email' label='E-mail' type="email" placeholder="you@example.com" />
 
-                <x-form.feild name='email' label='E-mail' type="email" />
+                <x-form.feild name='password' label='Password' type="password" placeholder="••••••••" />
 
-                <x-form.feild name='password' label='Password' type="password" />
+                <button class="btn mt-2 h-10 w-full text-sm font-semibold" type="submit">Create Account</button>
 
-                <div class="grid grid-cols-1 gap-4">
-                    <button class="btn btn-neutral mt-4 text-lg font-semibold">Create Account</button>
-                </div>
+                <p class="text-muted-foreground pt-1 text-center text-xs">
+                    Already have an account?
+                    <a href="/login" class="text-primary font-medium hover:underline">Sign in</a>
+                </p>
             </fieldset>
         </form>
     </x-form>

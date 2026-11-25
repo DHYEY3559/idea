@@ -1,15 +1,18 @@
 <x-layout>
-    <x-form title="Glad, To Have You Back" description="Start creating Ideas Today">
-        <form action="/login" method="POST" class="mt-5 w-full max-w-md">
+    <x-form title="Welcome back" description="Sign in to continue capturing and organizing your ideas.">
+        <form action="/login" method="POST" class="w-full">
             @csrf
-            <fieldset class="fieldset bg-base-200 border-primary flex w-100 flex-col gap-y-3 rounded-2xl border p-4">
-                <x-form.feild name='email' label='E-mail' type="email" />
+            <fieldset class="border-border/80 bg-card/85 flex w-full flex-col gap-y-4 rounded-2xl border p-6 shadow-xl backdrop-blur-sm">
+                <x-form.feild name='email' label='E-mail' type="email" placeholder="you@example.com" />
 
-                <x-form.feild name='password' label='Password' type="password" />
+                <x-form.feild name='password' label='Password' type="password" placeholder="••••••••" />
 
-                <div class="grid grid-cols-1 gap-4">
-                    <button class="btn btn-neutral mt-4 text-lg font-semibold" type="submit">Login</button>
-                </div>
+                <button class="btn mt-2 h-10 w-full text-sm font-semibold" type="submit">Login</button>
+
+                <p class="text-muted-foreground pt-1 text-center text-xs">
+                    Don't have an account?
+                    <a href="/register" class="text-primary font-medium hover:underline">Create one</a>
+                </p>
             </fieldset>
         </form>
     </x-form>

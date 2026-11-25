@@ -11,12 +11,45 @@
         'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
         'Noto Color Emoji';
 
-    --color-background: oklch(0.12 0 0);
-    --color-foreground: oklch(0.95 0 0);
-    --color-card: oklch(0.16 0 0);
-    --color-primary: oklch(0.65 0.15 160);
-    --color-primary-foreground: oklch(0.12 0 0);
-    --color-border: oklch(0.24 0 0);
-    --color-input: oklch(0.24 0 0);
-    --color-muted-foreground: oklch(0.6 0 0);
+    --color-background: oklch(0.11 0.005 260);
+    --color-foreground: oklch(0.96 0.005 260);
+    --color-card: oklch(0.155 0.006 260);
+    --color-primary: oklch(0.7 0.16 160);
+    --color-primary-foreground: oklch(0.12 0.02 160);
+    --color-border: oklch(0.24 0.008 260);
+    --color-input: oklch(0.2 0.008 260);
+    --color-muted-foreground: oklch(0.64 0.01 260);
+}
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+        color-scheme: dark;
+    }
+
+    body {
+        font-family: var(--font-sans);
+        background-color: var(--color-background);
+        color: var(--color-foreground);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: oklch(0.28 0.008 260);
+        border-radius: 9999px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: oklch(0.36 0.01 260);
+    }
 }
