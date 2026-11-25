@@ -36,7 +36,7 @@ class IdeaPolicy
      */
     public function update(User $user, Idea $idea): bool
     {
-        return true;
+        return $user->is($idea->iser);
     }
 
     /**
