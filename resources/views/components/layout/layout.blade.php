@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <script src="https://cdn.jsdelivr.net/npm/lucide@1.80.0/dist/umd/lucide.min.js"></script>
     <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600,700" rel="stylesheet" />
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/css/components/btn.css', 'resources/css/components/form.css'])
     <title>Idea</title>
 </head>
 
