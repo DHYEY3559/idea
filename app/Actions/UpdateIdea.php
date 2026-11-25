@@ -23,7 +23,9 @@ class UpdateIdea
         //     collect($attributes)->only(['title', 'description', 'status', 'links' ?? []],
         //     ['title' => '', 'description' => '', 'status' => 'pending', 'links' => []])->toArray()
         // );
-        $data = collect($attributes)->only(['title', 'description', 'status', 'links'])->toArray();
+        $data = collect($attributes)->only(['title', 'description', 'status'])->toArray();
+
+        $data['links'] = $attributes['links'] ?? [];
 
         if ($attributes['image'] ?? false) {
             $data['image_path'] = $attributes['image']->store('images', 'public');
