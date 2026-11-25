@@ -49,7 +49,7 @@
 
         @if ($idea->description)
             <x-card is="div" class="p-6">
-                <p class="text-foreground/90 text-sm leading-relaxed whitespace-pre-line sm:text-base">
+                <p class="text-foreground/90 text-sm leading-relaxed sm:text-base">
                     {{ $idea->description }}
                 </p>
             </x-card>
