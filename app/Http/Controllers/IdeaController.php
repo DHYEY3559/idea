@@ -73,10 +73,10 @@ class IdeaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateIdeaRequest $request, UpdateIdea $updateIdea)
+    public function update(UpdateIdeaRequest $request, UpdateIdea $updateIdea, Idea $idea)
     {
-        dd($request->all());
-        $updateIdea->handle($request->all());
+        // dd($request->all());
+        $updateIdea->handle($idea,$request->all());
 
         return redirect()->route('ideas.index')->with('success', 'Idea updated successfully.');
     }
