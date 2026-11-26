@@ -187,12 +187,12 @@ $(document).ready(function () {
                 .map(
                     (link, index) => `
             <div class="flex w-full items-center gap-2 mb-2">
-                <input class="input w-full rounded pr-12" 
-                       type="text" 
-                       name="links[]" 
+                <input class="input w-full rounded pr-12"
+                       type="text"
+                       name="links[]"
                        value="${link}">
-                <button type="button" 
-                        class="remove-link-edit shrink-0 text-2xl leading-none text-red-500" 
+                <button type="button"
+                        class="remove-link-edit shrink-0 text-2xl leading-none text-red-500"
                         data-index="${index}">&times;</button>
             </div>
         `,
@@ -255,12 +255,12 @@ $(document).ready(function () {
                     (step, index) => `
             <div class="flex w-full items-center gap-2 mb-2">
                 <input type="hidden" name="step_ids[]" value="${step.id || ''}">
-                <input class="input w-full rounded pr-12" 
-                       type="text" 
-                       name="steps[]" 
+                <input class="input w-full rounded pr-12"
+                       type="text"
+                       name="steps[]"
                        value="${step.description}">
-                <button type="button" 
-                        class="remove-step-edit shrink-0 text-2xl leading-none text-red-500" 
+                <button type="button"
+                        class="remove-step-edit shrink-0 text-2xl leading-none text-red-500"
                         data-index="${index}">&times;</button>
             </div>
         `,
