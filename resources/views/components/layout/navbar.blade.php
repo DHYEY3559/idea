@@ -5,7 +5,7 @@
             @auth()
             <div class="hidden items-center gap-1 sm:flex">
                     <a href="{{ route('ideas.index') }}"
-                    class="{{ request()->routeIs('ideas.*') ? 'bg-white/8 text-foreground' : 'text-muted-foreground hover:text-foreground hover:bg-white/5' }} flex items-center gap-2 rounded-xl px-3 py-1.5 text-sm font-medium transition-colors">
+                    class="{{ request()->routeIs('ideas.*') ? 'bg-primary/15 text-foreground' : 'text-muted-foreground hover:text-foreground hover:bg-white/5' }} flex items-center gap-2 rounded-xl px-3 py-1.5 text-sm font-medium border border-border hover:scale-102 transition-colors">
                     <img src="/images/logo.png" alt="Logo" class="h-8 w-auto rounded-lg transition-transform duration-200 group-hover:scale-105">
                         Ideas
                     </a>
