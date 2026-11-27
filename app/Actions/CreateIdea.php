@@ -20,6 +20,10 @@ class CreateIdea
             ['title' => '', 'description' => '', 'status' => 'pending', 'links' => []],
             collect($attributes)->only(['title', 'description', 'status', 'links' ?? []])->toArray(),
         );
+        if($data['status'] === null) {
+            $data['status'] = 'pending';
+        }
+        // dd($data);
 
         if ($attributes['image'] ?? false) {
             $data['image_path'] = $attributes['image']->store('images', 'public');
