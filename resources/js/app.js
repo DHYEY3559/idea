@@ -163,6 +163,10 @@ $(document).ready(function () {
         }
 
         const value = newLink.value.trim();
+        if(!value) {
+            return;
+        }
+
         if (editLinkStack.includes(value)) {
             return;
         }
@@ -232,6 +236,10 @@ $(document).ready(function () {
         }
 
         const value = newStep.value.trim();
+
+        if(!value) {
+            return;
+        }
 
         editStepStack.push({ id: '', description: value });
         RenderEditSteps();
