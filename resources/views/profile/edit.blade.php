@@ -19,7 +19,7 @@
                 <div class="border-border/80 flex flex-col items-center gap-6 border-b pb-6 sm:flex-row sm:items-start">
                     <div class="relative size-28 shrink-0">
                         <img
-                            src="{{ $profile->profile_image ? asset('storage/' . $profile->profile_image) : asset('images/logo.png') }}"
+                            src="{{ $profile->profile_image ? asset('storage/' . $profile->profile_image) : asset('images/default.png') }}"
                             alt="{{ $profile->user->name }}'s profile photo"
                             class="border-card ring-primary/40 h-full w-full rounded-full border-4 object-cover ring-2"
                         >
