@@ -28,7 +28,7 @@ label {
 }
 
 .input:hover:not(:focus) {
-    border-color: oklch(0.32 0.01 260);
+    border-color: oklch(0.32 0.16 360);
 }
 
 .input:focus-visible {
